@@ -12,6 +12,7 @@ function saveCart(cart) {
   localStorage.setItem(CART_KEY, JSON.stringify(cart));
 }
 
+// Cart is keyed by "productId" or "productId::variantId" for variant products.
 let cart = loadCart();
 let paypalButtonsInstance = null;
 
@@ -19,38 +20,74 @@ function findProduct(id) {
   return PRODUCTS.find((p) => p.id === id);
 }
 
-function addToCart(id) {
-  cart[id] = (cart[id] || 0) + 1;
+function cartKey(productId, variantId) {
+  return variantId ? `${productId}::${variantId}` : productId;
+}
+
+function parseCartKey(key) {
+  const [productId, variantId] = key.split("::");
+  return { productId, variantId };
+}
+
+function lineInfo(key) {
+  const { productId, variantId } = parseCartKey(key);
+  const product = findProduct(productId);
+  if (!product) return null;
+  const variant = variantId ? product.variants.find((v) => v.id === variantId) : null;
+  if (variantId && !variant) return null;
+  const price = variant ? variant.price : product.price;
+  const label = variant ? `${product.name} — ${variant.label}` : product.name;
+  return { product, variant, price, label };
+}
+
+function addToCart(productId, variantId) {
+  const key = cartKey(productId, variantId);
+  cart[key] = (cart[key] || 0) + 1;
   saveCart(cart);
   renderCart();
   openCart();
 }
 
-function setQuantity(id, qty) {
+function setQuantity(key, qty) {
   qty = Math.max(0, Math.floor(Number(qty)) || 0);
   if (qty === 0) {
-    delete cart[id];
+    delete cart[key];
   } else {
-    cart[id] = qty;
+    cart[key] = qty;
   }
   saveCart(cart);
   renderCart();
 }
 
-function removeFromCart(id) {
-  delete cart[id];
+function removeFromCart(key) {
+  delete cart[key];
   saveCart(cart);
   renderCart();
 }
 
 function cartLines() {
   return Object.entries(cart)
-    .map(([id, qty]) => ({ product: findProduct(id), qty }))
+    .map(([key, qty]) => ({ key, qty, ...lineInfo(key) }))
     .filter((line) => line.product);
 }
 
 function cartSubtotal() {
-  return cartLines().reduce((sum, line) => sum + line.product.price * line.qty, 0);
+  return cartLines().reduce((sum, line) => sum + line.price * line.qty, 0);
+}
+
+function cartTotalUnits() {
+  return cartLines().reduce((sum, line) => sum + line.qty, 0);
+}
+
+function cartShippingTotal() {
+  const qtyByProduct = {};
+  for (const line of cartLines()) {
+    qtyByProduct[line.product.id] = (qtyByProduct[line.product.id] || 0) + line.qty;
+  }
+  return Object.entries(qtyByProduct).reduce(
+    (sum, [productId, qty]) => sum + shippingForProductQty(findProduct(productId), qty),
+    0
+  );
 }
 
 function renderProducts() {
@@ -59,14 +96,34 @@ function renderProducts() {
   for (const product of PRODUCTS) {
     const card = document.createElement("div");
     card.className = "product-card";
+
+    const hasVariants = Array.isArray(product.variants) && product.variants.length > 0;
+    const priceDisplay = hasVariants
+      ? `$${Math.min(...product.variants.map((v) => v.price)).toFixed(2)}+`
+      : `$${product.price.toFixed(2)}`;
+
     card.innerHTML = `
       <img src="${product.image}" alt="${product.name}">
       <h3>${product.name}</h3>
       <p>${product.description}</p>
-      <div class="price">$${product.price.toFixed(2)}</div>
+      ${hasVariants ? `<select class="variant-select"></select>` : ""}
+      <div class="price">${priceDisplay}</div>
       <button class="add-to-cart" type="button">Add to Cart</button>
     `;
-    card.querySelector(".add-to-cart").addEventListener("click", () => addToCart(product.id));
+
+    if (hasVariants) {
+      const select = card.querySelector(".variant-select");
+      for (const variant of product.variants) {
+        const opt = document.createElement("option");
+        opt.value = variant.id;
+        opt.textContent = `${variant.label} — $${variant.price.toFixed(2)}`;
+        select.appendChild(opt);
+      }
+      card.querySelector(".add-to-cart").addEventListener("click", () => addToCart(product.id, select.value));
+    } else {
+      card.querySelector(".add-to-cart").addEventListener("click", () => addToCart(product.id));
+    }
+
     grid.appendChild(card);
   }
 }
@@ -94,22 +151,22 @@ function renderCart() {
   totalsEl.style.display = "block";
   paypalContainer.style.display = "block";
 
-  for (const { product, qty } of lines) {
+  for (const line of lines) {
     const row = document.createElement("div");
     row.className = "cart-line";
     row.innerHTML = `
-      <span class="line-name">${product.name}</span>
-      <input type="number" min="0" value="${qty}">
-      <span>$${(product.price * qty).toFixed(2)}</span>
+      <span class="line-name">${line.label}</span>
+      <input type="number" min="0" value="${line.qty}">
+      <span>$${(line.price * line.qty).toFixed(2)}</span>
       <button class="remove" type="button">Remove</button>
     `;
-    row.querySelector("input").addEventListener("change", (e) => setQuantity(product.id, e.target.value));
-    row.querySelector(".remove").addEventListener("click", () => removeFromCart(product.id));
+    row.querySelector("input").addEventListener("change", (e) => setQuantity(line.key, e.target.value));
+    row.querySelector(".remove").addEventListener("click", () => removeFromCart(line.key));
     linesEl.appendChild(row);
   }
 
   const subtotal = cartSubtotal();
-  const shipping = FLAT_SHIPPING_USD;
+  const shipping = cartShippingTotal();
   const total = subtotal + shipping;
 
   totalsEl.innerHTML = `
@@ -123,7 +180,7 @@ function renderCart() {
 }
 
 function updateCartCount() {
-  const count = Object.values(cart).reduce((sum, qty) => sum + qty, 0);
+  const count = cartTotalUnits();
   document.getElementById("cart-count").textContent = count > 0 ? `(${count})` : "";
 }
 
@@ -141,7 +198,7 @@ function renderPayPalButtons() {
     createOrder: (data, actions) => {
       const lines = cartLines();
       const subtotal = cartSubtotal();
-      const shipping = FLAT_SHIPPING_USD;
+      const shipping = cartShippingTotal();
       const total = subtotal + shipping;
 
       return actions.order.create({
@@ -156,8 +213,8 @@ function renderPayPalButtons() {
               },
             },
             items: lines.map((line) => ({
-              name: line.product.name,
-              unit_amount: { currency_code: "USD", value: line.product.price.toFixed(2) },
+              name: line.label,
+              unit_amount: { currency_code: "USD", value: line.price.toFixed(2) },
               quantity: String(line.qty),
             })),
           },
