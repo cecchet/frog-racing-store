@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Frog Racing Store</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Frog Racing Store</h1>
+    <button id="cart-toggle" type="button">Cart <span id="cart-count"></span></button>
+  </header>
+
+  <main>
+    <div id="product-grid"></div>
+  </main>
+
+  <div id="cart-overlay"></div>
+  <aside id="cart-drawer">
+    <h2>Your Cart <button id="close-cart" type="button" aria-label="Close cart">&times;</button></h2>
+    <p id="empty-cart-msg">Your cart is empty.</p>
+    <div id="cart-lines"></div>
+    <div id="cart-totals"></div>
+    <div id="paypal-button-container"></div>
+  </aside>
+
+  <script src="products.js"></script>
+  <script src="https://www.paypal.com/sdk/js?client-id=BAAaouQKLSw0slNxcXFbxWj5FAu5hj3j4e8L93juuPSI3OcMSvj6mIYQgPzJ0t6O4ZCLrbnh2wUhuTNUC4&currency=USD"></script>
+  <script src="app.js"></script>
+</body>
+</html>
