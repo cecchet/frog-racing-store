@@ -155,51 +155,73 @@ function cartShippingTotal() {
   return sumAdditional + (maxFirst - maxFirstAdditional);
 }
 
-function renderProducts() {
-  const grid = document.getElementById("product-grid");
-  grid.innerHTML = "";
-  for (const product of PRODUCTS) {
-    const card = document.createElement("div");
-    card.className = "product-card";
+function buildProductCard(product) {
+  const card = document.createElement("div");
+  card.className = "product-card";
 
-    const hasVariants = Array.isArray(product.variants) && product.variants.length > 0;
-    const priceDisplay = hasVariants
-      ? `$${Math.min(...product.variants.map((v) => v.price)).toFixed(2)}+`
-      : `$${product.price.toFixed(2)}`;
-    const initialImage = hasVariants ? (product.variants[0].image || product.image) : product.image;
+  const hasVariants = Array.isArray(product.variants) && product.variants.length > 0;
+  const priceDisplay = hasVariants
+    ? `$${Math.min(...product.variants.map((v) => v.price)).toFixed(2)}+`
+    : `$${product.price.toFixed(2)}`;
+  const initialImage = hasVariants ? (product.variants[0].image || product.image) : product.image;
 
-    const nameHtml = product.pageUrl
-      ? `<a href="${product.pageUrl}" target="_blank" rel="noopener">${product.name}</a>`
-      : product.name;
+  const nameHtml = product.pageUrl
+    ? `<a href="${product.pageUrl}" target="_blank" rel="noopener">${product.name}</a>`
+    : product.name;
 
-    card.innerHTML = `
-      <img src="${initialImage}" alt="${product.name}" data-product-id="${product.id}">
-      <h3>${nameHtml}</h3>
-      <p>${product.description}</p>
-      ${hasVariants ? `<select class="variant-select"></select>` : ""}
-      <div class="price">${priceDisplay}</div>
-      <button class="add-to-cart" type="button">Add to Cart</button>
-    `;
+  card.innerHTML = `
+    <img src="${initialImage}" alt="${product.name}" data-product-id="${product.id}">
+    <h3>${nameHtml}</h3>
+    <p>${product.description}</p>
+    ${hasVariants ? `<select class="variant-select"></select>` : ""}
+    <div class="price">${priceDisplay}</div>
+    <button class="add-to-cart" type="button">Add to Cart</button>
+  `;
 
-    if (hasVariants) {
-      const select = card.querySelector(".variant-select");
-      const img = card.querySelector("img");
-      for (const variant of product.variants) {
-        const opt = document.createElement("option");
-        opt.value = variant.id;
-        opt.textContent = `${variant.label} — $${variant.price.toFixed(2)}`;
-        select.appendChild(opt);
-      }
-      select.addEventListener("change", () => {
-        const variant = product.variants.find((v) => v.id === select.value);
-        if (variant && variant.image) img.src = variant.image;
-      });
-      card.querySelector(".add-to-cart").addEventListener("click", () => addToCart(product.id, select.value));
-    } else {
-      card.querySelector(".add-to-cart").addEventListener("click", () => addToCart(product.id));
+  if (hasVariants) {
+    const select = card.querySelector(".variant-select");
+    const img = card.querySelector("img");
+    for (const variant of product.variants) {
+      const opt = document.createElement("option");
+      opt.value = variant.id;
+      opt.textContent = `${variant.label} — $${variant.price.toFixed(2)}`;
+      select.appendChild(opt);
     }
+    select.addEventListener("change", () => {
+      const variant = product.variants.find((v) => v.id === select.value);
+      if (variant && variant.image) img.src = variant.image;
+    });
+    card.querySelector(".add-to-cart").addEventListener("click", () => addToCart(product.id, select.value));
+  } else {
+    card.querySelector(".add-to-cart").addEventListener("click", () => addToCart(product.id));
+  }
 
-    grid.appendChild(card);
+  return card;
+}
+
+function renderProducts() {
+  const catalog = document.getElementById("catalog");
+  catalog.innerHTML = "";
+
+  for (const category of CATEGORIES) {
+    const productsInCategory = PRODUCTS.filter((p) => p.category === category.id);
+    if (productsInCategory.length === 0) continue;
+
+    const section = document.createElement("section");
+    section.className = "category-section";
+
+    const heading = document.createElement("h2");
+    heading.textContent = category.label;
+    section.appendChild(heading);
+
+    const grid = document.createElement("div");
+    grid.className = "product-grid";
+    for (const product of productsInCategory) {
+      grid.appendChild(buildProductCard(product));
+    }
+    section.appendChild(grid);
+
+    catalog.appendChild(section);
   }
 }
 

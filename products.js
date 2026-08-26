@@ -1,18 +1,17 @@
 // Product catalog. Prices are in USD.
+
+// Section order for the storefront. Each product below has a `category`
+// matching one of these keys.
+const CATEGORIES = [
+  { id: "apparel", label: "Apparel" },
+  { id: "accessories", label: "Accessories" },
+  { id: "race-car-parts", label: "Race Car Parts" },
+];
+
 const PRODUCTS = [
   {
-    id: "key-ring",
-    name: "Women in Motorsports Key Ring",
-    image: "images/key-ring/cttc-2026.jpg",
-    description: "Laser engraved transparent acrylic key ring with a lobster claw clasp made of zinc alloy metal, featuring the Frog Racing and Women in Motorsports logo. Currently only shipping to the USA; contact sales@frogracing.us for international shipping.",
-    variants: [
-      { id: "cttc-2026", label: "CTTC 2026", price: 3.00, image: "images/key-ring/cttc-2026.jpg" },
-      { id: "frog-racing", label: "Frog Racing", price: 3.00, image: "images/key-ring/frog-racing.jpg" },
-    ],
-    shipping: { first: 2.00, additional: 0.50 },
-  },
-  {
     id: "tshirt-womens-pink",
+    category: "apparel",
     name: "Women in Motorsports Pink T-Shirt",
     image: "images/tshirt-womens-pink/front.jpg",
     description: "100% cotton short sleeve t-shirt with a Frog Racing logo on the front and the Women in Motorsports logo on the back. Currently only shipping to the USA; contact sales@frogracing.us for international shipping.",
@@ -27,6 +26,7 @@ const PRODUCTS = [
   },
   {
     id: "tshirt-womens-black-longsleeve",
+    category: "apparel",
     name: "Women in Motorsports Black T-Shirt Long Sleeves",
     image: "images/tshirt-womens-black-longsleeve/front.png",
     description: "100% cotton long sleeve t-shirt with a Frog Racing logo on the front and the Women in Motorsports logo on the back. Currently only shipping to the USA; contact sales@frogracing.us for international shipping.",
@@ -41,6 +41,7 @@ const PRODUCTS = [
   },
   {
     id: "hat",
+    category: "apparel",
     name: "Frog Racing Embroidered Hat",
     image: "images/hat/front.jpg",
     description: "100% cotton unisex hat with an embroidered Frog Racing logo and a rear clasp for adjustment. Currently only shipping to the USA; contact sales@frogracing.us for international shipping.",
@@ -48,7 +49,20 @@ const PRODUCTS = [
     shipping: { first: 6.00, additional: 1.00 },
   },
   {
+    id: "key-ring",
+    category: "accessories",
+    name: "Women in Motorsports Key Ring",
+    image: "images/key-ring/cttc-2026.jpg",
+    description: "Laser engraved transparent acrylic key ring with a lobster claw clasp made of zinc alloy metal, featuring the Frog Racing and Women in Motorsports logo. Currently only shipping to the USA; contact sales@frogracing.us for international shipping.",
+    variants: [
+      { id: "cttc-2026", label: "CTTC 2026", price: 3.00, image: "images/key-ring/cttc-2026.jpg" },
+      { id: "frog-racing", label: "Frog Racing", price: 3.00, image: "images/key-ring/frog-racing.jpg" },
+    ],
+    shipping: { first: 2.00, additional: 0.50 },
+  },
+  {
     id: "license-plate-cover",
+    category: "accessories",
     name: "Frog Racing License Plate Cover",
     image: "images/license-plate-cover/front.jpg",
     description: "3D printed in-house by Frog Racing from PETG filament. Features a translucent green Frog Racing in a black frame. Currently only shipping to the USA; contact sales@frogracing.us for international shipping.",
@@ -57,6 +71,7 @@ const PRODUCTS = [
   },
   {
     id: "cttc-road-cutout",
+    category: "accessories",
     name: "Climb to the Clouds Glow in the Dark",
     image: "images/cttc-road-cutout/front.jpg",
     description: "A cutout of the Mt Washington Climb to the Clouds auto road made from our GPS data from racing. This is a smaller version of our bigger 3D art, just the road, printed in Glow in the Dark green PLA filament. A great little piece to put on your desk or your shelf, great add-on to any order! Currently only shipping to the USA; contact sales@frogracing.us for international shipping.",
@@ -65,6 +80,7 @@ const PRODUCTS = [
   },
   {
     id: "racing-harness-collar",
+    category: "race-car-parts",
     name: "Racing Harness Collar",
     pageUrl: "https://www.frogracing.us/store/racing-harness-collars",
     image: "images/racing-harness-collar/38mm-2in.jpg",
@@ -82,6 +98,7 @@ const PRODUCTS = [
   },
   {
     id: "steering-wheel-hook",
+    category: "race-car-parts",
     name: "Steering Wheel Hook with GoPro Mount",
     pageUrl: "https://www.frogracing.us/store/steering-wheel-hook",
     image: "images/steering-wheel-hook/38mm-standard-abs.jpg",
@@ -101,6 +118,7 @@ const PRODUCTS = [
   },
   {
     id: "sun-visor",
+    category: "race-car-parts",
     name: "Sun Visor GoPro Mount",
     pageUrl: "https://www.frogracing.us/store/sun-visor",
     image: "images/sun-visor/standalone.jpg",
@@ -117,6 +135,7 @@ const PRODUCTS = [
   },
   {
     id: "button-cover-fire-suppression",
+    category: "race-car-parts",
     name: "Button Cover for Lifeline Fire Suppression Systems",
     pageUrl: "https://www.frogracing.us/store/button-cover-for-lifeline-fire-suppression-systems",
     image: "images/button-cover-fire-suppression/red-bg-white-e.jpg",
@@ -129,6 +148,7 @@ const PRODUCTS = [
   },
   {
     id: "steering-wheel-plug",
+    category: "race-car-parts",
     name: "Steering Wheel Horn Plug",
     pageUrl: "https://www.frogracing.us/store/steering-wheel-plug",
     image: "images/steering-wheel-plug/sti.jpg",
