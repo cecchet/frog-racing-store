@@ -29,7 +29,7 @@ const PRODUCTS = [
       { id: "combo-1.75", label: "1.75\" Combo - Visor+1.75\" bar mount+GoPro thumbscrew+Cable tie", price: 30.00, image: "images/sun-visor/combo-1.75.jpg" },
       { id: "deluxe-1.5", label: "1.5\" Deluxe - Visor+1.5\" bar mount+Swivel mount+Cable tie", price: 49.00, image: "images/sun-visor/deluxe-1.5.jpg" },
       { id: "deluxe-1.75", label: "1.75\" Deluxe - Visor+1.75\" bar mount+Swivel mount+Cable tie", price: 49.00, image: "images/sun-visor/deluxe-1.75.jpg" },
-      { id: "custom", label: "Custom design (contact sales@frogracing.us)", price: 79.00, image: "images/placeholder.svg" },
+      { id: "custom", label: "Custom design (contact sales@frogracing.us)", price: 79.00, image: "images/sun-visor/custom.jpg" },
     ],
     shipping: { first: 9.00, additional: 1.00 },
   },
