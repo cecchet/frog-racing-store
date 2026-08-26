@@ -97,9 +97,10 @@ const PRODUCTS = [
     description: "100% cotton short sleeve t-shirt with a Frog Racing logo on the front and the Women in Motorsports logo on the back. Currently only shipping to the USA; contact sales@frogracing.us for international shipping.",
     variants: [
       { id: "s", label: "S", price: 25.00, image: "images/tshirt-womens-pink/front.jpg" },
-      { id: "m", label: "M", price: 25.00, image: "images/tshirt-womens-pink/front.jpg" },
+      { id: "m", label: "M", price: 25.00, image: "images/tshirt-womens-pink/back.jpg" },
       { id: "l", label: "L", price: 25.00, image: "images/tshirt-womens-pink/front.jpg" },
-      { id: "xl", label: "XL", price: 25.00, image: "images/tshirt-womens-pink/front.jpg" },
+      { id: "xl", label: "XL", price: 25.00, image: "images/tshirt-womens-pink/back.jpg" },
+      { id: "2xl", label: "2XL", price: 25.00, image: "images/tshirt-womens-pink/front.jpg" },
     ],
     shipping: { first: 7.00, additional: 2.00 },
   },
