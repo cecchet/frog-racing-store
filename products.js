@@ -29,6 +29,14 @@ const PRODUCTS = [
     shipping: { first: 7.00, additional: 2.00 },
   },
   {
+    id: "hat",
+    name: "Frog Racing Embroidered Hat",
+    image: "images/hat/front.jpg",
+    description: "100% cotton unisex hat with an embroidered Frog Racing logo and a rear clasp for adjustment. Currently only shipping to the USA; contact sales@frogracing.us for international shipping.",
+    price: 35.00,
+    shipping: { first: 6.00, additional: 1.00 },
+  },
+  {
     id: "key-ring",
     name: "Women in Motorsports Key Ring",
     image: "images/key-ring/cttc-2026.jpg",
