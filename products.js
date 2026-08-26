@@ -1,6 +1,17 @@
 // Product catalog. Prices are in USD.
 const PRODUCTS = [
   {
+    id: "key-ring",
+    name: "Women in Motorsports Key Ring",
+    image: "images/key-ring/cttc-2026.jpg",
+    description: "Laser engraved transparent acrylic key ring with a lobster claw clasp made of zinc alloy metal, featuring the Frog Racing and Women in Motorsports logo. Currently only shipping to the USA; contact sales@frogracing.us for international shipping.",
+    variants: [
+      { id: "cttc-2026", label: "CTTC 2026", price: 3.00, image: "images/key-ring/cttc-2026.jpg" },
+      { id: "frog-racing", label: "Frog Racing", price: 3.00, image: "images/key-ring/frog-racing.jpg" },
+    ],
+    shipping: { first: 2.00, additional: 0.50 },
+  },
+  {
     id: "tshirt-womens-pink",
     name: "Women in Motorsports Pink T-Shirt",
     image: "images/tshirt-womens-pink/front.jpg",
@@ -43,17 +54,6 @@ const PRODUCTS = [
     description: "3D printed in-house by Frog Racing from PETG filament. Features a translucent green Frog Racing in a black frame. Currently only shipping to the USA; contact sales@frogracing.us for international shipping.",
     price: 10.00,
     shipping: { first: 6.00, additional: 1.00 },
-  },
-  {
-    id: "key-ring",
-    name: "Women in Motorsports Key Ring",
-    image: "images/key-ring/cttc-2026.jpg",
-    description: "Laser engraved transparent acrylic key ring with a lobster claw clasp made of zinc alloy metal, featuring the Frog Racing and Women in Motorsports logo. Currently only shipping to the USA; contact sales@frogracing.us for international shipping.",
-    variants: [
-      { id: "cttc-2026", label: "CTTC 2026", price: 3.00, image: "images/key-ring/cttc-2026.jpg" },
-      { id: "frog-racing", label: "Frog Racing", price: 3.00, image: "images/key-ring/frog-racing.jpg" },
-    ],
-    shipping: { first: 2.00, additional: 0.50 },
   },
   {
     id: "racing-harness-collar",
