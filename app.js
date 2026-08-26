@@ -199,6 +199,20 @@ function buildProductCard(product) {
   return card;
 }
 
+function renderNav() {
+  const nav = document.getElementById("category-nav");
+  nav.innerHTML = "";
+  for (const category of CATEGORIES) {
+    const hasProducts = PRODUCTS.some((p) => p.category === category.id);
+    if (!hasProducts) continue;
+
+    const link = document.createElement("a");
+    link.href = `#${category.id}`;
+    link.textContent = category.label;
+    nav.appendChild(link);
+  }
+}
+
 function renderProducts() {
   const catalog = document.getElementById("catalog");
   catalog.innerHTML = "";
@@ -209,6 +223,7 @@ function renderProducts() {
 
     const section = document.createElement("section");
     section.className = "category-section";
+    section.id = category.id;
 
     const heading = document.createElement("h2");
     heading.textContent = category.label;
@@ -357,5 +372,6 @@ document.getElementById("cart-toggle").addEventListener("click", openCart);
 document.getElementById("close-cart").addEventListener("click", closeCart);
 document.getElementById("cart-overlay").addEventListener("click", closeCart);
 
+renderNav();
 renderProducts();
 renderCart();
