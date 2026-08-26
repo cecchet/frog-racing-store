@@ -91,6 +91,16 @@ main {
   font-size: 1.05rem;
 }
 
+.product-card h3 a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.product-card h3 a:hover {
+  color: var(--green-dark);
+  text-decoration: underline;
+}
+
 .product-card p {
   color: var(--muted);
   font-size: 0.9rem;

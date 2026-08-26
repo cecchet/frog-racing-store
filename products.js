@@ -3,6 +3,7 @@ const PRODUCTS = [
   {
     id: "racing-harness-collar",
     name: "Racing Harness Collar",
+    pageUrl: "https://www.frogracing.us/store/racing-harness-collars",
     image: "images/racing-harness-collar/38mm-2in.jpg",
     description: "Carbon Fiber reinforced polyamide (PA6-CF) racing harness collar with carbon steel hardware, designed and produced in-house at Frog Racing.",
     variants: [
@@ -19,6 +20,7 @@ const PRODUCTS = [
   {
     id: "sun-visor",
     name: "Sun Visor GoPro Mount",
+    pageUrl: "https://www.frogracing.us/store/sun-visor",
     image: "images/sun-visor/standalone.jpg",
     description: "Black ABS plastic sun visor with a versatile GoPro mount.",
     variants: [
@@ -34,6 +36,7 @@ const PRODUCTS = [
   {
     id: "steering-wheel-hook",
     name: "Steering Wheel Hook with GoPro Mount",
+    pageUrl: "https://www.frogracing.us/store/steering-wheel-hook",
     image: "images/steering-wheel-hook/38mm-standard-abs.jpg",
     description: "Lightweight 2-in-1 solution to hook a steering wheel to a rollcage bar, plus a standard GoPro mount.",
     variants: [
@@ -52,6 +55,7 @@ const PRODUCTS = [
   {
     id: "steering-wheel-plug",
     name: "Steering Wheel Horn Plug",
+    pageUrl: "https://www.frogracing.us/store/steering-wheel-plug",
     image: "images/steering-wheel-plug/sti.jpg",
     description: "Fits the standard Sparco steering wheel horn button hole.",
     variants: [
@@ -66,6 +70,7 @@ const PRODUCTS = [
   {
     id: "button-cover-fire-suppression",
     name: "Button Cover for Lifeline Fire Suppression Systems",
+    pageUrl: "https://www.frogracing.us/store/button-cover-for-lifeline-fire-suppression-systems",
     image: "images/button-cover-fire-suppression/red-bg-white-e.jpg",
     description: "Fits Lifeline Zero 360 FIA 3.0kg FK 5-1-12 Stored Pressure Electric System buttons.",
     variants: [

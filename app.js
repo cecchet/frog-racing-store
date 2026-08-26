@@ -103,9 +103,13 @@ function renderProducts() {
       : `$${product.price.toFixed(2)}`;
     const initialImage = hasVariants ? (product.variants[0].image || product.image) : product.image;
 
+    const nameHtml = product.pageUrl
+      ? `<a href="${product.pageUrl}" target="_blank" rel="noopener">${product.name}</a>`
+      : product.name;
+
     card.innerHTML = `
       <img src="${initialImage}" alt="${product.name}" data-product-id="${product.id}">
-      <h3>${product.name}</h3>
+      <h3>${nameHtml}</h3>
       <p>${product.description}</p>
       ${hasVariants ? `<select class="variant-select"></select>` : ""}
       <div class="price">${priceDisplay}</div>
