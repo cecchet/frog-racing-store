@@ -1,5 +1,41 @@
 const CART_KEY = "frogracing-cart";
 
+// Paste the Google Apps Script Web App URL here after deploying it (see
+// google-apps-script.gs in this repo for the script + deployment steps).
+// Order logging is skipped silently if this is left blank.
+const ORDER_LOG_WEBHOOK_URL = "";
+
+function logOrderToSheet(details, lines, subtotal, shipping, total) {
+  if (!ORDER_LOG_WEBHOOK_URL) return;
+
+  const payload = {
+    orderId: details.id,
+    payerName: [details.payer.name.given_name, details.payer.name.surname].filter(Boolean).join(" "),
+    payerEmail: details.payer.email_address,
+    subtotal: subtotal.toFixed(2),
+    shipping: shipping.toFixed(2),
+    total: total.toFixed(2),
+    items: lines.map((line) => ({
+      product: line.product.name,
+      variant: line.variant ? line.variant.label : "",
+      quantity: line.qty,
+      unitPrice: line.price.toFixed(2),
+      lineTotal: (line.price * line.qty).toFixed(2),
+    })),
+  };
+
+  // Apps Script web apps don't handle CORS preflight requests; using
+  // text/plain avoids the browser sending one, and mode: "no-cors" means we
+  // can't read a response, so this is fire-and-forget best-effort logging.
+  // PayPal's own transaction record remains the source of truth for orders.
+  fetch(ORDER_LOG_WEBHOOK_URL, {
+    method: "POST",
+    mode: "no-cors",
+    headers: { "Content-Type": "text/plain" },
+    body: JSON.stringify(payload),
+  }).catch((err) => console.error("Order logging to sheet failed", err));
+}
+
 function loadCart() {
   try {
     return JSON.parse(localStorage.getItem(CART_KEY)) || {};
@@ -232,7 +268,13 @@ function renderPayPalButtons() {
       });
     },
     onApprove: (data, actions) => {
+      const lines = cartLines();
+      const subtotal = cartSubtotal();
+      const shipping = cartShippingTotal();
+      const total = subtotal + shipping;
+
       return actions.order.capture().then((details) => {
+        logOrderToSheet(details, lines, subtotal, shipping, total);
         cart = {};
         saveCart(cart);
         renderCart();
