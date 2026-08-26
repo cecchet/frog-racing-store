@@ -15,6 +15,20 @@ const PRODUCTS = [
     shipping: { first: 7.00, additional: 2.00 },
   },
   {
+    id: "tshirt-womens-black-longsleeve",
+    name: "Women in Motorsports Black T-Shirt Long Sleeves",
+    image: "images/tshirt-womens-black-longsleeve/front.png",
+    description: "100% cotton long sleeve t-shirt with a Frog Racing logo on the front and the Women in Motorsports logo on the back. Currently only shipping to the USA; contact sales@frogracing.us for international shipping.",
+    variants: [
+      { id: "s", label: "S", price: 30.00, image: "images/tshirt-womens-black-longsleeve/front.png" },
+      { id: "m", label: "M", price: 30.00, image: "images/tshirt-womens-black-longsleeve/back.png" },
+      { id: "l", label: "L", price: 30.00, image: "images/tshirt-womens-black-longsleeve/front.png" },
+      { id: "xl", label: "XL", price: 30.00, image: "images/tshirt-womens-black-longsleeve/back.png" },
+      { id: "2xl", label: "2XL", price: 30.00, image: "images/tshirt-womens-black-longsleeve/front.png" },
+    ],
+    shipping: { first: 7.00, additional: 2.00 },
+  },
+  {
     id: "key-ring",
     name: "Women in Motorsports Key Ring",
     image: "images/key-ring/cttc-2026.jpg",
