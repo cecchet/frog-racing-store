@@ -101,9 +101,10 @@ function renderProducts() {
     const priceDisplay = hasVariants
       ? `$${Math.min(...product.variants.map((v) => v.price)).toFixed(2)}+`
       : `$${product.price.toFixed(2)}`;
+    const initialImage = hasVariants ? (product.variants[0].image || product.image) : product.image;
 
     card.innerHTML = `
-      <img src="${product.image}" alt="${product.name}">
+      <img src="${initialImage}" alt="${product.name}" data-product-id="${product.id}">
       <h3>${product.name}</h3>
       <p>${product.description}</p>
       ${hasVariants ? `<select class="variant-select"></select>` : ""}
@@ -113,12 +114,17 @@ function renderProducts() {
 
     if (hasVariants) {
       const select = card.querySelector(".variant-select");
+      const img = card.querySelector("img");
       for (const variant of product.variants) {
         const opt = document.createElement("option");
         opt.value = variant.id;
         opt.textContent = `${variant.label} — $${variant.price.toFixed(2)}`;
         select.appendChild(opt);
       }
+      select.addEventListener("change", () => {
+        const variant = product.variants.find((v) => v.id === select.value);
+        if (variant && variant.image) img.src = variant.image;
+      });
       card.querySelector(".add-to-cart").addEventListener("click", () => addToCart(product.id, select.value));
     } else {
       card.querySelector(".add-to-cart").addEventListener("click", () => addToCart(product.id));
