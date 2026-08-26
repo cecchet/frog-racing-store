@@ -37,6 +37,14 @@ const PRODUCTS = [
     shipping: { first: 6.00, additional: 1.00 },
   },
   {
+    id: "license-plate-cover",
+    name: "Frog Racing License Plate Cover",
+    image: "images/license-plate-cover/front.jpg",
+    description: "3D printed in-house by Frog Racing from PETG filament. Features a translucent green Frog Racing in a black frame. Currently only shipping to the USA; contact sales@frogracing.us for international shipping.",
+    price: 10.00,
+    shipping: { first: 6.00, additional: 1.00 },
+  },
+  {
     id: "key-ring",
     name: "Women in Motorsports Key Ring",
     image: "images/key-ring/cttc-2026.jpg",
