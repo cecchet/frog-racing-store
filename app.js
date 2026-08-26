@@ -3,17 +3,30 @@ const CART_KEY = "frogracing-cart";
 // Paste the Google Apps Script Web App URL here after deploying it (see
 // google-apps-script.gs in this repo for the script + deployment steps).
 // Order logging is skipped silently if this is left blank.
-const ORDER_LOG_WEBHOOK_URL = "";
+const ORDER_LOG_WEBHOOK_URL = "https://script.google.com/macros/s/AKfycbyFxXB60DY6rtPQNqn7qzFUK5es2l7LSV4EX7ZdmyNOQWbgQCUY2KpXZNbcoS7AGB3ghA/exec";
 
-function logOrderToSheet(details, lines, subtotal, shipping, total) {
+function logOrderToSheet(details, lines, subtotal, shippingCost, total) {
   if (!ORDER_LOG_WEBHOOK_URL) return;
+
+  // PayPal collects a shipping address by default (shipping_preference
+  // defaults to GET_FROM_FILE since we don't set NO_SHIPPING), and it comes
+  // back on the capture response under purchase_units[0].shipping.
+  const shipToInfo = details.purchase_units && details.purchase_units[0] && details.purchase_units[0].shipping;
+  const shipToAddress = (shipToInfo && shipToInfo.address) || {};
 
   const payload = {
     orderId: details.id,
     payerName: [details.payer.name.given_name, details.payer.name.surname].filter(Boolean).join(" "),
     payerEmail: details.payer.email_address,
+    shipToName: (shipToInfo && shipToInfo.name && shipToInfo.name.full_name) || "",
+    shipToAddressLine1: shipToAddress.address_line_1 || "",
+    shipToAddressLine2: shipToAddress.address_line_2 || "",
+    shipToCity: shipToAddress.admin_area_2 || "",
+    shipToState: shipToAddress.admin_area_1 || "",
+    shipToPostalCode: shipToAddress.postal_code || "",
+    shipToCountry: shipToAddress.country_code || "",
     subtotal: subtotal.toFixed(2),
-    shipping: shipping.toFixed(2),
+    shipping: shippingCost.toFixed(2),
     total: total.toFixed(2),
     items: lines.map((line) => ({
       product: line.product.name,

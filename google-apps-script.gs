@@ -25,6 +25,7 @@ function doPost(e) {
   if (sheet.getLastRow() === 0) {
     sheet.appendRow([
       "Timestamp", "Order ID", "Buyer Name", "Buyer Email",
+      "Ship To Name", "Address Line 1", "Address Line 2", "City", "State", "Postal Code", "Country",
       "Product", "Variant", "Quantity", "Unit Price", "Line Total",
       "Order Subtotal", "Order Shipping", "Order Total",
     ]);
@@ -39,6 +40,13 @@ function doPost(e) {
       data.orderId,
       data.payerName,
       data.payerEmail,
+      data.shipToName,
+      data.shipToAddressLine1,
+      data.shipToAddressLine2,
+      data.shipToCity,
+      data.shipToState,
+      data.shipToPostalCode,
+      data.shipToCountry,
       item.product,
       item.variant,
       item.quantity,
