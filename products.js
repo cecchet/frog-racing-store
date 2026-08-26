@@ -56,6 +56,14 @@ const PRODUCTS = [
     shipping: { first: 6.00, additional: 1.00 },
   },
   {
+    id: "cttc-road-cutout",
+    name: "Climb to the Clouds Glow in the Dark",
+    image: "images/cttc-road-cutout/front.jpg",
+    description: "A cutout of the Mt Washington Climb to the Clouds auto road made from our GPS data from racing. This is a smaller version of our bigger 3D art, just the road, printed in Glow in the Dark green PLA filament. A great little piece to put on your desk or your shelf, great add-on to any order! Currently only shipping to the USA; contact sales@frogracing.us for international shipping.",
+    price: 2.00,
+    shipping: { first: 5.00, additional: 0.00 },
+  },
+  {
     id: "racing-harness-collar",
     name: "Racing Harness Collar",
     pageUrl: "https://www.frogracing.us/store/racing-harness-collars",
