@@ -133,10 +133,26 @@ function cartShippingTotal() {
   for (const line of cartLines()) {
     qtyByProduct[line.product.id] = (qtyByProduct[line.product.id] || 0) + line.qty;
   }
-  return Object.entries(qtyByProduct).reduce(
-    (sum, [productId, qty]) => sum + shippingForProductQty(findProduct(productId), qty),
-    0
-  );
+
+  const productIds = Object.keys(qtyByProduct);
+  if (productIds.length === 0) return 0;
+
+  // The whole order ships together, so only one product's "first item" rate
+  // applies to the order (the highest one, since that's the one assumed to
+  // set the box/postage cost) - every other unit, including extra units of
+  // that same product, is charged at its own product's additional-item rate.
+  let sumAdditional = 0;
+  let maxFirst = -Infinity;
+  let maxFirstAdditional = 0;
+  for (const productId of productIds) {
+    const rule = findProduct(productId).shipping || DEFAULT_SHIPPING;
+    sumAdditional += qtyByProduct[productId] * rule.additional;
+    if (rule.first > maxFirst) {
+      maxFirst = rule.first;
+      maxFirstAdditional = rule.additional;
+    }
+  }
+  return sumAdditional + (maxFirst - maxFirstAdditional);
 }
 
 function renderProducts() {

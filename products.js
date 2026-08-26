@@ -139,14 +139,3 @@ const PRODUCTS = [
 // Fallback graduated shipping for products that don't yet have a real rate
 // (flat per unit until the user gives us actual numbers).
 const DEFAULT_SHIPPING = { first: 6.00, additional: 6.00 };
-
-// Combined shipping per product: each product's variants share one shipping
-// "bucket" (first unit at the full rate, each additional unit of that same
-// product at the discounted rate). Buckets for different products are added
-// together. This is the workaround for PayPal's own buttons only supporting
-// a single flat shipping fee, not a real per-product combined-cart rate.
-function shippingForProductQty(product, qty) {
-  if (qty <= 0) return 0;
-  const rule = product.shipping || DEFAULT_SHIPPING;
-  return rule.first + (qty - 1) * rule.additional;
-}
