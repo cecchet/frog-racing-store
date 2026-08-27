@@ -71,6 +71,15 @@ const PRODUCTS = [
     shipping: { first: 6.00, additional: 1.00 },
   },
   {
+    id: "wim-sticker",
+    category: "accessories",
+    name: "Women in Motorsport Sticker",
+    image: "images/wim-sticker/front.jpg",
+    description: "Our Women in Motorsport sticker from our all women team at CTTC 2026. A piece of history for the first ever women team at this event, also setting a new all time record for fastest woman! Currently only shipping to the USA; contact sales@frogracing.us for international shipping.",
+    price: 5.00,
+    shipping: { first: 1.00, additional: 0.00 },
+  },
+  {
     id: "racing-harness-collar",
     category: "race-car-parts",
     name: "Racing Harness Collar",
