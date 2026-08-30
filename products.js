@@ -89,6 +89,15 @@ const PRODUCTS = [
     shipping: { first: 1.00, additional: 0.00 },
   },
   {
+    id: "hood-pin-clips",
+    category: "race-car-parts",
+    name: "Frog Racing Hood Pin Clips",
+    images: ["images/hood-pin-clips/front.jpg", "images/hood-pin-clips/2.jpg", "images/hood-pin-clips/3.jpg"],
+    description: "The Frog Racing hood pin clips secure your hood pin in place. It is made of ASA filament and 3D printed in house by Frog Racing. The kit comes with 4 clips and 2 Service in Process signs so that you don't forget to re-secure your hood pins. Currently only shipping to the USA; contact sales@frogracing.us for international shipping.",
+    price: 10.00,
+    shipping: { first: 5.00, additional: 1.00 },
+  },
+  {
     id: "racing-harness-collar",
     category: "race-car-parts",
     name: "Racing Harness Collar",

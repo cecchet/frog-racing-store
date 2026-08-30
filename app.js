@@ -155,6 +155,12 @@ function cartShippingTotal() {
   return sumAdditional + (maxFirst - maxFirstAdditional);
 }
 
+// Returns the list of photos to cycle through for a product or variant -
+// falls back to its single `image` field when there's no `images` array.
+function getImages(item) {
+  return item.images && item.images.length > 0 ? item.images : [item.image];
+}
+
 function buildProductCard(product) {
   const card = document.createElement("div");
   card.className = "product-card";
@@ -163,14 +169,19 @@ function buildProductCard(product) {
   const priceDisplay = hasVariants
     ? `$${Math.min(...product.variants.map((v) => v.price)).toFixed(2)}+`
     : `$${product.price.toFixed(2)}`;
-  const initialImage = hasVariants ? (product.variants[0].image || product.image) : product.image;
+  const initialImages = hasVariants ? getImages(product.variants[0]) : getImages(product);
 
   const nameHtml = product.pageUrl
     ? `<a href="${product.pageUrl}" target="_blank" rel="noopener">${product.name}</a>`
     : product.name;
 
   card.innerHTML = `
-    <img src="${initialImage}" alt="${product.name}" data-product-id="${product.id}">
+    <div class="image-carousel">
+      <img src="${initialImages[0]}" alt="${product.name}" data-product-id="${product.id}">
+      <button class="carousel-prev" type="button" aria-label="Previous photo">&#10094;</button>
+      <button class="carousel-next" type="button" aria-label="Next photo">&#10095;</button>
+      <div class="carousel-dots"></div>
+    </div>
     <h3>${nameHtml}</h3>
     <p>${product.description}</p>
     ${hasVariants ? `<select class="variant-select"></select>` : ""}
@@ -178,9 +189,54 @@ function buildProductCard(product) {
     <button class="add-to-cart" type="button">Add to Cart</button>
   `;
 
+  const img = card.querySelector(".image-carousel img");
+  const prevBtn = card.querySelector(".carousel-prev");
+  const nextBtn = card.querySelector(".carousel-next");
+  const dotsEl = card.querySelector(".carousel-dots");
+  let images = initialImages;
+  let index = 0;
+
+  function renderCarousel() {
+    img.src = images[index];
+    const multi = images.length > 1;
+    prevBtn.style.display = multi ? "flex" : "none";
+    nextBtn.style.display = multi ? "flex" : "none";
+    dotsEl.style.display = multi ? "flex" : "none";
+    dotsEl.innerHTML = "";
+    if (multi) {
+      images.forEach((_, i) => {
+        const dot = document.createElement("button");
+        dot.type = "button";
+        dot.className = "carousel-dot" + (i === index ? " active" : "");
+        dot.setAttribute("aria-label", `Photo ${i + 1}`);
+        dot.addEventListener("click", () => {
+          index = i;
+          renderCarousel();
+        });
+        dotsEl.appendChild(dot);
+      });
+    }
+  }
+
+  function setImages(newImages) {
+    images = newImages.length > 0 ? newImages : ["images/placeholder.svg"];
+    index = 0;
+    renderCarousel();
+  }
+
+  prevBtn.addEventListener("click", () => {
+    index = (index - 1 + images.length) % images.length;
+    renderCarousel();
+  });
+  nextBtn.addEventListener("click", () => {
+    index = (index + 1) % images.length;
+    renderCarousel();
+  });
+
+  renderCarousel();
+
   if (hasVariants) {
     const select = card.querySelector(".variant-select");
-    const img = card.querySelector("img");
     for (const variant of product.variants) {
       const opt = document.createElement("option");
       opt.value = variant.id;
@@ -189,7 +245,7 @@ function buildProductCard(product) {
     }
     select.addEventListener("change", () => {
       const variant = product.variants.find((v) => v.id === select.value);
-      if (variant && variant.image) img.src = variant.image;
+      if (variant) setImages(getImages(variant));
     });
     card.querySelector(".add-to-cart").addEventListener("click", () => addToCart(product.id, select.value));
   } else {
