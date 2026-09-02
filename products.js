@@ -93,7 +93,7 @@ const PRODUCTS = [
     category: "race-car-parts",
     pageUrl: "https://www.frogracing.us/store/hood-pin-clips",
     name: "Frog Racing Hood Pin Clips",
-    images: ["images/hood-pin-clips/4clips.jpg", "images/hood-pin-clips/2.jpg", "images/hood-pin-clips/3.jpg", "images/hood-pin-clips/pin-size.jpg", "images/hood-pin-clips/ring-size.jpg"],
+    images: ["images/hood-pin-clips/3.jpg", "images/hood-pin-clips/4clips.jpg", "images/hood-pin-clips/2.jpg", "images/hood-pin-clips/pin-size.jpg", "images/hood-pin-clips/ring-size.jpg"],
     description: "The Frog Racing hood pin clips secure your hood pins in place (made for hood pins with 6mm diameter pins and 3mm rings). It is made of ASA filament and 3D printed in house by Frog Racing. Currently only shipping to the USA; contact sales@frogracing.us for international shipping.",
     variants: [
       {
@@ -143,7 +143,7 @@ const PRODUCTS = [
     category: "race-car-parts",
     name: "Racing Harness Collar",
     pageUrl: "https://www.frogracing.us/store/racing-harness-collars",
-    image: "images/racing-harness-collar/38mm-2in.jpg",
+    images: ["images/racing-harness-collar/cover.jpg"],
     description: "Carbon Fiber reinforced polyamide (PA6-CF) racing harness collar with carbon steel hardware, designed and produced in-house at Frog Racing.",
     variants: [
       { id: "38mm-2in", label: "1.5\" / 38mm harness bar - 2\" belt kit", price: 44.99, image: "images/racing-harness-collar/38mm-2in.jpg" },
@@ -161,7 +161,7 @@ const PRODUCTS = [
     category: "race-car-parts",
     name: "Steering Wheel Hook with GoPro Mount",
     pageUrl: "https://www.frogracing.us/store/steering-wheel-hook",
-    image: "images/steering-wheel-hook/38mm-standard-abs.jpg",
+    images: ["images/steering-wheel-hook/cover.jpg"],
     description: "Lightweight 2-in-1 solution to hook a steering wheel to a rollcage bar, plus a standard GoPro mount.",
     variants: [
       { id: "38mm-standard-abs", label: "1.5\" / 38mm standard (ABS)", price: 12.00, image: "images/steering-wheel-hook/38mm-standard-abs.jpg" },
@@ -181,7 +181,7 @@ const PRODUCTS = [
     category: "race-car-parts",
     name: "Sun Visor GoPro Mount",
     pageUrl: "https://www.frogracing.us/store/sun-visor",
-    image: "images/sun-visor/standalone.jpg",
+    images: ["images/sun-visor/cover.jpg"],
     description: "Black ABS plastic sun visor with a versatile GoPro mount.",
     variants: [
       { id: "standalone", label: "Standalone visor (one visor)", price: 25.00, image: "images/sun-visor/standalone.jpg" },

@@ -192,7 +192,10 @@ function buildProductCard(product) {
   const priceDisplay = hasVariants
     ? `$${Math.min(...product.variants.map((v) => v.price)).toFixed(2)}+`
     : `$${product.price.toFixed(2)}`;
-  const initialImages = hasVariants ? getImages(product.variants[0]) : getImages(product);
+  // Always start on the product's own cover photo(s), not a specific
+  // variant's - once the shopper picks a variant, the select's "change"
+  // handler below takes over and shows that variant's own photo(s).
+  const initialImages = getImages(product);
 
   const nameHtml = product.pageUrl
     ? `<a href="${product.pageUrl}" target="_blank" rel="noopener">${product.name}</a>`
