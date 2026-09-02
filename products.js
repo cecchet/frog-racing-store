@@ -93,9 +93,49 @@ const PRODUCTS = [
     category: "race-car-parts",
     pageUrl: "https://www.frogracing.us/store/hood-pin-clips",
     name: "Frog Racing Hood Pin Clips",
-    images: ["images/hood-pin-clips/front.jpg", "images/hood-pin-clips/2.jpg", "images/hood-pin-clips/3.jpg", "images/hood-pin-clips/pin-size.jpg", "images/hood-pin-clips/ring-size.jpg"],
-    description: "The Frog Racing hood pin clips secure your hood pins in place (made for hood pins with 6mm diameter pins and 3mm rings). It is made of ASA filament and 3D printed in house by Frog Racing. The kit comes with 4 clips and 2 Service in Process signs so that you don't forget to re-secure your hood pins. Currently only shipping to the USA; contact sales@frogracing.us for international shipping.",
-    price: 10.00,
+    images: ["images/hood-pin-clips/4clips.jpg", "images/hood-pin-clips/2.jpg", "images/hood-pin-clips/3.jpg", "images/hood-pin-clips/pin-size.jpg", "images/hood-pin-clips/ring-size.jpg"],
+    description: "The Frog Racing hood pin clips secure your hood pins in place (made for hood pins with 6mm diameter pins and 3mm rings). It is made of ASA filament and 3D printed in house by Frog Racing. Currently only shipping to the USA; contact sales@frogracing.us for international shipping.",
+    variants: [
+      {
+        id: "clips-only",
+        label: "4 clips only",
+        price: 2.00,
+        // Free as an additional item alongside any other hood pin clips option
+        // (still pays the normal $5.50 first-item rate if ordered alone).
+        shippingAdditional: 0,
+        images: ["images/hood-pin-clips/4clips.jpg", "images/hood-pin-clips/2.jpg", "images/hood-pin-clips/3.jpg", "images/hood-pin-clips/pin-size.jpg", "images/hood-pin-clips/ring-size.jpg"],
+      },
+      {
+        id: "holder-2",
+        label: "4 clip + key ring clip holder (holds 2 clips)",
+        price: 10.00,
+        images: ["images/hood-pin-clips/holder2.jpg", "images/hood-pin-clips/2.jpg", "images/hood-pin-clips/3.jpg", "images/hood-pin-clips/pin-size.jpg", "images/hood-pin-clips/ring-size.jpg"],
+      },
+      {
+        id: "holder-4",
+        label: "4 clip + key ring clip holder (holds 4 clips)",
+        price: 10.00,
+        images: ["images/hood-pin-clips/holder4.jpg", "images/hood-pin-clips/2.jpg", "images/hood-pin-clips/3.jpg", "images/hood-pin-clips/pin-size.jpg", "images/hood-pin-clips/ring-size.jpg"],
+      },
+      {
+        id: "signs",
+        label: "4 clips + 2 service in progress clip-on signs",
+        price: 10.00,
+        images: ["images/hood-pin-clips/front.jpg", "images/hood-pin-clips/2.jpg", "images/hood-pin-clips/3.jpg", "images/hood-pin-clips/pin-size.jpg", "images/hood-pin-clips/ring-size.jpg"],
+      },
+      {
+        id: "combo-2",
+        label: "Full combo (2 clips capacity key ring)",
+        price: 15.00,
+        images: ["images/hood-pin-clips/combo2.jpg", "images/hood-pin-clips/2.jpg", "images/hood-pin-clips/3.jpg", "images/hood-pin-clips/pin-size.jpg", "images/hood-pin-clips/ring-size.jpg"],
+      },
+      {
+        id: "combo-4",
+        label: "Full combo (4 clips capacity key ring)",
+        price: 15.00,
+        images: ["images/hood-pin-clips/combo4.jpg", "images/hood-pin-clips/2.jpg", "images/hood-pin-clips/3.jpg", "images/hood-pin-clips/pin-size.jpg", "images/hood-pin-clips/ring-size.jpg"],
+      },
+    ],
     shipping: { first: 5.50, additional: 1.00 },
   },
   {

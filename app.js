@@ -128,28 +128,51 @@ function cartTotalUnits() {
   return cartLines().reduce((sum, line) => sum + line.qty, 0);
 }
 
+// A variant can override its own additional-item shipping rate (e.g. a
+// bundled add-on that ships free alongside another unit of the same
+// product) via `variant.shippingAdditional`. Falls back to the product's
+// standard additional rate otherwise.
+function lineAdditionalRate(line) {
+  if (line.variant && line.variant.shippingAdditional !== undefined) {
+    return line.variant.shippingAdditional;
+  }
+  return (line.product.shipping || DEFAULT_SHIPPING).additional;
+}
+
 function cartShippingTotal() {
-  const qtyByProduct = {};
+  // Group by product: each product's units share one shipping "bucket" -
+  // one of them (whichever has the highest additional rate) gets promoted
+  // to absorb the order-wide "first item" charge, and every other unit
+  // (across every product) pays its own line's additional rate. This lets
+  // a discounted/free variant "ride along" without ever being the one that
+  // absorbs the first-item charge, while still paying full first-item price
+  // if it's the only thing in the cart.
+  const groups = {};
   for (const line of cartLines()) {
-    qtyByProduct[line.product.id] = (qtyByProduct[line.product.id] || 0) + line.qty;
+    const productId = line.product.id;
+    const rate = lineAdditionalRate(line);
+    if (!groups[productId]) {
+      groups[productId] = {
+        sumAdditional: 0,
+        maxAdditional: -Infinity,
+        first: (line.product.shipping || DEFAULT_SHIPPING).first,
+      };
+    }
+    groups[productId].sumAdditional += line.qty * rate;
+    groups[productId].maxAdditional = Math.max(groups[productId].maxAdditional, rate);
   }
 
-  const productIds = Object.keys(qtyByProduct);
-  if (productIds.length === 0) return 0;
+  const productGroups = Object.values(groups);
+  if (productGroups.length === 0) return 0;
 
-  // The whole order ships together, so only one product's "first item" rate
-  // applies to the order (the highest one, since that's the one assumed to
-  // set the box/postage cost) - every other unit, including extra units of
-  // that same product, is charged at its own product's additional-item rate.
   let sumAdditional = 0;
   let maxFirst = -Infinity;
   let maxFirstAdditional = 0;
-  for (const productId of productIds) {
-    const rule = findProduct(productId).shipping || DEFAULT_SHIPPING;
-    sumAdditional += qtyByProduct[productId] * rule.additional;
-    if (rule.first > maxFirst) {
-      maxFirst = rule.first;
-      maxFirstAdditional = rule.additional;
+  for (const group of productGroups) {
+    sumAdditional += group.sumAdditional;
+    if (group.first > maxFirst) {
+      maxFirst = group.first;
+      maxFirstAdditional = group.maxAdditional;
     }
   }
   return sumAdditional + (maxFirst - maxFirstAdditional);
