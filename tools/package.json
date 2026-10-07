@@ -1,0 +1,1 @@
+﻿{ "name": "frog-racing-store-tools", "private": true, "version": "1.0.0", "description": "Build tooling for the Frog Racing store (not deployed logic)", "dependencies": { "cheerio": "^1.0.0" } }

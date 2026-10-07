@@ -293,6 +293,12 @@ function renderNav() {
     link.textContent = category.label;
     nav.appendChild(link);
   }
+
+  // Affiliate picks live on their own page; always the last menu entry.
+  const recommended = document.createElement("a");
+  recommended.href = "recommended.html";
+  recommended.textContent = "Recommended Products";
+  nav.appendChild(recommended);
 }
 
 function renderProducts() {
@@ -457,3 +463,6 @@ document.getElementById("cart-overlay").addEventListener("click", closeCart);
 renderNav();
 renderProducts();
 renderCart();
+
+// The Recommended page's Cart button links here.
+if (new URLSearchParams(location.search).get("cart") === "open") openCart();
