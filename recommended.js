@@ -143,15 +143,32 @@ function recTagsHtml(item) {
   return tags.length ? `<span class="rec-tags">${tags.join("")}</span>` : "";
 }
 
+// A note such as "See the DIY videos on our Subaru maintenance page" links the words
+// that were linked on the original page ("Subaru maintenance"). If those words can't be
+// found in the note (the page just showed the bare URL), the whole note is the link.
+function recNoteHtml(text, links) {
+  let html = recEsc(text);
+  const unplaced = [];
+  for (const link of links) {
+    const words = link.t ? recEsc(link.t) : "";
+    const anchor = (inner) => `<a href="${recEsc(link.h)}">${inner}</a>`;
+    if (words && html.includes(words) && !html.includes(">" + words + "<")) {
+      html = html.replace(words, anchor(words));
+    } else {
+      unplaced.push(link);
+    }
+  }
+  if (unplaced.length === 1 && html === recEsc(text)) {
+    html = `<a href="${recEsc(unplaced[0].h)}">${html}</a>`;
+  }
+  return html;
+}
+
 function recBuildItem(item) {
   if (!recIsProduct(item)) {
     const note = document.createElement("p");
     note.className = "rec-note";
-    if (item.href) {
-      note.innerHTML = `<a href="${recEsc(item.href)}">${recEsc(item.note)}</a>`;
-    } else {
-      note.textContent = item.note;
-    }
+    note.innerHTML = recNoteHtml(item.note, item.links || []);
     return note;
   }
 
@@ -299,7 +316,7 @@ function renderRecommended() {
     `<h2>Recommended Products</h2>` +
     `<p class="rec-intro">Gear we have reviewed, tested and actively use &mdash; ${productCount} picks across ` +
     `${RECOMMENDED.length} categories. As an Amazon Associate we earn from qualifying purchases made from these links ` +
-    `(at no cost to you); the commissions directly fund our Women in Motorsports efforts. ` +
+    `(at no cost to you); the commissions directly fund our <a href="https://www.frogracing.us/wim">Women in Motorsports</a> efforts. ` +
     `Also see our <a href="${AMAZON_STOREFRONT}" target="_blank" rel="noopener sponsored">Amazon storefront</a> and our ` +
     `<a href="${TIRE_RACK_LINK}" target="_blank" rel="noopener sponsored">Tire Rack</a> affiliate link.</p>` +
     `<div class="rec-controls">` +

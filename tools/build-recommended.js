@@ -21,7 +21,8 @@ const fs = require("fs");
 const path = require("path");
 const cheerio = require("cheerio");
 
-const PAGE_URL = "https://www.frogracing.us/store/recommended-products";
+const SITE_ORIGIN = "https://www.frogracing.us";
+const PAGE_URL = SITE_ORIGIN + "/store/recommended-products";
 const OUT_FILE = path.join(__dirname, "..", "recommended-data.js");
 const CACHE_DIR = path.join(__dirname, "cache");
 const ASIN_CACHE = path.join(CACHE_DIR, "asin.json");
@@ -86,13 +87,22 @@ function readEntries(html) {
     const text = clean($el.text());
     if (!text) return;
     const hrefs = [];
+    const anchors = []; // links to other pages of frogracing.us, with the words they sit on
     $el.find("a[href]").each((__, a) => {
-      const h = unwrap($(a).attr("href"));
-      if (/^https?:/.test(h) && !hrefs.includes(h)) hrefs.push(h);
+      const raw = $(a).attr("href");
+      if (/^(#|mailto:|tel:)/.test(raw)) return; // in-page anchors and mail links
+      // Internal links in the page source are relative (/tech/tools), so resolve them.
+      const h = unwrap(new URL(raw, SITE_ORIGIN + "/").toString());
+      if (!/^https?:/.test(h)) return;
+      if (!hrefs.includes(h)) hrefs.push(h);
+      if (isFrogSite(h) && !anchors.some((x) => x.h === h)) {
+        const words = clean($(a).text());
+        anchors.push({ h, t: /^https?:/.test(words) ? "" : words });
+      }
     });
     // A few lines hold a bare amzn.to URL that was never turned into a hyperlink.
     for (const m of text.matchAll(/https:\/\/amzn\.to\/\w+/g)) if (!hrefs.includes(m[0])) hrefs.push(m[0]);
-    entries.push({ tag: el.tagName.toLowerCase(), label: labelFrom(text), hrefs });
+    entries.push({ tag: el.tagName.toLowerCase(), label: labelFrom(text), hrefs, anchors });
   });
   return entries;
 }
@@ -144,7 +154,9 @@ function parseSections(entries) {
     if (looksLikeHeading) {
       grp = e.label;
     } else {
-      ensureSub().items.push({ note: e.label, href: internal[0] || null, group: grp });
+      // `links`: the linked words (t) and where they go (h); t is blank when the
+      // page showed the bare URL, in which case the whole note is the link.
+      ensureSub().items.push({ note: e.label, links: e.anchors, group: grp });
     }
   }
 
@@ -154,7 +166,7 @@ function parseSections(entries) {
       const merged = [];
       for (const it of ss.items) {
         const prev = merged[merged.length - 1];
-        if (it.note && prev && prev.note && !it.href && !prev.href && it.group === prev.group) {
+        if (it.note && prev && prev.note && !it.links.length && !prev.links.length && it.group === prev.group) {
           prev.note += (/:$/.test(prev.note) ? " " : " · ") + it.note;
         } else merged.push(it);
       }
@@ -196,7 +208,7 @@ async function main() {
   for (const s of sections) {
     for (const ss of s.subsections) {
       for (const it of ss.items) {
-        if (!it.links) continue;
+        if (it.note !== undefined || !it.links) continue; // notes keep their `links`
         const amazon = it.links.find(isAmazon);
         if (amazon) {
           it.url = amazon;
