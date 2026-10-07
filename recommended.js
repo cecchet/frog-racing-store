@@ -26,7 +26,24 @@ function recThumbUrl(imageId, size) {
   return `https://m.media-amazon.com/images/I/${imageId}._AC_UL${size}_.jpg`;
 }
 
+// Amazon prices change constantly, so how old the data is decides how it may be shown:
+//   under 2 hours   shown as current
+//   2 hours - 7 days shown with a "may be out of date" notice
+//   over 7 days     prices, discounts and deal tags are hidden (thumbnails and links stay)
+const REC_STALE_AFTER_MS = 2 * 60 * 60 * 1000;
+const REC_HIDE_AFTER_MS = 7 * 24 * 60 * 60 * 1000;
+
+// When the prices on screen were fetched: the live data's time, else the snapshot's.
+function recDataAgeMs() {
+  return Date.now() - new Date(recLiveAt || RECOMMENDED_CHECKED).getTime();
+}
+
+function recPricesExpired() {
+  return recDataAgeMs() > REC_HIDE_AFTER_MS;
+}
+
 function recOnSale(item) {
+  if (recPricesExpired()) return false;
   return !!(item.pct || item.coupon || item.deal);
 }
 
@@ -40,21 +57,25 @@ function recCheckedLabel() {
 }
 
 function recFinePrint() {
-  if (recLiveAt) {
-    const when = new Date(recLiveAt).toLocaleString("en-US", {
-      month: "long",
-      day: "numeric",
-      hour: "numeric",
-      minute: "2-digit",
-    });
+  const checked = new Date(recLiveAt || RECOMMENDED_CHECKED);
+  const when = checked.toLocaleString("en-US", { month: "long", day: "numeric", hour: "numeric", minute: "2-digit" });
+  const applies = `The price shown on Amazon when you buy is the one that applies.`;
+
+  if (recPricesExpired()) {
     return (
-      `Prices, discounts and availability are from Amazon.com as of ${when} and refresh about once an hour. ` +
-      `The price shown on Amazon when you buy is the one that applies.`
+      `Current Amazon prices are temporarily unavailable here (last updated ${checked.toLocaleDateString("en-US", { month: "long", day: "numeric", year: "numeric" })}), ` +
+      `so each item links to its Amazon page for today's price and any discount. Thumbnails are from Amazon.com.`
     );
   }
+  if (recLiveAt && recDataAgeMs() <= REC_STALE_AFTER_MS) {
+    return `Prices, discounts and availability are from Amazon.com as of ${when} and refresh about once an hour. ${applies}`;
+  }
+  if (recLiveAt) {
+    return `Prices were last updated from Amazon.com on ${when} and may be out of date. ${applies}`;
+  }
   return (
-    `Amazon prices and discounts were last checked on ${recCheckedLabel()} and change often; ` +
-    `the price shown on Amazon when you buy is the one that applies. Thumbnails and prices are from Amazon.com.`
+    `Amazon prices and discounts were last checked on ${recCheckedLabel()} and change often, ` +
+    `so they may be out of date. ${applies} Thumbnails and prices are from Amazon.com.`
   );
 }
 
@@ -98,6 +119,9 @@ function recPriceHtml(item) {
   if (item.vendor) {
     return `<span class="rec-vendor">View at ${recEsc(item.vendor)} &rarr;</span>`;
   }
+  if (recPricesExpired()) {
+    return `<span class="rec-unknown">See price on Amazon &rarr;</span>`;
+  }
   if (item.unavailable) {
     return `<span class="rec-unknown">Currently unavailable</span>`;
   }
@@ -111,6 +135,7 @@ function recPriceHtml(item) {
 }
 
 function recTagsHtml(item) {
+  if (recPricesExpired()) return "";
   const tags = [];
   if (item.deal === "pbd") tags.push(`<span class="rec-tag rec-tag-deal">Prime Big Deal</span>`);
   else if (item.deal === "ltd") tags.push(`<span class="rec-tag rec-tag-deal">Limited-time deal</span>`);
@@ -279,7 +304,7 @@ function renderRecommended() {
     `<a href="${TIRE_RACK_LINK}" target="_blank" rel="noopener sponsored">Tire Rack</a> affiliate link.</p>` +
     `<div class="rec-controls">` +
     `<input class="rec-search" type="search" placeholder="Search recommended products" aria-label="Search recommended products">` +
-    `<label class="rec-sale-label"><input class="rec-sale-only" type="checkbox"> On sale only</label>` +
+    `<label class="rec-sale-label"${recPricesExpired() ? " hidden" : ""}><input class="rec-sale-only" type="checkbox"> On sale only</label>` +
     `</div>` +
     `<div class="rec-list"></div>` +
     `<p class="rec-empty" hidden>No recommended products match.</p>` +

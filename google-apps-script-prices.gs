@@ -19,6 +19,8 @@
  *      Check View -> Logs / Executions: it should say the token was obtained.
  *   4. Run `debugOneItem`: logs Amazon's raw answer for one product.
  *   5. Run `refreshPrices` once (takes ~1 minute), then `installHourlyTrigger`.
+ *      (The first run asks for one more permission: sending you an email. It only
+ *      emails you, and only after 3 failed hourly runs in a row.)
  *   6. Deploy -> New deployment -> type "Web app" -> Execute as: Me,
  *      Who has access: Anyone -> Deploy. Copy the Web app URL into
  *      RECOMMENDED_LIVE_URL at the top of recommended.js in the store repo.
@@ -210,13 +212,65 @@ function load_() {
 
 // ------------------------------------------------------------------ entry points
 
-/** Hourly job (see installHourlyTrigger). Keeps the previous data if Amazon fails part way. */
+// ------------------------------------------------------------------ failure alerts
+
+var ALERT_AFTER_FAILURES = 3; // email after this many failed hourly runs in a row...
+var ALERT_REPEAT_EVERY = 24; // ...then again every 24 failed runs (about daily)
+
+function sendMail_(subject, body) {
+  try {
+    MailApp.sendEmail(Session.getEffectiveUser().getEmail(), subject, body);
+  } catch (err) {
+    console.error("Could not send email: " + err);
+  }
+}
+
+function noteFailure_(message) {
+  var props = PropertiesService.getScriptProperties();
+  var count = parseInt(props.getProperty("fail_count") || "0", 10) + 1;
+  props.setProperty("fail_count", String(count));
+  var due = count === ALERT_AFTER_FAILURES || (count > ALERT_AFTER_FAILURES && (count - ALERT_AFTER_FAILURES) % ALERT_REPEAT_EVERY === 0);
+  if (!due) return;
+  var hint = /AssociateNotEligible/.test(message)
+    ? "\n\nAmazon says the account is not eligible for the Creators API right now. It requires an approved Associates account with at least 10 qualifying sales in the past 30 days."
+    : "";
+  sendMail_(
+    "Frog Racing store: Amazon price refresh is failing",
+    "The hourly Amazon price refresh has failed " + count + " times in a row.\n\n" +
+      "Last error: " + message + hint + "\n\n" +
+      "The Recommended Products page keeps showing the last good prices, labelled \"may be out of date\" after 2 hours " +
+      "and with prices hidden after 7 days, until a refresh succeeds."
+  );
+}
+
+function noteSuccess_() {
+  var props = PropertiesService.getScriptProperties();
+  var count = parseInt(props.getProperty("fail_count") || "0", 10);
+  props.setProperty("fail_count", "0");
+  if (count >= ALERT_AFTER_FAILURES) {
+    sendMail_("Frog Racing store: Amazon price refresh is working again", "The hourly refresh succeeded after " + count + " failed runs.");
+  }
+}
+
+/** Hourly job (see installHourlyTrigger): refresh, and email on repeated failure. */
 function refreshPrices() {
+  try {
+    refreshPricesNow_();
+    noteSuccess_();
+  } catch (err) {
+    noteFailure_(String(err && err.message ? err.message : err));
+    throw err;
+  }
+}
+
+/** Keeps the previous data if Amazon fails part way. */
+function refreshPricesNow_() {
   var asins = loadAsins_();
   if (!asins.length) throw new Error("No ASINs found at " + DATA_URL + " - has recommended-data.js been pushed?");
   var previous = load_().items;
   var items = {};
   var failed = 0;
+  var lastError = "";
 
   for (var start = 0; start < asins.length; start += BATCH_SIZE) {
     var batch = asins.slice(start, start + BATCH_SIZE);
@@ -225,6 +279,7 @@ function refreshPrices() {
       data = getItems_(batch, RESOURCES);
     } catch (err) {
       console.error("Batch starting at " + start + " failed: " + err);
+      lastError = String(err && err.message ? err.message : err);
       failed += batch.length;
       batch.forEach(function (a) {
         if (previous[a]) items[a] = previous[a];
@@ -244,7 +299,7 @@ function refreshPrices() {
     Utilities.sleep(PAUSE_MS);
   }
 
-  if (failed >= asins.length) throw new Error("Every batch failed; keeping the previous data.");
+  if (failed >= asins.length) throw new Error("Every batch failed (keeping the previous data). Last error: " + lastError);
   save_(items);
   console.log("Refreshed " + Object.keys(items).length + " products (" + failed + " carried over from the previous run).");
 }
