@@ -187,6 +187,7 @@ function getImages(item) {
 function buildProductCard(product) {
   const card = document.createElement("div");
   card.className = "product-card";
+  card.id = `product-${product.id}`; // lets other pages link straight to this card
 
   const hasVariants = Array.isArray(product.variants) && product.variants.length > 0;
   const priceDisplay = hasVariants

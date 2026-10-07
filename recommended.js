@@ -146,12 +146,21 @@ function recTagsHtml(item) {
 // A note such as "See the DIY videos on our Subaru maintenance page" links the words
 // that were linked on the original page ("Subaru maintenance"). If those words can't be
 // found in the note (the page just showed the bare URL), the whole note is the link.
+// The old site's store pages (/store/sun-visor, /store/racing-harness-collars) are now
+// cards on this store's page, so link there instead. Other pages stay as they were.
+function recLocalHref(href) {
+  const m = href.match(/^https:\/\/www\.frogracing\.us\/store\/([a-z0-9-]+)\/?$/);
+  if (!m || typeof PRODUCTS === "undefined") return href;
+  const product = PRODUCTS.find((p) => p.id === m[1] || p.id === m[1].replace(/s$/, ""));
+  return product ? `./#product-${product.id}` : href;
+}
+
 function recNoteHtml(text, links) {
   let html = recEsc(text);
   const unplaced = [];
   for (const link of links) {
     const words = link.t ? recEsc(link.t) : "";
-    const anchor = (inner) => `<a href="${recEsc(link.h)}">${inner}</a>`;
+    const anchor = (inner) => `<a href="${recEsc(recLocalHref(link.h))}">${inner}</a>`;
     if (words && html.includes(words) && !html.includes(">" + words + "<")) {
       html = html.replace(words, anchor(words));
     } else {
@@ -159,7 +168,7 @@ function recNoteHtml(text, links) {
     }
   }
   if (unplaced.length === 1 && html === recEsc(text)) {
-    html = `<a href="${recEsc(unplaced[0].h)}">${html}</a>`;
+    html = `<a href="${recEsc(recLocalHref(unplaced[0].h))}">${html}</a>`;
   }
   return html;
 }
