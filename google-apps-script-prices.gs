@@ -100,6 +100,7 @@ function getItems_(asins, resources) {
     resources: resources,
   });
   var token = getToken_(false);
+  var lastDetail = "";
   for (var attempt = 1; attempt <= 4; attempt++) {
     var res = UrlFetchApp.fetch(API_URL, {
       method: "post",
@@ -110,6 +111,11 @@ function getItems_(asins, resources) {
     });
     var code = res.getResponseCode();
     if (code === 200) return JSON.parse(res.getContentText());
+    var detail = "HTTP " + code + ": " + res.getContentText().slice(0, 500);
+    var retryAfter = res.getHeaders()["Retry-After"] || res.getHeaders()["retry-after"];
+    if (retryAfter) detail += " (Retry-After: " + retryAfter + ")";
+    console.log("GetItems attempt " + attempt + " -> " + detail);
+    lastDetail = detail;
     if (code === 401 && attempt === 1) {
       token = getToken_(true);
       continue;
@@ -118,9 +124,9 @@ function getItems_(asins, resources) {
       Utilities.sleep(2000 * attempt);
       continue;
     }
-    throw new Error("GetItems failed (" + code + "): " + res.getContentText().slice(0, 500));
+    throw new Error("GetItems failed (" + detail + ")");
   }
-  throw new Error("GetItems kept failing after retries.");
+  throw new Error("GetItems kept failing after 4 attempts. Last answer: " + lastDetail);
 }
 
 var RESOURCES = [
