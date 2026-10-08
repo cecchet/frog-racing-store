@@ -78,9 +78,10 @@ header h1 {
   gap: 0.4rem 1.5rem;
 }
 
-/* Phones: logo + title + Cart on the first row, the menu on one swipeable row below
-   (no wrapping, so the sticky header stays short). */
-@media (max-width: 700px) {
+/* Phones and tablets: logo + title + Cart on the first row, the menu on one row below
+   (swipeable if it doesn't fit; no wrapping, so the sticky header stays short). Wider
+   screens have room for everything on one line. */
+@media (max-width: 1000px) {
   header {
     flex-wrap: wrap;
     padding: 0.6rem 1rem;
@@ -358,6 +359,11 @@ main {
   color: var(--muted);
   text-transform: uppercase;
   letter-spacing: 0.04em;
+}
+
+.rec-group .rec-see-all {
+  text-transform: none;
+  letter-spacing: 0;
 }
 
 .rec-grid {

@@ -2,10 +2,10 @@
  "_comment": "The list behind recommended.html. Edit it here (it was originally copied from the old Google Sites page, which now points to this store). Items: {name, url} - amzn.to links become Amazon products (asin is filled in by the build), other links are vendor links; {note, links?} is a free-standing note. Then run `node build-recommended.js` in tools/ to regenerate ../recommended-data.js.",
  "sections": [
   {
-   "name": "Subaru parts",
+   "name": "Car specific parts",
    "subsections": [
     {
-     "name": "",
+     "name": "Subaru",
      "items": [
       {
        "note": "See the DIY videos on our Subaru maintenance page",
@@ -15,484 +15,485 @@
          "t": "Subaru maintenance"
         }
        ]
-      }
-     ]
-    },
-    {
-     "name": "Brakes",
-     "link": "https://amzn.to/4tAQIfb",
-     "items": [
+      },
       {
        "name": "Front 4-pot brake calipers (direct fit on 04 STi) (buy left and right separately, they are cheaper than the combo!)",
-       "group": "Calipers",
+       "group": "Brakes › Calipers",
        "url": "https://amzn.to/3NlvYbU",
-       "asin": "B082MKSNSY"
+       "asin": "B082MKSNSY",
+       "groupLink": "https://amzn.to/4tAQIfb"
       },
       {
        "name": "Rear 2-pot brake calipers (direct fit on 04 STi) (buy left and right separately, they are cheaper than the combo!)",
-       "group": "Calipers",
+       "group": "Brakes › Calipers",
        "url": "https://amzn.to/4tl7DSX",
        "asin": "B083JCZHPT"
       },
       {
        "name": "Rear caliper/brake pad spring 26632FA010",
-       "group": "Calipers",
+       "group": "Brakes › Calipers",
        "url": "https://amzn.to/4vSNaH9",
        "asin": "B00L2ORKS8"
       },
       {
        "name": "Frozen rotors from Rally.Build (for 4/2 pots on 04 STi)",
-       "group": "Rotors",
+       "group": "Brakes › Rotors",
        "url": "https://rally.build/collections/frozen-rotors",
        "vendor": "Rally.Build"
       },
       {
        "name": "Front rotor for HP+ pads only: Centric Premium 120.47018",
-       "group": "Rotors",
+       "group": "Brakes › Rotors",
        "url": "https://amzn.to/4vdRKiE",
        "asin": "B000BZXR6I"
       },
       {
        "name": "KNS 4650 Front rotors (dual drilled 5x100/5x114)",
-       "group": "Rotors",
+       "group": "Brakes › Rotors",
        "url": "https://bleedingtarmac.com/products/kns-brakes-front-rotor-02-14-subaru-wrx",
        "vendor": "Bleeding Tarmac"
       },
       {
        "name": "KNS4656 Rear rotor (dual drilled 5x100/5x114)",
-       "group": "Rotors",
+       "group": "Brakes › Rotors",
        "url": "https://bleedingtarmac.com/products/kns-brakes-dual-drilled-2-pot-rear-gravel-rotor-04-07-subaru-wrx-sti",
        "vendor": "Bleeding Tarmac"
       },
       {
        "name": "Hawk brake pads: HAWK brake pads at Tire Rack",
-       "group": "Brake pads",
+       "group": "Brakes › Brake pads",
        "url": "https://www.dpbolvw.net/click-101708275-10399817",
        "vendor": "Tire Rack"
       },
       {
        "name": "4 pot front HP+ HB178N.564",
-       "group": "Brake pads",
+       "group": "Brakes › Brake pads",
        "url": "https://amzn.to/4sXFSiR",
        "asin": "B000CO728M"
       },
       {
        "name": "4 pot front DTC60 HB700G.562",
-       "group": "Brake pads",
+       "group": "Brakes › Brake pads",
        "url": "https://amzn.to/3PSlLnV",
        "asin": "B006A3WWI4"
       },
       {
        "name": "2 pot rear HP+ HB179N.630",
-       "group": "Brake pads",
+       "group": "Brakes › Brake pads",
        "url": "https://amzn.to/3NwLrWC",
        "asin": "B000IES5Q4"
       },
       {
        "name": "Brembo front HP+ HB453N.585",
-       "group": "Brake pads",
+       "group": "Brakes › Brake pads",
        "url": "https://amzn.to/4t5UUTX",
        "asin": "B000IET39C"
       },
       {
        "name": "Brembo rear HP+ HB180N.56",
-       "group": "Brake pads",
+       "group": "Brakes › Brake pads",
        "url": "https://amzn.to/4sXFZLj",
        "asin": "B0014HP9IQ"
       },
       {
        "name": "Stainless steel braided brake lines Goodridge 24215",
-       "group": "Brake lines",
+       "group": "Brakes › Brake lines",
        "url": "https://amzn.to/4uLMzWX",
        "asin": "B00HZGS00O"
       },
       {
        "name": "2004 STi ABS sensor rear passenger",
-       "group": "Sensors",
+       "group": "Brakes › Sensors",
        "url": "https://amzn.to/4bmDvAk",
        "asin": "B0946CHZ14"
-      }
-     ]
-    },
-    {
-     "name": "Group N mounts",
-     "items": [
+      },
       {
        "name": "2004 STi Group N motor mounts (LH Mount D1010FE120 x1, RH Mount D1010FE110 x1)",
        "url": "https://amzn.to/4bYgi7F",
-       "asin": "B00ANOV24G"
+       "asin": "B00ANOV24G",
+       "group": "Group N mounts"
       },
       {
        "name": "Subaru Group N Front & Rear Strut Mounts (Front Strut Mount B0310FE000 X 2 + Rear Strut Mount B0310FE013 X2)",
        "url": "https://amzn.to/4bNei14",
-       "asin": "B01HOWF51U"
+       "asin": "B01HOWF51U",
+       "group": "Group N mounts"
       },
       {
        "name": "Subaru Group N Rear Strut Mount for 2004-2007 WRX/STi - B0310FE013",
        "url": "https://amzn.to/4uKVtUD",
-       "asin": "B00C1PCQOK"
+       "asin": "B00C1PCQOK",
+       "group": "Group N mounts"
       },
       {
        "name": "Group N Motor mounts & transmission mount",
        "url": "https://amzn.to/4vKzQ7l",
-       "asin": "B06ZZ69Z9N"
+       "asin": "B06ZZ69Z9N",
+       "group": "Group N mounts"
       },
       {
        "name": "Pitch Stop Mount - D1040FE000",
        "url": "https://amzn.to/4eA67YH",
-       "asin": "B00HRXTB5S"
-      }
-     ]
-    },
-    {
-     "name": "Suspension",
-     "items": [
+       "asin": "B00HRXTB5S",
+       "group": "Group N mounts"
+      },
       {
        "name": "Budget KYB with King Springs",
        "url": "https://amzn.to/4mNn9EU",
-       "vendor": "Amazon list"
+       "vendor": "Amazon list",
+       "group": "Suspension"
       },
       {
        "name": "KYB 734036",
        "url": "https://amzn.to/3Qp50Bg",
-       "asin": "B000CO7XEU"
+       "asin": "B000CO7XEU",
+       "group": "Suspension"
       },
       {
        "name": "KYB 734034",
        "url": "https://amzn.to/4mIns3M",
-       "asin": "B000CO9Q22"
+       "asin": "B000CO9Q22",
+       "group": "Suspension"
       },
       {
        "name": "KYB 734035",
        "url": "https://amzn.to/4d0qTzy",
-       "asin": "B000CODGA0"
+       "asin": "B000CODGA0",
+       "group": "Suspension"
       },
       {
        "name": "KYB 734037",
        "url": "https://amzn.to/4cpYgM2",
-       "asin": "B000CO9Q2C"
+       "asin": "B000CO9Q2C",
+       "group": "Suspension"
       },
       {
        "name": "KYB SM5422 rear top hat",
        "url": "https://amzn.to/4vLPlfm",
-       "asin": "B000E0YMZA"
+       "asin": "B000E0YMZA",
+       "group": "Suspension"
       },
       {
        "name": "KYB SM5361 front top hat",
        "url": "https://amzn.to/4sUiFgZ",
-       "asin": "B000C42STA"
+       "asin": "B000C42STA",
+       "group": "Suspension"
       },
       {
        "name": "King Springs",
        "url": "https://get-primitive.com/products/lift-springs-king-springs-2004-2007-impreza",
-       "vendor": "Primitive"
+       "vendor": "Primitive",
+       "group": "Suspension"
       },
       {
        "name": "Subaru Group N Front & Rear Strut Mounts (Front Strut Mount B0310FE000 X 2 + Rear Strut Mount B0310FE013 X2)",
        "url": "https://amzn.to/4bNei14",
-       "asin": "B01HOWF51U"
+       "asin": "B01HOWF51U",
+       "group": "Suspension"
       },
       {
        "name": "Intrax Rally suspension at Rally.Build",
        "url": "https://rally.build/collections/intrax-suspension",
-       "vendor": "Rally.Build"
+       "vendor": "Rally.Build",
+       "group": "Suspension"
       },
       {
        "name": "Samsonas at Fercomp",
        "url": "https://fercomp.com/product/samsonas-motorsport-subaru-impreza-sti-n14-suspension/",
-       "vendor": "Fercomp"
-      }
-     ]
-    },
-    {
-     "name": "Seats",
-     "items": [
+       "vendor": "Fercomp",
+       "group": "Suspension"
+      },
       {
        "name": "Sparco Seat Bracket, Competition, Side Mount, FIA Approved",
        "url": "https://amzn.to/4rLltMS",
-       "asin": "B00E5ZIMJW"
+       "asin": "B00E5ZIMJW",
+       "group": "Seats"
       },
       {
        "name": "Driver Seat Bracket for MOMO / NRG / Sparco / Recaro / Bride / OMP - Subaru Impreza/WRX/STI (1993-2007) - Part #SB019DR",
        "url": "https://amzn.to/4rK7zL2",
-       "asin": "B0087OYCGO"
+       "asin": "B0087OYCGO",
+       "group": "Seats"
       },
       {
        "name": "Passenger Seat Bracket for MOMO / NRG / Sparco / Recaro / Bride / OMP - Subaru Impreza/WRX/STI (1993-2007) - Part # SB019PA",
        "url": "https://amzn.to/4dChLBT",
-       "asin": "B0087OYCZA"
-      }
-     ]
-    },
-    {
-     "name": "Tie rod/Ball joints/End links",
-     "items": [
+       "asin": "B0087OYCZA",
+       "group": "Seats"
+      },
       {
        "name": "2004 STi outer tie rod end (MOOG ES3712)",
        "url": "https://amzn.to/47IA2ty",
-       "asin": "B000QR12FY"
+       "asin": "B000QR12FY",
+       "group": "Tie rod/Ball joints/End links"
       },
       {
        "name": "2004 STi inner tie rod end (MOOG EV800361)",
        "url": "https://amzn.to/4vSj5HN",
-       "asin": "B004991LAQ"
+       "asin": "B004991LAQ",
+       "group": "Tie rod/Ball joints/End links"
       },
       {
        "name": "2004 STi Ball Joint (MOOG K9513 Front Lower Suspension)",
        "url": "https://amzn.to/4d1fYpV",
-       "asin": "B000C561WY"
+       "asin": "B000C561WY",
+       "group": "Tie rod/Ball joints/End links"
       },
       {
        "name": "Front sway bar end link MOOG K750049",
        "url": "https://amzn.to/4sDISAs",
-       "asin": "B002M2MHHI"
+       "asin": "B002M2MHHI",
+       "group": "Tie rod/Ball joints/End links"
       },
       {
        "name": "Read sway bar end link MOOG K750041",
        "url": "https://amzn.to/48amE1I",
-       "asin": "B001ILOGF0"
+       "asin": "B001ILOGF0",
+       "group": "Tie rod/Ball joints/End links"
       },
       {
        "name": "Sway bar bushings MOOG K200635",
        "url": "https://amzn.to/4cr6GRV",
-       "asin": "B00CE3OT1M"
+       "asin": "B00CE3OT1M",
+       "group": "Tie rod/Ball joints/End links"
       },
       {
        "name": "Power steering boot ACDelco 45A7084",
        "url": "https://amzn.to/4mAta7F",
-       "asin": "B000C9OJYM"
-      }
-     ]
-    },
-    {
-     "name": "Bushings/Bearings",
-     "items": [
+       "asin": "B000C9OJYM",
+       "group": "Tie rod/Ball joints/End links"
+      },
       {
        "name": "FRONT Control Arm FRONT Bushing 20204FE010 (2002-2007 WRX/2004-2007 STi)",
        "url": "https://amzn.to/4rHzTxD",
-       "asin": "B07MTSMN53"
+       "asin": "B07MTSMN53",
+       "group": "Bushings/Bearings"
       },
       {
        "name": "Sway bar bushings MOOG K200635",
        "url": "https://amzn.to/4cr6GRV",
-       "asin": "B00CE3OT1M"
+       "asin": "B00CE3OT1M",
+       "group": "Bushings/Bearings"
       },
       {
        "name": "2004 STi Subaru Front Wheel Bearing Kit",
        "url": "https://amzn.to/47eY8Mr",
-       "asin": "B01GID0FQQ"
+       "asin": "B01GID0FQQ",
+       "group": "Bushings/Bearings"
       },
       {
        "name": "2004 STi Rear wheel bearing (28016PA0108)",
        "url": "https://amzn.to/47eMGjO",
-       "asin": "B06XT8K8GZ"
+       "asin": "B06XT8K8GZ",
+       "group": "Bushings/Bearings"
       },
       {
        "name": "2004 STi Subaru 34170FE050 Steering Column U-Joint Coupling",
        "url": "https://amzn.to/4sZ8JDq",
-       "asin": "B071NVVL4C"
+       "asin": "B071NVVL4C",
+       "group": "Bushings/Bearings"
       },
       {
        "name": "Dorman 926-046 Lateral Link To Knuckle Bolt",
        "url": "https://amzn.to/4dnQsvc",
-       "asin": "B07KFZ29D1"
+       "asin": "B07KFZ29D1",
+       "group": "Bushings/Bearings"
       },
       {
        "note": "Part numbers · Bolt: 20540AA001 · Nut: 20550AA010 · Washer: 900335056 · Rear lateral link bushing: 20251AA040",
-       "links": []
-      }
-     ]
-    },
-    {
-     "name": "Axle boots",
-     "items": [
+       "links": [],
+       "group": "Bushings/Bearings"
+      },
       {
        "name": "Rear outer 103-2614",
-       "group": "Beck Arnley CV boots",
+       "group": "Axle boots › Beck Arnley CV boots",
        "url": "https://amzn.to/4es42xZ",
        "asin": "B000CB1KNS"
       },
       {
        "note": "Rear inner ?",
        "links": [],
-       "group": "Beck Arnley CV boots"
+       "group": "Axle boots › Beck Arnley CV boots"
       },
       {
-       "name": "Front outer103-2932",
-       "group": "Front inner 103-2942",
+       "name": "Front inner 103-2942 / front outer 103-2932",
+       "group": "Axle boots › Beck Arnley CV boots",
        "url": "https://amzn.to/4dOyiD3",
        "asin": "B000EOJ28S"
-      }
-     ]
-    },
-    {
-     "name": "Gaskets",
-     "items": [
+      },
       {
        "name": "Exhaust Manifold Gasket Pair Turbo WRX STI (OEM 14038AA000)",
        "url": "https://amzn.to/47IAnwk",
-       "asin": "B076FGQ7LN"
+       "asin": "B076FGQ7LN",
+       "group": "Gaskets"
       },
       {
        "name": "Head Gasket 11044AA642 (04-06 STi 05-06 Legacy GT 04-05 Forester XT EJ255 EJ257)",
        "url": "https://amzn.to/3PSkZr1",
-       "asin": "B01ED8AZYU"
+       "asin": "B01ED8AZYU",
+       "group": "Gaskets"
       },
       {
        "name": "Exhaust donut gasket",
        "url": "https://amzn.to/4t499IX",
-       "asin": "B087TN2MH9"
+       "asin": "B087TN2MH9",
+       "group": "Gaskets"
       },
       {
        "name": "Subaru Exhaust Gasket Kit (Exhaust Gasket 14038AA000 X2, DOWN PIPE Gasket 44022AA180 X1, UP PIPE Gasket 44022AA170 X1, TURBO Gasket 44022AA150 X1)",
        "url": "https://amzn.to/4t4nQM8",
-       "asin": "B01E22136G"
+       "asin": "B01E22136G",
+       "group": "Gaskets"
       },
       {
        "name": "Intake Manifold Gasket Set Turbo Impreza WRX STi 14035AA421",
        "url": "https://amzn.to/47guk21",
-       "asin": "B07F2L5Z9B"
-      }
-     ]
-    },
-    {
-     "name": "Misc",
-     "items": [
+       "asin": "B07F2L5Z9B",
+       "group": "Gaskets"
+      },
       {
        "name": "2004 STi STi Cabin Air Filter with Activated Carbon",
        "url": "https://amzn.to/41lUc94",
-       "asin": "B0BRSCH9P4"
+       "asin": "B0BRSCH9P4",
+       "group": "Misc"
       },
       {
        "name": "2004 STi fender liner (passenger side)",
        "url": "https://amzn.to/4d2F2Nk",
-       "asin": "B081J741J8"
+       "asin": "B081J741J8",
+       "group": "Misc"
       },
       {
        "name": "2015-2021 STi Windshield Washer Pump",
        "url": "https://amzn.to/3Pq75MH",
-       "asin": "B0F9LBH33W"
+       "asin": "B0F9LBH33W",
+       "group": "Misc"
       },
       {
        "name": "2015-2021 STi Cabin Air Filter with Activated Carbon",
        "url": "https://amzn.to/47Zk2TY",
-       "asin": "B0C6XW5KRS"
+       "asin": "B0C6XW5KRS",
+       "group": "Misc"
       },
       {
        "name": "Lateral Link To Knuckle Bolt (Jesus bolt)",
        "url": "https://amzn.to/4t0PQQH",
-       "asin": "B07KFZ29D1"
+       "asin": "B07KFZ29D1",
+       "group": "Misc"
       },
       {
        "name": "Subaru 11109AA131 Oil Pan",
        "url": "https://amzn.to/47L1neC",
-       "asin": "B00I795TT8"
+       "asin": "B00I795TT8",
+       "group": "Misc"
       },
       {
        "name": "K&N HP-1008 oil filter",
        "url": "https://amzn.to/4d2KxeK",
-       "asin": "B000C4087Y"
+       "asin": "B000C4087Y",
+       "group": "Misc"
       },
       {
        "name": "Power steering pump",
        "url": "https://amzn.to/4o3gkQi",
-       "asin": "B0FZBDDQ8C"
+       "asin": "B0FZBDDQ8C",
+       "group": "Misc"
       },
       {
        "name": "IAG Power steering lines",
        "url": "https://amzn.to/4ua1qZM",
-       "asin": "B06XR62Y95"
+       "asin": "B06XR62Y95",
+       "group": "Misc"
       },
       {
        "name": "Rally Armor UR mud flaps ($135)",
        "url": "https://amzn.to/43cip2F",
-       "asin": "B004PBCCFQ"
+       "asin": "B004PBCCFQ",
+       "group": "Misc"
       },
       {
        "name": "Hydrophobic sock for air filter",
        "url": "https://amzn.to/4elPQVN",
-       "asin": "B00YXHCYSC"
+       "asin": "B00YXHCYSC",
+       "group": "Misc"
       },
       {
        "name": "Vibrant 2164 Crankcase Breather Filter (for gas tank breather)",
        "url": "https://amzn.to/3QFstyq",
-       "asin": "B001QKNJH4"
-      }
-     ]
-    },
-    {
-     "name": "Studs / lug nuts / spacers",
-     "items": [
+       "asin": "B001QKNJH4",
+       "group": "Misc"
+      },
       {
        "name": "ARP 1007716 long Wheel Stud Kit for Subaru",
        "url": "https://amzn.to/4sS0ucc",
-       "asin": "B001O065FY"
+       "asin": "B001O065FY",
+       "group": "Studs / lug nuts / spacers"
       },
       {
        "name": "Muteki 32905B SR Series Black 12mm x 1.25mm SR48",
        "url": "https://amzn.to/3PPgKN8",
-       "asin": "B004QHMS5S"
+       "asin": "B004QHMS5S",
+       "group": "Studs / lug nuts / spacers"
       },
       {
        "name": "Cheaper Lug Nuts M12x1.25 Open End Wheel Nuts,Taper Acorn Seat, Forged",
        "url": "https://amzn.to/4v8FjVm",
-       "asin": "B097RCY2F4"
+       "asin": "B097RCY2F4",
+       "group": "Studs / lug nuts / spacers"
       },
       {
        "name": "5mm spacer",
        "url": "https://amzn.to/3O3fntG",
-       "asin": "B01M6238ZD"
+       "asin": "B01M6238ZD",
+       "group": "Studs / lug nuts / spacers"
       },
       {
        "name": "10mm spacer",
        "url": "https://amzn.to/3OnYdqH",
-       "asin": "B01FBBB2PO"
-      }
-     ]
-    },
-    {
-     "name": "Intercooler sprayer",
-     "link": "https://amzn.to/3QCbr4r",
-     "items": [
+       "asin": "B01FBBB2PO",
+       "group": "Studs / lug nuts / spacers"
+      },
       {
        "name": "Relay timer module",
        "url": "https://amzn.to/43ZiOWF",
-       "asin": "B09Z21QS2Z"
+       "asin": "B09Z21QS2Z",
+       "group": "Intercooler sprayer",
+       "groupLink": "https://amzn.to/3QCbr4r"
       },
       {
        "name": "Windshield washer hose kit",
        "url": "https://amzn.to/4eECXaN",
-       "asin": "B0FR1G72RG"
+       "asin": "B0FR1G72RG",
+       "group": "Intercooler sprayer"
       },
       {
        "name": "Universal washer sprayers",
        "url": "https://amzn.to/4g1pzyq",
-       "asin": "B00MB7EXW6"
+       "asin": "B00MB7EXW6",
+       "group": "Intercooler sprayer"
       },
       {
        "name": "NOCO GC004 X-Connect 10-Foot Extension Cable",
        "url": "https://amzn.to/3SMOPyG",
-       "asin": "B0F66RFR6W"
+       "asin": "B0F66RFR6W",
+       "group": "Intercooler sprayer"
       },
       {
        "name": "GC002 X-Connect fit for NOCO Battery Charger",
        "url": "https://amzn.to/3QLOOKT",
-       "asin": "B0DC6SVTW6"
+       "asin": "B0DC6SVTW6",
+       "group": "Intercooler sprayer"
       },
       {
        "name": "Subaru 86636FA120 STi Intercooler Water Spray Nozzle",
        "url": "https://amzn.to/3QKLXlo",
-       "asin": "B01N00G2A9"
+       "asin": "B01N00G2A9",
+       "group": "Intercooler sprayer"
       }
      ]
-    }
-   ]
-  },
-  {
-   "name": "2007 Audi RS4 parts",
-   "subsections": [
+    },
     {
-     "name": "",
+     "name": "2007 Audi RS4",
      "items": [
       {
        "note": "See the DIY videos on our RS4 maintenance page",
@@ -502,131 +503,125 @@
          "t": "RS4 maintenance"
         }
        ]
-      }
-     ]
-    },
-    {
-     "name": "Seats",
-     "items": [
+      },
       {
        "name": "Sparco Seat Bracket, Competition, Side Mount, FIA Approved",
        "url": "https://amzn.to/4rLltMS",
-       "asin": "B00E5ZIMJW"
+       "asin": "B00E5ZIMJW",
+       "group": "Seats"
       },
       {
        "name": "Driver Seat Bracket for MOMO / NRG / Sparco / Recaro / Bride / OMP - Audi A4 S4 B7 (2006-2008) - Part # SB093DR",
        "url": "https://amzn.to/47jABdg",
-       "asin": "B0085C5ZBO"
+       "asin": "B0085C5ZBO",
+       "group": "Seats"
       },
       {
        "name": "Passenger Seat Bracket for MOMO / NRG / Sparco / Recaro / Bride / OMP - Audi A4 S4 B7 (2006-2008) - Part # SB093PA",
        "url": "https://amzn.to/4d3lbxu",
-       "asin": "B0085C6N38"
-      }
-     ]
-    },
-    {
-     "name": "Spacers",
-     "items": [
+       "asin": "B0085C6N38",
+       "group": "Seats"
+      },
       {
        "name": "5x112mm Hub Centric Wheel Adapters Spacers 10mm Compatible with Audi",
        "url": "https://amzn.to/4dlwkKf",
-       "asin": "B0C7KKBPFX"
+       "asin": "B0C7KKBPFX",
+       "group": "Spacers"
       },
       {
        "name": "15mm Hubcentric Wheel Spacers (5x112 and 5x100, 57.1mm Bore) Compatible with Audi",
        "url": "https://amzn.to/4bKlB9L",
-       "asin": "B00A71VKJW"
-      }
-     ]
-    },
-    {
-     "name": "Misc",
-     "items": [
+       "asin": "B00A71VKJW",
+       "group": "Spacers"
+      },
       {
        "name": "URO Parts 1J0121087B Coolant Connecting Pipe, Located in Upper Hose",
        "url": "https://amzn.to/40MCjA3",
-       "asin": "B00BQS7KIU"
+       "asin": "B00BQS7KIU",
+       "group": "Misc"
       },
       {
        "name": "URO Parts 8E0121321 Expansion Tank Cap",
        "url": "https://amzn.to/4sJn5Zb",
-       "asin": "B00BQS9722"
+       "asin": "B00BQS9722",
+       "group": "Misc"
       },
       {
        "name": "ECOGARD X5843 Premium Cartridge Engine Oil Filter",
        "url": "https://amzn.to/4boWJoX",
-       "asin": "B00I8IKC5Y"
+       "asin": "B00I8IKC5Y",
+       "group": "Misc"
       },
       {
        "name": "21323-232316B Windshield Washer Pump w/Grommet (Interchangeable with the OEM part numbers 67128362154, 67128377612, 1J5955651)",
        "url": "https://amzn.to/4bJFsFT",
-       "asin": "B01AOC6J1W"
+       "asin": "B01AOC6J1W",
+       "group": "Misc"
       },
       {
        "name": "Cabin Air Filter with Activated Carbon",
        "url": "https://amzn.to/3NOoDlf",
-       "asin": "B0BS417CVF"
+       "asin": "B0BS417CVF",
+       "group": "Misc"
       },
       {
        "name": "Hengst E685L Air Filter",
        "url": "https://amzn.to/47L1JSu",
-       "asin": "B00DQITXGA"
+       "asin": "B00DQITXGA",
+       "group": "Misc"
       },
       {
        "name": "Hood Strut for Audi | OE # SG101019 8E0823359A 6444",
        "url": "https://amzn.to/4sqUZBu",
-       "asin": "B015F6F2HO"
+       "asin": "B015F6F2HO",
+       "group": "Misc"
       },
       {
        "name": "WeatherTech Custom Fit FloorLiners for Audi S4, RS4, A4-1st Row (441941)",
        "url": "https://amzn.to/4uFgG2t",
-       "asin": "B002ZTNVXM"
+       "asin": "B002ZTNVXM",
+       "group": "Misc"
       },
       {
        "name": "AUTOOL Automotive Intake Valve Carbon Clean Machine / Walnut blasting",
        "url": "https://amzn.to/4sG9S2s",
-       "asin": "B0CBMM1ZZW"
-      }
-     ]
-    },
-    {
-     "name": "Brakes",
-     "items": [
+       "asin": "B0CBMM1ZZW",
+       "group": "Misc"
+      },
       {
        "name": "Hawk brake pads: HAWK brake pads at Tire Rack",
        "url": "https://www.dpbolvw.net/click-101708275-10399817",
-       "vendor": "Tire Rack"
+       "vendor": "Tire Rack",
+       "group": "Brakes"
       },
       {
        "name": "front HP+ HB609N.572",
        "url": "https://amzn.to/3NTMK1S",
-       "asin": "B002MBF9HY"
+       "asin": "B002MBF9HY",
+       "group": "Brakes"
       },
       {
        "name": "front DTC60 HB609G.572",
        "url": "https://amzn.to/47cFBQP",
-       "asin": "B003I51QRU"
+       "asin": "B003I51QRU",
+       "group": "Brakes"
       },
       {
        "name": "rear HPS5.0 HB553B.652",
        "url": "https://amzn.to/4dAWmJd",
-       "asin": "B07WH7QTYN"
+       "asin": "B07WH7QTYN",
+       "group": "Brakes"
       },
       {
        "name": "Stainless steel braided brake lines",
        "url": "https://jhmotorsports.com/brake-line-kit-stainless-jhm-front-and-rear-lines-for-b7-rs4.html",
-       "vendor": "JHM Motorsports"
+       "vendor": "JHM Motorsports",
+       "group": "Brakes"
       }
      ]
-    }
-   ]
-  },
-  {
-   "name": "2014 Jeep Grand Cherokee Summit parts",
-   "subsections": [
+    },
     {
-     "name": "",
+     "name": "2014 Jeep Grand Cherokee Summit",
      "items": [
       {
        "name": "68395074AA Transfer Case Control Module Compatible with 2014-2015 Dodge Durango/Grand Cherokee 2014-2015 with 2 Speed that replaces the original part# 05150732AE",
@@ -1363,14 +1358,9 @@
        "asin": "B0GJ57F4BK"
       }
      ]
-    }
-   ]
-  },
-  {
-   "name": "Tools for scrutineers",
-   "subsections": [
+    },
     {
-     "name": "",
+     "name": "Tools for scrutineers",
      "items": [
       {
        "name": "Curated list of tools on our Amazon front store",
@@ -1531,10 +1521,10 @@
    ]
   },
   {
-   "name": "Safety",
+   "name": "Racing",
    "subsections": [
     {
-     "name": "",
+     "name": "Safety",
      "items": [
       {
        "name": "Amerex B417 fire extinguishers",
@@ -1671,6 +1661,123 @@
        "group": "Switch panel",
        "url": "https://amzn.to/4szBnu9",
        "asin": "B071S1VMC2"
+      }
+     ]
+    },
+    {
+     "name": "Steering wheel",
+     "items": [
+      {
+       "name": "Sparco 330mm 015R383PSN Suede Steering Wheel",
+       "url": "https://amzn.to/4bzRTE8",
+       "asin": "B000ECPZAY"
+      },
+      {
+       "name": "Steering wheel bolts M5 x 16mm Metric Hex Socket Countersunk Head",
+       "url": "https://amzn.to/3QMM5Ai",
+       "asin": "B018RSSJHC"
+      },
+      {
+       "name": "NRG Innovations SRK-180H Hub Adapter (for Audi)",
+       "url": "https://amzn.to/4cYbssd",
+       "asin": "B001CK18H6"
+      },
+      {
+       "name": "NRG Innovations SRK-250BK Quick Release Kit",
+       "url": "https://amzn.to/4bCc8RE",
+       "asin": "B001AM1PHY"
+      },
+      {
+       "name": "NRG Innovations NRG-SRK-100H Hub Adapter (for Subaru)",
+       "url": "https://amzn.to/3PSj5qn",
+       "asin": "B005DHV8Q0"
+      },
+      {
+       "note": "Steering wheel hook",
+       "links": [
+        {
+         "h": "https://www.frogracing.us/store/steering-wheel-hook",
+         "t": ""
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Onboard video and telemetry",
+     "items": [
+      {
+       "note": "Check our Onboard Videos and Telemetry pages",
+       "links": [
+        {
+         "h": "https://www.frogracing.us/tech/on-board-cameras",
+         "t": "Onboard Videos"
+        },
+        {
+         "h": "https://www.frogracing.us/tech/telemetry",
+         "t": "Telemetry"
+        }
+       ]
+      },
+      {
+       "name": "The current go-to camera for onboard footage is the DJI line-up",
+       "url": "https://amzn.to/4vedM4A",
+       "vendor": "Amazon list",
+       "group": "Camera"
+      },
+      {
+       "name": "DJI Osmo Action 4 Adventure Combo",
+       "url": "https://amzn.to/4vatL3o",
+       "asin": "B009CN8VNY",
+       "group": "Camera"
+      },
+      {
+       "name": "DJI Osmo Action 5 Pro Essential Combo",
+       "url": "https://amzn.to/4uy7gEr",
+       "asin": "B0DS2DF5S5",
+       "group": "Camera"
+      },
+      {
+       "name": "DJI Osmo 360 Camera",
+       "url": "https://amzn.to/4vPEYqi",
+       "asin": "B0DTTZZ6Q3",
+       "group": "Camera"
+      },
+      {
+       "name": "ContourRoam cameras (discontinued but we still use them!)",
+       "url": "https://amzn.to/4vatL3o",
+       "asin": "B009CN8VNY",
+       "group": "Camera"
+      },
+      {
+       "name": "rollcage mount",
+       "group": "RAM mounts to secure tablet to rollcage",
+       "url": "https://amzn.to/4vOj7iK",
+       "asin": "B0030HO6SM"
+      },
+      {
+       "name": "tablet holder",
+       "group": "RAM mounts to secure tablet to rollcage",
+       "url": "https://amzn.to/4a4parg",
+       "asin": "B005MFKV20"
+      },
+      {
+       "name": "ball mount for tablet holder",
+       "group": "RAM mounts to secure tablet to rollcage",
+       "url": "https://amzn.to/4vMBNPX",
+       "asin": "B000WJA5ZY"
+      },
+      {
+       "name": "long arm",
+       "group": "RAM mounts to secure tablet to rollcage",
+       "url": "https://amzn.to/4vMBNPX",
+       "asin": "B000WJA5ZY"
+      },
+      {
+       "name": "Bluetooth OBD2 for telemetry ($5)",
+       "group": "Telemetry",
+       "url": "https://amzn.to/4uAlp3Y",
+       "asin": "B0D5Q5Z4KL"
       }
      ]
     }
@@ -1916,50 +2023,6 @@
        "group": "Ramps",
        "url": "https://amzn.to/4vDkMI0",
        "asin": "B086NW4977"
-      }
-     ]
-    }
-   ]
-  },
-  {
-   "name": "Steering wheel",
-   "subsections": [
-    {
-     "name": "",
-     "items": [
-      {
-       "name": "Sparco 330mm 015R383PSN Suede Steering Wheel",
-       "url": "https://amzn.to/4bzRTE8",
-       "asin": "B000ECPZAY"
-      },
-      {
-       "name": "Steering wheel bolts M5 x 16mm Metric Hex Socket Countersunk Head",
-       "url": "https://amzn.to/3QMM5Ai",
-       "asin": "B018RSSJHC"
-      },
-      {
-       "name": "NRG Innovations SRK-180H Hub Adapter (for Audi)",
-       "url": "https://amzn.to/4cYbssd",
-       "asin": "B001CK18H6"
-      },
-      {
-       "name": "NRG Innovations SRK-250BK Quick Release Kit",
-       "url": "https://amzn.to/4bCc8RE",
-       "asin": "B001AM1PHY"
-      },
-      {
-       "name": "NRG Innovations NRG-SRK-100H Hub Adapter (for Subaru)",
-       "url": "https://amzn.to/3PSj5qn",
-       "asin": "B005DHV8Q0"
-      },
-      {
-       "note": "Steering wheel hook",
-       "links": [
-        {
-         "h": "https://www.frogracing.us/store/steering-wheel-hook",
-         "t": ""
-        }
-       ]
       }
      ]
     }
@@ -2304,84 +2367,6 @@
        "name": "Waist bag (attach to rollcage to secure cellphone/wallet/...)",
        "url": "https://amzn.to/4459Sii",
        "asin": "B08FT1NQ2T"
-      }
-     ]
-    }
-   ]
-  },
-  {
-   "name": "Onboard video and telemetry",
-   "subsections": [
-    {
-     "name": "",
-     "items": [
-      {
-       "note": "Check our Onboard Videos and Telemetry pages",
-       "links": [
-        {
-         "h": "https://www.frogracing.us/tech/on-board-cameras",
-         "t": "Onboard Videos"
-        },
-        {
-         "h": "https://www.frogracing.us/tech/telemetry",
-         "t": "Telemetry"
-        }
-       ]
-      },
-      {
-       "name": "The current go-to camera for onboard footage is the DJI line-up",
-       "url": "https://amzn.to/4vedM4A",
-       "vendor": "Amazon list"
-      },
-      {
-       "name": "DJI Osmo Action 4 Adventure Combo",
-       "url": "https://amzn.to/4vatL3o",
-       "asin": "B009CN8VNY"
-      },
-      {
-       "name": "DJI Osmo Action 5 Pro Essential Combo",
-       "url": "https://amzn.to/4uy7gEr",
-       "asin": "B0DS2DF5S5"
-      },
-      {
-       "name": "DJI Osmo 360 Camera",
-       "url": "https://amzn.to/4vPEYqi",
-       "asin": "B0DTTZZ6Q3"
-      },
-      {
-       "name": "ContourRoam cameras (discontinued but we still use them!)",
-       "url": "https://amzn.to/4vatL3o",
-       "asin": "B009CN8VNY"
-      },
-      {
-       "name": "rollcage mount",
-       "group": "RAM mounts to secure tablet to rollcage",
-       "url": "https://amzn.to/4vOj7iK",
-       "asin": "B0030HO6SM"
-      },
-      {
-       "name": "tablet holder",
-       "group": "RAM mounts to secure tablet to rollcage",
-       "url": "https://amzn.to/4a4parg",
-       "asin": "B005MFKV20"
-      },
-      {
-       "name": "ball mount for tablet holder",
-       "group": "RAM mounts to secure tablet to rollcage",
-       "url": "https://amzn.to/4vMBNPX",
-       "asin": "B000WJA5ZY"
-      },
-      {
-       "name": "long arm",
-       "group": "RAM mounts to secure tablet to rollcage",
-       "url": "https://amzn.to/4vMBNPX",
-       "asin": "B000WJA5ZY"
-      },
-      {
-       "name": "Bluetooth OBD2 for telemetry ($5)",
-       "group": "RAM mounts to secure tablet to rollcage",
-       "url": "https://amzn.to/4uAlp3Y",
-       "asin": "B0D5Q5Z4KL"
       }
      ]
     }

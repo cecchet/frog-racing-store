@@ -243,6 +243,12 @@ function recBuildCategory(category) {
         const groupHeading = document.createElement("h5");
         groupHeading.className = "rec-group";
         groupHeading.textContent = item.group;
+        if (item.groupLink) {
+          groupHeading.insertAdjacentHTML(
+            "beforeend",
+            ` <a class="rec-see-all" href="${recEsc(item.groupLink)}" target="_blank" rel="noopener sponsored">See the full list on Amazon &rarr;</a>`
+          );
+        }
         grid.appendChild(groupHeading);
       }
       lastGroup = item.group || null;
