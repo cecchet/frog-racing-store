@@ -2,6 +2,171 @@
  "_comment": "The list behind recommended.html. Edit it here (it was originally copied from the old Google Sites page, which now points to this store). Items: {name, url} - amzn.to links become Amazon products (asin is filled in by the build), other links are vendor links; {note, links?} is a free-standing note. Then run `node build-recommended.js` in tools/ to regenerate ../recommended-data.js.",
  "sections": [
   {
+   "name": "Brakes",
+   "subsections": [
+    {
+     "name": "Brake pads",
+     "items": [
+      {
+       "name": "Street: HPS 5.0",
+       "group": "Hawk brake pads",
+       "url": "https://www.anrdoezrs.net/click-101708275-10399817",
+       "vendor": "Tire Rack"
+      },
+      {
+       "name": "RallyX / Hillclimb for cold bite: HP+",
+       "group": "Hawk brake pads",
+       "url": "https://www.anrdoezrs.net/click-101708275-10399817",
+       "vendor": "Tire Rack"
+      },
+      {
+       "name": "HPDE / Rally: DTC-60 front / HP+ rear",
+       "group": "Hawk brake pads",
+       "url": "https://www.anrdoezrs.net/click-101708275-10399817",
+       "vendor": "Tire Rack"
+      },
+      {
+       "name": "Track on slicks: DTC-70 front / DTC-60 rear",
+       "group": "Hawk brake pads",
+       "url": "https://www.anrdoezrs.net/click-101708275-10399817",
+       "vendor": "Tire Rack"
+      }
+     ]
+    },
+    {
+     "name": "Subaru brakes",
+     "link": "https://amzn.to/4tAQIfb",
+     "items": [
+      {
+       "name": "Front 4-pot brake calipers (direct fit on 04 STi) (buy left and right separately, they are cheaper than the combo!)",
+       "group": "Calipers",
+       "url": "https://amzn.to/3NlvYbU",
+       "asin": "B082MKSNSY"
+      },
+      {
+       "name": "Rear 2-pot brake calipers (direct fit on 04 STi) (buy left and right separately, they are cheaper than the combo!)",
+       "group": "Calipers",
+       "url": "https://amzn.to/4tl7DSX",
+       "asin": "B083JCZHPT"
+      },
+      {
+       "name": "Rear caliper/brake pad spring 26632FA010",
+       "group": "Calipers",
+       "url": "https://amzn.to/4vSNaH9",
+       "asin": "B00L2ORKS8"
+      },
+      {
+       "name": "Frozen rotors from Rally.Build (for 4/2 pots on 04 STi)",
+       "group": "Rotors",
+       "url": "https://rally.build/collections/frozen-rotors",
+       "vendor": "Rally.Build"
+      },
+      {
+       "name": "Front rotor for HP+ pads only: Centric Premium 120.47018",
+       "group": "Rotors",
+       "url": "https://amzn.to/4vdRKiE",
+       "asin": "B000BZXR6I"
+      },
+      {
+       "name": "KNS 4650 Front rotors (dual drilled 5x100/5x114)",
+       "group": "Rotors",
+       "url": "https://bleedingtarmac.com/products/kns-brakes-front-rotor-02-14-subaru-wrx",
+       "vendor": "Bleeding Tarmac"
+      },
+      {
+       "name": "KNS4656 Rear rotor (dual drilled 5x100/5x114)",
+       "group": "Rotors",
+       "url": "https://bleedingtarmac.com/products/kns-brakes-dual-drilled-2-pot-rear-gravel-rotor-04-07-subaru-wrx-sti",
+       "vendor": "Bleeding Tarmac"
+      },
+      {
+       "name": "Hawk brake pads: HAWK brake pads at Tire Rack",
+       "group": "Brake pads",
+       "url": "https://www.dpbolvw.net/click-101708275-10399817",
+       "vendor": "Tire Rack"
+      },
+      {
+       "name": "4 pot front HP+ HB178N.564",
+       "group": "Brake pads",
+       "url": "https://amzn.to/4sXFSiR",
+       "asin": "B000CO728M"
+      },
+      {
+       "name": "4 pot front DTC60 HB700G.562",
+       "group": "Brake pads",
+       "url": "https://amzn.to/3PSlLnV",
+       "asin": "B006A3WWI4"
+      },
+      {
+       "name": "2 pot rear HP+ HB179N.630",
+       "group": "Brake pads",
+       "url": "https://amzn.to/3NwLrWC",
+       "asin": "B000IES5Q4"
+      },
+      {
+       "name": "Brembo front HP+ HB453N.585",
+       "group": "Brake pads",
+       "url": "https://amzn.to/4t5UUTX",
+       "asin": "B000IET39C"
+      },
+      {
+       "name": "Brembo rear HP+ HB180N.56",
+       "group": "Brake pads",
+       "url": "https://amzn.to/4sXFZLj",
+       "asin": "B0014HP9IQ"
+      },
+      {
+       "name": "Stainless steel braided brake lines Goodridge 24215",
+       "group": "Brake lines",
+       "url": "https://amzn.to/4uLMzWX",
+       "asin": "B00HZGS00O"
+      },
+      {
+       "name": "2004 STi ABS sensor rear passenger",
+       "group": "Sensors",
+       "url": "https://amzn.to/4bmDvAk",
+       "asin": "B0946CHZ14"
+      }
+     ]
+    },
+    {
+     "name": "2007 Audi RS4 brakes",
+     "items": [
+      {
+       "name": "Hawk brake pads: HAWK brake pads at Tire Rack",
+       "url": "https://www.dpbolvw.net/click-101708275-10399817",
+       "vendor": "Tire Rack",
+       "group": "Brake pads"
+      },
+      {
+       "name": "front HP+ HB609N.572",
+       "url": "https://amzn.to/3NTMK1S",
+       "asin": "B002MBF9HY",
+       "group": "Brake pads"
+      },
+      {
+       "name": "front DTC60 HB609G.572",
+       "url": "https://amzn.to/47cFBQP",
+       "asin": "B003I51QRU",
+       "group": "Brake pads"
+      },
+      {
+       "name": "rear HPS5.0 HB553B.652",
+       "url": "https://amzn.to/4dAWmJd",
+       "asin": "B07WH7QTYN",
+       "group": "Brake pads"
+      },
+      {
+       "name": "Stainless steel braided brake lines",
+       "url": "https://jhmotorsports.com/brake-line-kit-stainless-jhm-front-and-rear-lines-for-b7-rs4.html",
+       "vendor": "JHM Motorsports",
+       "group": "Brake lines"
+      }
+     ]
+    }
+   ]
+  },
+  {
    "name": "Car specific parts",
    "subsections": [
     {
@@ -687,6 +852,843 @@
        "name": "Mopar 68360247AA license plate light full wiring harness (if you prefer to replace the stock connectors)",
        "url": "https://amzn.to/4fInozp",
        "asin": "B0CDVT55GG"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Diagnostic",
+   "subsections": [
+    {
+     "name": "OBD2",
+     "items": [
+      {
+       "name": "Autel Scanner MaxiCOM MK808 OBD2 Scanner, 28+ Resets, Active Test, All System Diagnostic, Injector C0ding, Escaner Automotriz",
+       "url": "https://amzn.to/4bHSow8",
+       "asin": "B098TDC7FM"
+      },
+      {
+       "name": "ANCEL AD410 Enhanced OBD2 Scanner, Vehicle Code Reader for Check Engine Light, Automotive OBD II Scanner Fault Diagnosis",
+       "url": "https://amzn.to/4rYK2q4",
+       "asin": "B071FSNL73"
+      }
+     ]
+    },
+    {
+     "name": "Engine",
+     "items": [
+      {
+       "name": "Solary Automotive Smoke Machine Leak Detector - 12V DC EVAP Vacuum Diagnostic Tester for Pipe System",
+       "url": "https://amzn.to/4sEHUEZ",
+       "asin": "B0C7MKZPK3"
+      },
+      {
+       "name": "OTC 5609 Cylinder Leakage Tester Kit",
+       "url": "https://amzn.to/4uRwNdn",
+       "asin": "B0030EVL60"
+      },
+      {
+       "name": "AUTOWN Professional Compression Tester Kit",
+       "url": "https://amzn.to/4s9OfY4",
+       "asin": "B0GHS9FQY5"
+      }
+     ]
+    },
+    {
+     "name": "Thermal",
+     "items": [
+      {
+       "name": "MILESEEY TR256i Thermal Imaging Camera",
+       "url": "https://amzn.to/4vsg8wI",
+       "asin": "B0G6ZJ2Q6B"
+      },
+      {
+       "name": "Thermal Master P1 Camera",
+       "url": "https://amzn.to/4xPnsUR",
+       "asin": "B0FLK4V7Z6"
+      }
+     ]
+    },
+    {
+     "name": "Misc",
+     "items": [
+      {
+       "name": "Brake Fluid Tester, BELEY F60 Brake Fluid Moisture Tester for DOT3/DOT4/DOT5.1",
+       "url": "https://amzn.to/4tiA2Jf",
+       "asin": "B0DZNJPCVK"
+      },
+      {
+       "name": "JIFETOR Radiator Coolant Pressure Tester Vacuum Refill Tool Kit, 28PCS Automotive Cooling System Leak Test and Pneumatic Purge Fill Set with Testing Adapter Caps Universal",
+       "url": "https://amzn.to/3Psaw5L",
+       "asin": "B08BG3WTDX"
+      },
+      {
+       "name": "ANCEL BA101 Car Battery Tester, 12V Digital Automotive Alternator Meter Diagnostic Tool,100-2000 CCA Load Capacity, Charging & Cranking Analyzer",
+       "url": "https://amzn.to/3NDTwbS",
+       "asin": "B01M0ARG3X"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Emergency repairs essentials",
+   "link": "https://amzn.to/3SdRgKq",
+   "subsections": [
+    {
+     "name": "",
+     "items": [
+      {
+       "name": "J-B Weld SteelStik, 1 Hour Cure, Steel Reinforced Epoxy Putty",
+       "url": "https://amzn.to/42bFxh4",
+       "asin": "B0B5VJML6M"
+      },
+      {
+       "name": "RadiatorWeld J-B Weld 2120 Radiator Repair Kit",
+       "url": "https://amzn.to/4tMWrhR",
+       "asin": "B01IOPE66G"
+      },
+      {
+       "name": "J-B Weld 8276 KwikWeld Quick Setting Steel Reinforced Epoxy",
+       "url": "https://amzn.to/4mCoVsz",
+       "asin": "B0006O1ICY"
+      },
+      {
+       "name": "Permatex Right Stuff one minute gasket maker (oil resistant)",
+       "url": "https://amzn.to/4vas1al",
+       "asin": "B000HBM6PE"
+      },
+      {
+       "name": "Windshield repair kit",
+       "url": "https://amzn.to/3Q7loXo",
+       "asin": "B0H35PQMD9"
+      },
+      {
+       "name": "Flex seal tape",
+       "url": "https://amzn.to/4vUmEwf",
+       "asin": "B07B6CM4SL"
+      },
+      {
+       "name": "J-B Weld 8277 WaterWeld Epoxy Putty",
+       "url": "https://amzn.to/4vLseRh",
+       "asin": "B000BRQ0TW"
+      },
+      {
+       "name": "J-B Weld 50139 Plastic Bonder Body Panel Adhesive and Gap Filler",
+       "url": "https://amzn.to/4eKewsb",
+       "asin": "B01IBOK7FE"
+      },
+      {
+       "name": "Gorilla 2 Part Clear Epoxy 5 Minute",
+       "url": "https://amzn.to/4uCUoNu",
+       "asin": "B01M7VD07W"
+      },
+      {
+       "name": "Cable Zip Ties Heavy Duty 12 Inch, Ultra Strong Plastic Wire Ties with 120 Pounds Tensile Strength, 100 Pieces",
+       "url": "https://amzn.to/41l8AOR",
+       "asin": "B01N2M308O"
+      },
+      {
+       "name": "Zip tie gun",
+       "url": "https://amzn.to/41lMLyG",
+       "asin": "B0BC184T32"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Fluids",
+   "subsections": [
+    {
+     "name": "",
+     "items": [
+      {
+       "name": "Amazon list",
+       "url": "https://amzn.to/4tMz5Jp",
+       "vendor": "Amazon list"
+      },
+      {
+       "name": "Brake fluid Motul RBF 600 (MTL100949 8068HL)",
+       "url": "https://amzn.to/4lGL5Jw",
+       "asin": "B07KY29S4L"
+      },
+      {
+       "name": "Brake Bleeder Kit One Person, 4L Brake Pressure Bleeder Hand Pump with 1L Brake Bleeder Bottle for Most European Automotive Master Cylinder Bleeders (also 43.5mm adapter for Jeep, Dodge... ( 49.5mm adapter for GM, Mazda ( 50.7mm adapter for Subaru, Nissan, Ford... (",
+       "url": "https://amzn.to/3NDRQiz",
+       "asin": "B0C2YP1Y5T"
+      },
+      {
+       "name": "Brake Fluid Tester, BELEY F60 Brake Fluid Moisture Tester for DOT3/DOT4/DOT5.1",
+       "url": "https://amzn.to/4tiA2Jf",
+       "asin": "B0DZNJPCVK"
+      },
+      {
+       "note": "Engine oil",
+       "links": []
+      },
+      {
+       "name": "Street use: LIQUI MOLY Leichtlauf High Tech SAE 5W-40 | 20 L | Fully synthetic engine oil | SKU: 20122",
+       "group": "RS4 engine oil",
+       "url": "https://amzn.to/4t1LlW3",
+       "asin": "B082Q587QT"
+      },
+      {
+       "name": "Race use: Liqui Moly Synthoil Race Tech GT1 10W-60 Motor Oil",
+       "group": "RS4 engine oil",
+       "url": "https://amzn.to/4bNS2E0",
+       "asin": "B00G4UI52U"
+      },
+      {
+       "name": "ECOGARD X5843 Premium Cartridge Engine Oil Filter",
+       "group": "RS4 engine oil",
+       "url": "https://amzn.to/4ekTJLZ",
+       "asin": "B00I8IKC5Y"
+      },
+      {
+       "name": "Shell Rotella T6 Full Synthetic 5W-40 Diesel Engine Oil, 1 Gallon",
+       "group": "Subaru engine oil",
+       "url": "https://amzn.to/4cXhKIy",
+       "asin": "B01LG3Q6LQ"
+      },
+      {
+       "name": "K&N HP 1008 oil filter",
+       "group": "Subaru engine oil",
+       "url": "https://amzn.to/41xmwWo",
+       "asin": "B000C4087Y"
+      },
+      {
+       "name": "DURATECH 8-Piece Oil Filter Swivel Wrench Set",
+       "group": "Subaru engine oil",
+       "url": "https://amzn.to/47i38jr",
+       "asin": "B0BNHWGBV9"
+      },
+      {
+       "name": "FOUR UNCLES 1.5L Engine Oil Funnel Kit, Universal No-Spill",
+       "group": "Subaru engine oil",
+       "url": "https://amzn.to/4dIbDbt",
+       "asin": "B0DCB7QQ9X"
+      },
+      {
+       "name": "Subaru transmission oil Motul Gear 300 75W90 100 Percent Synthetic Gear Oil 1 Liter (105777)",
+       "group": "Transmission oil",
+       "url": "https://amzn.to/4d4emvC",
+       "asin": "B07GNT8WCV"
+      },
+      {
+       "name": "04 STi rear differential LSD oil Motul Gear 300 LS 75W90-100% Synthetic Ester",
+       "group": "Transmission oil",
+       "url": "https://amzn.to/4dD8bi9",
+       "asin": "B00N30Q7N8"
+      },
+      {
+       "name": "Transfer case: 2qt of ATF+4 fluid (Castrol Transmax ATF+4",
+       "group": "Transmission oil",
+       "url": "https://amzn.to/4s6Fg9W",
+       "asin": "B008MISB2Q"
+      },
+      {
+       "name": "FOUR UNCLES 200cc Fluid Extractor & Fill Pump for Automotive Use",
+       "group": "Transmission oil",
+       "url": "https://amzn.to/3NRf9FZ",
+       "asin": "B0CRDBQY5T"
+      },
+      {
+       "name": "Racing Shock Oil 75/390, 3wt",
+       "group": "Suspension",
+       "url": "https://amzn.to/3QCMghy",
+       "asin": "B000MYAH20"
+      },
+      {
+       "name": "Red Line 80401 High Performance CV-2 Synthetic Grease for coilovers or bearings",
+       "group": "Suspension",
+       "url": "https://amzn.to/4dMWSUS",
+       "asin": "B000T9Q8K8"
+      },
+      {
+       "name": "Permatex 80078 Anti-Seize Lubricant with Brush Top Bottle",
+       "group": "Lubricants/Glue/Loctite",
+       "url": "https://amzn.to/4sKosWx",
+       "asin": "B000FW7VGE"
+      },
+      {
+       "name": "To remove stickers/vinyl glue... Transtar 9783 Acry Solvent - 14 oz. Aerosol",
+       "group": "Lubricants/Glue/Loctite",
+       "url": "https://amzn.to/4rMCshO",
+       "asin": "B000RI578K"
+      },
+      {
+       "name": "Kroil Aerokroil Penetrant - Rust Penetrating Lubricant",
+       "group": "Lubricants/Glue/Loctite",
+       "url": "https://amzn.to/415IcIV",
+       "asin": "B005XUIX24"
+      },
+      {
+       "name": "Torque paint Vibra-TITE Viz-Torque Tamper Detection Marker",
+       "group": "Lubricants/Glue/Loctite",
+       "url": "https://amzn.to/48GsdoH",
+       "asin": "B07Q84FX6K"
+      },
+      {
+       "name": "Better than red Loctite: Vibra-TITE - 13535 135 Permanent Strength Gel Anaerobic Threadlocker, 35 ml Pump, Red",
+       "group": "Lubricants/Glue/Loctite",
+       "url": "https://amzn.to/42gRqlS",
+       "asin": "B002QMYQRI"
+      },
+      {
+       "name": "Better than blue Loctite: Vibra-TITE - 12535 125 Removable Medium Strength Gel Anaerobic Threadlocker, 35 ml Pump, Blue",
+       "group": "Lubricants/Glue/Loctite",
+       "url": "https://amzn.to/4cgRl7S",
+       "asin": "B004UMONPC"
+      },
+      {
+       "name": "Gorilla 2 Part Clear Epoxy, 0.85 Ounce Syringe - 5 Minute Set",
+       "group": "Lubricants/Glue/Loctite",
+       "url": "https://amzn.to/4zr0FPO",
+       "asin": "B01M7VD07W"
+      },
+      {
+       "name": "J-B Weld SteelStik, 1 Hour Cure, Steel Reinforced Epoxy Putty",
+       "group": "Lubricants/Glue/Loctite",
+       "url": "https://amzn.to/42bFxh4",
+       "asin": "B0B5VJML6M"
+      },
+      {
+       "name": "J-B Weld 2120 Radiator Repair Kit",
+       "group": "Lubricants/Glue/Loctite",
+       "url": "https://amzn.to/4tMWrhR",
+       "asin": "B01IOPE66G"
+      },
+      {
+       "name": "J-B Weld 8276 KwikWeld Quick Setting Steel Reinforced Epoxy",
+       "group": "Lubricants/Glue/Loctite",
+       "url": "https://amzn.to/4mCoVsz",
+       "asin": "B0006O1ICY"
+      },
+      {
+       "name": "Permatex Right Stuff one minute gasket maker (oil resistant)",
+       "group": "Lubricants/Glue/Loctite",
+       "url": "https://amzn.to/4vas1al",
+       "asin": "B000HBM6PE"
+      },
+      {
+       "name": "Tuff Jug | 5 Gallon Multipurpose Container: Green: - Red",
+       "group": "Gas cans",
+       "url": "https://amzn.to/4v7lIEW",
+       "asin": "B0FC3RBX6C"
+      },
+      {
+       "name": "VP Racing Square Motorsports 5 gal Jug (Red)",
+       "group": "Gas cans",
+       "url": "https://amzn.to/41KCJY2",
+       "asin": "B00BSG0DN4"
+      },
+      {
+       "name": "VP Racing Fuels 3044 Deluxe Filler Hose",
+       "group": "Gas cans",
+       "url": "https://amzn.to/41JdKV5",
+       "asin": "B005G5R5LQ"
+      },
+      {
+       "name": "VP Racing Utility Container 5.5 Gallon Jug - 2 Pack With 2 Deluxe Hoses and a Get Bent Hose Bender",
+       "group": "Gas cans",
+       "url": "https://amzn.to/3NZtaBu",
+       "asin": "B0DSWMH8JY"
+      },
+      {
+       "name": "VP Racing Utility Container 5.5 Gallon Jug - 4 Pack With 4 Deluxe Hoses and a Get Bent Hose Bender",
+       "group": "Gas cans",
+       "url": "https://amzn.to/3POFu8f",
+       "asin": "B0DQ27422D"
+      },
+      {
+       "name": "Spill Heavy Duty Absorbent pads",
+       "group": "Gas cans",
+       "url": "https://amzn.to/4orNAkd",
+       "asin": "B07CYCB8JL"
+      },
+      {
+       "name": "Anti Fog & Water Repellent Spray",
+       "group": "Gas cans",
+       "url": "https://amzn.to/4j92lb7",
+       "asin": "B0H3KDJ4MG"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Hardware",
+   "subsections": [
+    {
+     "name": "",
+     "items": [
+      {
+       "name": "20Sets M6-1.0 Bolts & U-Nuts Assortment",
+       "url": "https://amzn.to/4bZ0vp6",
+       "asin": "B0BWM49ZPL"
+      },
+      {
+       "name": "25pcs Under Cover & Fender Liner Nut",
+       "url": "https://amzn.to/4lKEG02",
+       "asin": "B0BWVVCCCP"
+      },
+      {
+       "name": "Cable Zip Ties Heavy Duty 12 Inch, Ultra Strong Plastic Wire Ties with 120 Pounds Tensile Strength, 100 Pieces",
+       "url": "https://amzn.to/41l8AOR",
+       "asin": "B01N2M308O"
+      },
+      {
+       "name": "Solary Automotive Smoke Machine Leak Detector - 12V DC EVAP Vacuum Diagnostic Tester for Pipe System",
+       "url": "https://amzn.to/3NvpYgR",
+       "asin": "B0C7MKZPK3"
+      },
+      {
+       "name": "Nord-Lock Wedge Locking Washers",
+       "url": "https://amzn.to/49xmZMx",
+       "asin": "B007VAW1W2"
+      },
+      {
+       "name": "Bolt/nuts securing essentials",
+       "url": "https://amzn.to/3RGVI4e",
+       "vendor": "Amazon list"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Racing",
+   "subsections": [
+    {
+     "name": "Safety",
+     "items": [
+      {
+       "name": "Amerex B417 fire extinguishers",
+       "url": "https://amzn.to/40I8T6f",
+       "asin": "B07JBLR91P"
+      },
+      {
+       "name": "Amerex 817S double strap bracket",
+       "url": "https://www.zoro.com/amerex-vehicle-mounting-bracket-amerex-817s/i/G002696208",
+       "vendor": "zoro.com"
+      },
+      {
+       "name": "Emergency Escape Tool Auto Car Window Glass Hammer Breaker and Seat Belt Cutter Escape 2-in-1 Tool",
+       "url": "https://amzn.to/3NGcezN",
+       "asin": "B01A9Z9MFE"
+      },
+      {
+       "name": "3 safety triangles ($16)",
+       "url": "https://amzn.to/4e0rsZs",
+       "asin": "B074M7SZN2"
+      },
+      {
+       "name": "First aid kit and spill kit ($100): get it from Rally.Build (",
+       "url": "https://rally.build/collections/rally-build-fabricated-rally-parts/products/first-aid-spill-kit-combo",
+       "vendor": "Rally.Build"
+      },
+      {
+       "name": "Air horn for hillclimbs: Shoreline Marine Eco Air Horn",
+       "url": "https://amzn.to/47MByuG",
+       "asin": "B01NCSJGGC"
+      },
+      {
+       "note": "Racing harness collars",
+       "links": [
+        {
+         "h": "https://www.frogracing.us/store/racing-harness-collars",
+         "t": ""
+        }
+       ]
+      },
+      {
+       "note": "Steering wheel hook",
+       "links": [
+        {
+         "h": "https://www.frogracing.us/store/steering-wheel-hook",
+         "t": ""
+        }
+       ]
+      },
+      {
+       "name": "Universal hood pins",
+       "url": "https://amzn.to/4uLP63r",
+       "asin": "B08L8TPFYY"
+      },
+      {
+       "name": "Nord-Lock Wedge Locking Washers",
+       "url": "https://amzn.to/49xmZMx",
+       "asin": "B007VAW1W2"
+      },
+      {
+       "name": "Classic TK12314",
+       "group": "Hans tethers",
+       "url": "https://amzn.to/3Ovu8FR",
+       "asin": "B019XEC6UK"
+      },
+      {
+       "name": "M61 quick release FIA",
+       "group": "Hans tethers",
+       "url": "https://amzn.to/4thcjcz",
+       "asin": "B0G7QQSSJ3"
+      },
+      {
+       "name": "Cartek GT",
+       "group": "Kill switch",
+       "url": "https://rally.build/products/cartek-x-club-solid-state-battery-isolator-kit",
+       "vendor": "Rally.Build"
+      },
+      {
+       "name": "Fuse tap",
+       "group": "Kill switch",
+       "url": "https://amzn.to/3QykTFG",
+       "asin": "B0CHF4LDGH"
+      },
+      {
+       "name": "Relay",
+       "group": "Kill switch",
+       "url": "https://amzn.to/4mXjzYX",
+       "asin": "B072QXDZRD"
+      },
+      {
+       "name": "4-post kill switch",
+       "group": "Kill switch",
+       "url": "https://amzn.to/4tI6uEU",
+       "asin": "B012UW1GAI"
+      },
+      {
+       "name": "4 gauge wire spool to/fropm battery",
+       "group": "Kill switch",
+       "url": "https://amzn.to/42ByHla",
+       "asin": "B002DZF1MW"
+      },
+      {
+       "name": "10 gauge wire to ignition",
+       "group": "Kill switch",
+       "url": "https://amzn.to/4sUSpTN",
+       "asin": "B0FSCSLDG9"
+      },
+      {
+       "name": "Firewall pass through connectors",
+       "group": "Kill switch",
+       "url": "https://amzn.to/4vKpwfI",
+       "asin": "B079K5HB79"
+      },
+      {
+       "name": "Toggle switches",
+       "group": "Switch panel",
+       "url": "https://amzn.to/4cjByDY",
+       "asin": "B00ST2H3B0"
+      },
+      {
+       "name": "Momentary push button",
+       "group": "Switch panel",
+       "url": "https://amzn.to/41vwlUz",
+       "asin": "B079HR5Q4R"
+      },
+      {
+       "name": "All-in-one panel",
+       "group": "Switch panel",
+       "url": "https://amzn.to/3Q6qbb9",
+       "asin": "B07DVRCF2W"
+      },
+      {
+       "name": "All-in-one with kill switch",
+       "group": "Switch panel",
+       "url": "https://amzn.to/4szBnu9",
+       "asin": "B071S1VMC2"
+      }
+     ]
+    },
+    {
+     "name": "Steering wheel",
+     "items": [
+      {
+       "name": "Sparco 330mm 015R383PSN Suede Steering Wheel",
+       "url": "https://amzn.to/4bzRTE8",
+       "asin": "B000ECPZAY"
+      },
+      {
+       "name": "Steering wheel bolts M5 x 16mm Metric Hex Socket Countersunk Head",
+       "url": "https://amzn.to/3QMM5Ai",
+       "asin": "B018RSSJHC"
+      },
+      {
+       "name": "NRG Innovations SRK-180H Hub Adapter (for Audi)",
+       "url": "https://amzn.to/4cYbssd",
+       "asin": "B001CK18H6"
+      },
+      {
+       "name": "NRG Innovations SRK-250BK Quick Release Kit",
+       "url": "https://amzn.to/4bCc8RE",
+       "asin": "B001AM1PHY"
+      },
+      {
+       "name": "NRG Innovations NRG-SRK-100H Hub Adapter (for Subaru)",
+       "url": "https://amzn.to/3PSj5qn",
+       "asin": "B005DHV8Q0"
+      },
+      {
+       "note": "Steering wheel hook",
+       "links": [
+        {
+         "h": "https://www.frogracing.us/store/steering-wheel-hook",
+         "t": ""
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "Onboard video and telemetry",
+     "items": [
+      {
+       "note": "Check our Onboard Videos and Telemetry pages",
+       "links": [
+        {
+         "h": "https://www.frogracing.us/tech/on-board-cameras",
+         "t": "Onboard Videos"
+        },
+        {
+         "h": "https://www.frogracing.us/tech/telemetry",
+         "t": "Telemetry"
+        }
+       ]
+      },
+      {
+       "name": "The current go-to camera for onboard footage is the DJI line-up",
+       "url": "https://amzn.to/4vedM4A",
+       "vendor": "Amazon list",
+       "group": "Camera"
+      },
+      {
+       "name": "DJI Osmo Action 4 Adventure Combo",
+       "url": "https://amzn.to/4vatL3o",
+       "asin": "B009CN8VNY",
+       "group": "Camera"
+      },
+      {
+       "name": "DJI Osmo Action 5 Pro Essential Combo",
+       "url": "https://amzn.to/4uy7gEr",
+       "asin": "B0DS2DF5S5",
+       "group": "Camera"
+      },
+      {
+       "name": "DJI Osmo 360 Camera",
+       "url": "https://amzn.to/4vPEYqi",
+       "asin": "B0DTTZZ6Q3",
+       "group": "Camera"
+      },
+      {
+       "name": "ContourRoam cameras (discontinued but we still use them!)",
+       "url": "https://amzn.to/4vatL3o",
+       "asin": "B009CN8VNY",
+       "group": "Camera"
+      },
+      {
+       "name": "rollcage mount",
+       "group": "RAM mounts to secure tablet to rollcage",
+       "url": "https://amzn.to/4vOj7iK",
+       "asin": "B0030HO6SM"
+      },
+      {
+       "name": "tablet holder",
+       "group": "RAM mounts to secure tablet to rollcage",
+       "url": "https://amzn.to/4a4parg",
+       "asin": "B005MFKV20"
+      },
+      {
+       "name": "ball mount for tablet holder",
+       "group": "RAM mounts to secure tablet to rollcage",
+       "url": "https://amzn.to/4vMBNPX",
+       "asin": "B000WJA5ZY"
+      },
+      {
+       "name": "long arm",
+       "group": "RAM mounts to secure tablet to rollcage",
+       "url": "https://amzn.to/4vMBNPX",
+       "asin": "B000WJA5ZY"
+      },
+      {
+       "name": "Bluetooth OBD2 for telemetry ($5)",
+       "group": "Telemetry",
+       "url": "https://amzn.to/4uAlp3Y",
+       "asin": "B0D5Q5Z4KL"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Rollcage mounts",
+   "subsections": [
+    {
+     "name": "",
+     "items": [
+      {
+       "note": "Steering wheel hook with GoPro mount by Frog Racing",
+       "links": [
+        {
+         "h": "https://www.frogracing.us/store/steering-wheel-hook",
+         "t": "Steering wheel hook"
+        }
+       ]
+      },
+      {
+       "note": "Rollcage mounted Sun visor by Frog Racing",
+       "links": [
+        {
+         "h": "https://www.frogracing.us/store/sun-visor",
+         "t": "Sun visor"
+        }
+       ]
+      },
+      {
+       "name": "Phone Holder with tether, 1\" Ball Compatible with RAM mount",
+       "url": "https://amzn.to/4elMPos",
+       "asin": "B0D1XNF4ZY"
+      },
+      {
+       "name": "Phone Mount X Holder Grip Tether (set of 4)",
+       "url": "https://amzn.to/4oqqSJb",
+       "asin": "B01CTZ7VVY"
+      },
+      {
+       "name": "RAM MOUNTS Twist-Lock Suction Cup Base with B Size 1\" Ball,RAP-B-224-1U",
+       "url": "https://amzn.to/4uAAZNk",
+       "asin": "B008JGZMZK"
+      },
+      {
+       "name": "RAM Mounts rollcage mount for 1\"-2.1\" bars RAM-B-108BU",
+       "url": "https://amzn.to/4om4CQJ",
+       "asin": "B0030HO6SM"
+      },
+      {
+       "name": "Hydration backpack (CamelBak) with storage",
+       "url": "https://amzn.to/49YY7xs",
+       "asin": "B0BYCRTF54"
+      },
+      {
+       "name": "Waist bag (attach to rollcage to secure cellphone/wallet/...)",
+       "url": "https://amzn.to/4459Sii",
+       "asin": "B08FT1NQ2T"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Tires / Rims",
+   "subsections": [
+    {
+     "name": "",
+     "items": [
+      {
+       "name": "We are a Tire Rack affiliate and earn a commission when you purchase from the TireRack using the link below (all discounts and coupons apply normally)",
+       "url": "https://www.tkqlhce.com/click-101708275-10377982",
+       "vendor": "Tire Rack"
+      }
+     ]
+    },
+    {
+     "name": "Tarmac 200TW",
+     "items": [
+      {
+       "name": "Bridgestone RE-71RS",
+       "url": "https://www.dpbolvw.net/click-101708275-10399846",
+       "vendor": "Tire Rack"
+      },
+      {
+       "name": "Yokohama A052",
+       "url": "https://www.dpbolvw.net/click-101708275-10399878",
+       "vendor": "Tire Rack"
+      },
+      {
+       "name": "Budget: Falken RT660",
+       "url": "https://www.dpbolvw.net/click-101708275-12976277",
+       "vendor": "Tire Rack"
+      }
+     ]
+    },
+    {
+     "name": "Winter tires",
+     "items": [
+      {
+       "name": "Nokian Hakkapeliitta (studded or unstudded)",
+       "url": "https://www.jdoqocy.com/click-101708275-15867316",
+       "vendor": "Tire Rack"
+      },
+      {
+       "name": "Blizzak WS90",
+       "url": "https://www.dpbolvw.net/click-101708275-10399846",
+       "vendor": "Tire Rack"
+      },
+      {
+       "name": "Michelin X-Ice",
+       "url": "https://www.tkqlhce.com/click-101708275-10399872",
+       "vendor": "Tire Rack"
+      },
+      {
+       "name": "General Arctic 12 (cars) / Grabber Arctic (Truck)",
+       "url": "https://www.jdoqocy.com/click-101708275-14092901",
+       "vendor": "Tire Rack"
+      },
+      {
+       "name": "Budget: Sumitomo Ice Edge",
+       "url": "https://amzn.to/4hNw0nZ",
+       "vendor": "Amazon"
+      }
+     ]
+    },
+    {
+     "name": "All season performance",
+     "items": [
+      {
+       "name": "Continental DWS06+",
+       "url": "https://www.tkqlhce.com/click-101708275-10399847",
+       "vendor": "Tire Rack"
+      }
+     ]
+    },
+    {
+     "name": "Gravel tires",
+     "items": [
+      {
+       "name": "MRF ZDM3 (soft, 175-195 sizes)",
+       "url": "https://tirestreets.com/collections/gravel-rally-tires/products/mrf-zdm",
+       "vendor": "tirestreets.com"
+      },
+      {
+       "name": "MRF ZG3 (205 sizes)",
+       "url": "https://tirestreets.com/collections/gravel-rally-tires/products/mrf-zg3",
+       "vendor": "tirestreets.com"
+      }
+     ]
+    },
+    {
+     "name": "Rims",
+     "items": [
+      {
+       "name": "RallyX / Recce: Sparco Terra",
+       "url": "https://www.kqzyfj.com/click-101708275-15867268",
+       "vendor": "Tire Rack"
+      },
+      {
+       "name": "Stage Rally: Evo Corse",
+       "url": "https://rally.build/collections/evocorse-rally-wheels",
+       "vendor": "Rally.Build"
+      },
+      {
+       "name": "RallyX / Rally: Method MR502",
+       "url": "https://www.kqzyfj.com/click-101708275-12232389",
+       "vendor": "Tire Rack"
+      },
+      {
+       "name": "Lightweight Tarmac: Enkei RPF1",
+       "url": "https://www.dpbolvw.net/click-101708275-10399940",
+       "vendor": "Tire Rack"
       }
      ]
     }
@@ -1406,384 +2408,6 @@
    ]
   },
   {
-   "name": "Diagnostic",
-   "subsections": [
-    {
-     "name": "OBD2",
-     "items": [
-      {
-       "name": "Autel Scanner MaxiCOM MK808 OBD2 Scanner, 28+ Resets, Active Test, All System Diagnostic, Injector C0ding, Escaner Automotriz",
-       "url": "https://amzn.to/4bHSow8",
-       "asin": "B098TDC7FM"
-      },
-      {
-       "name": "ANCEL AD410 Enhanced OBD2 Scanner, Vehicle Code Reader for Check Engine Light, Automotive OBD II Scanner Fault Diagnosis",
-       "url": "https://amzn.to/4rYK2q4",
-       "asin": "B071FSNL73"
-      }
-     ]
-    },
-    {
-     "name": "Engine",
-     "items": [
-      {
-       "name": "Solary Automotive Smoke Machine Leak Detector - 12V DC EVAP Vacuum Diagnostic Tester for Pipe System",
-       "url": "https://amzn.to/4sEHUEZ",
-       "asin": "B0C7MKZPK3"
-      },
-      {
-       "name": "OTC 5609 Cylinder Leakage Tester Kit",
-       "url": "https://amzn.to/4uRwNdn",
-       "asin": "B0030EVL60"
-      },
-      {
-       "name": "AUTOWN Professional Compression Tester Kit",
-       "url": "https://amzn.to/4s9OfY4",
-       "asin": "B0GHS9FQY5"
-      }
-     ]
-    },
-    {
-     "name": "Thermal",
-     "items": [
-      {
-       "name": "MILESEEY TR256i Thermal Imaging Camera",
-       "url": "https://amzn.to/4vsg8wI",
-       "asin": "B0G6ZJ2Q6B"
-      },
-      {
-       "name": "Thermal Master P1 Camera",
-       "url": "https://amzn.to/4xPnsUR",
-       "asin": "B0FLK4V7Z6"
-      }
-     ]
-    },
-    {
-     "name": "Misc",
-     "items": [
-      {
-       "name": "Brake Fluid Tester, BELEY F60 Brake Fluid Moisture Tester for DOT3/DOT4/DOT5.1",
-       "url": "https://amzn.to/4tiA2Jf",
-       "asin": "B0DZNJPCVK"
-      },
-      {
-       "name": "JIFETOR Radiator Coolant Pressure Tester Vacuum Refill Tool Kit, 28PCS Automotive Cooling System Leak Test and Pneumatic Purge Fill Set with Testing Adapter Caps Universal",
-       "url": "https://amzn.to/3Psaw5L",
-       "asin": "B08BG3WTDX"
-      },
-      {
-       "name": "ANCEL BA101 Car Battery Tester, 12V Digital Automotive Alternator Meter Diagnostic Tool,100-2000 CCA Load Capacity, Charging & Cranking Analyzer",
-       "url": "https://amzn.to/3NDTwbS",
-       "asin": "B01M0ARG3X"
-      }
-     ]
-    }
-   ]
-  },
-  {
-   "name": "Hardware",
-   "subsections": [
-    {
-     "name": "",
-     "items": [
-      {
-       "name": "20Sets M6-1.0 Bolts & U-Nuts Assortment",
-       "url": "https://amzn.to/4bZ0vp6",
-       "asin": "B0BWM49ZPL"
-      },
-      {
-       "name": "25pcs Under Cover & Fender Liner Nut",
-       "url": "https://amzn.to/4lKEG02",
-       "asin": "B0BWVVCCCP"
-      },
-      {
-       "name": "Cable Zip Ties Heavy Duty 12 Inch, Ultra Strong Plastic Wire Ties with 120 Pounds Tensile Strength, 100 Pieces",
-       "url": "https://amzn.to/41l8AOR",
-       "asin": "B01N2M308O"
-      },
-      {
-       "name": "Solary Automotive Smoke Machine Leak Detector - 12V DC EVAP Vacuum Diagnostic Tester for Pipe System",
-       "url": "https://amzn.to/3NvpYgR",
-       "asin": "B0C7MKZPK3"
-      },
-      {
-       "name": "Nord-Lock Wedge Locking Washers",
-       "url": "https://amzn.to/49xmZMx",
-       "asin": "B007VAW1W2"
-      },
-      {
-       "name": "Bolt/nuts securing essentials",
-       "url": "https://amzn.to/3RGVI4e",
-       "vendor": "Amazon list"
-      }
-     ]
-    }
-   ]
-  },
-  {
-   "name": "Racing",
-   "subsections": [
-    {
-     "name": "Safety",
-     "items": [
-      {
-       "name": "Amerex B417 fire extinguishers",
-       "url": "https://amzn.to/40I8T6f",
-       "asin": "B07JBLR91P"
-      },
-      {
-       "name": "Amerex 817S double strap bracket",
-       "url": "https://www.zoro.com/amerex-vehicle-mounting-bracket-amerex-817s/i/G002696208",
-       "vendor": "zoro.com"
-      },
-      {
-       "name": "Emergency Escape Tool Auto Car Window Glass Hammer Breaker and Seat Belt Cutter Escape 2-in-1 Tool",
-       "url": "https://amzn.to/3NGcezN",
-       "asin": "B01A9Z9MFE"
-      },
-      {
-       "name": "3 safety triangles ($16)",
-       "url": "https://amzn.to/4e0rsZs",
-       "asin": "B074M7SZN2"
-      },
-      {
-       "name": "First aid kit and spill kit ($100): get it from Rally.Build (",
-       "url": "https://rally.build/collections/rally-build-fabricated-rally-parts/products/first-aid-spill-kit-combo",
-       "vendor": "Rally.Build"
-      },
-      {
-       "name": "Air horn for hillclimbs: Shoreline Marine Eco Air Horn",
-       "url": "https://amzn.to/47MByuG",
-       "asin": "B01NCSJGGC"
-      },
-      {
-       "note": "Racing harness collars",
-       "links": [
-        {
-         "h": "https://www.frogracing.us/store/racing-harness-collars",
-         "t": ""
-        }
-       ]
-      },
-      {
-       "note": "Steering wheel hook",
-       "links": [
-        {
-         "h": "https://www.frogracing.us/store/steering-wheel-hook",
-         "t": ""
-        }
-       ]
-      },
-      {
-       "name": "Universal hood pins",
-       "url": "https://amzn.to/4uLP63r",
-       "asin": "B08L8TPFYY"
-      },
-      {
-       "name": "Nord-Lock Wedge Locking Washers",
-       "url": "https://amzn.to/49xmZMx",
-       "asin": "B007VAW1W2"
-      },
-      {
-       "name": "Classic TK12314",
-       "group": "Hans tethers",
-       "url": "https://amzn.to/3Ovu8FR",
-       "asin": "B019XEC6UK"
-      },
-      {
-       "name": "M61 quick release FIA",
-       "group": "Hans tethers",
-       "url": "https://amzn.to/4thcjcz",
-       "asin": "B0G7QQSSJ3"
-      },
-      {
-       "name": "Cartek GT",
-       "group": "Kill switch",
-       "url": "https://rally.build/products/cartek-x-club-solid-state-battery-isolator-kit",
-       "vendor": "Rally.Build"
-      },
-      {
-       "name": "Fuse tap",
-       "group": "Kill switch",
-       "url": "https://amzn.to/3QykTFG",
-       "asin": "B0CHF4LDGH"
-      },
-      {
-       "name": "Relay",
-       "group": "Kill switch",
-       "url": "https://amzn.to/4mXjzYX",
-       "asin": "B072QXDZRD"
-      },
-      {
-       "name": "4-post kill switch",
-       "group": "Kill switch",
-       "url": "https://amzn.to/4tI6uEU",
-       "asin": "B012UW1GAI"
-      },
-      {
-       "name": "4 gauge wire spool to/fropm battery",
-       "group": "Kill switch",
-       "url": "https://amzn.to/42ByHla",
-       "asin": "B002DZF1MW"
-      },
-      {
-       "name": "10 gauge wire to ignition",
-       "group": "Kill switch",
-       "url": "https://amzn.to/4sUSpTN",
-       "asin": "B0FSCSLDG9"
-      },
-      {
-       "name": "Firewall pass through connectors",
-       "group": "Kill switch",
-       "url": "https://amzn.to/4vKpwfI",
-       "asin": "B079K5HB79"
-      },
-      {
-       "name": "Toggle switches",
-       "group": "Switch panel",
-       "url": "https://amzn.to/4cjByDY",
-       "asin": "B00ST2H3B0"
-      },
-      {
-       "name": "Momentary push button",
-       "group": "Switch panel",
-       "url": "https://amzn.to/41vwlUz",
-       "asin": "B079HR5Q4R"
-      },
-      {
-       "name": "All-in-one panel",
-       "group": "Switch panel",
-       "url": "https://amzn.to/3Q6qbb9",
-       "asin": "B07DVRCF2W"
-      },
-      {
-       "name": "All-in-one with kill switch",
-       "group": "Switch panel",
-       "url": "https://amzn.to/4szBnu9",
-       "asin": "B071S1VMC2"
-      }
-     ]
-    },
-    {
-     "name": "Steering wheel",
-     "items": [
-      {
-       "name": "Sparco 330mm 015R383PSN Suede Steering Wheel",
-       "url": "https://amzn.to/4bzRTE8",
-       "asin": "B000ECPZAY"
-      },
-      {
-       "name": "Steering wheel bolts M5 x 16mm Metric Hex Socket Countersunk Head",
-       "url": "https://amzn.to/3QMM5Ai",
-       "asin": "B018RSSJHC"
-      },
-      {
-       "name": "NRG Innovations SRK-180H Hub Adapter (for Audi)",
-       "url": "https://amzn.to/4cYbssd",
-       "asin": "B001CK18H6"
-      },
-      {
-       "name": "NRG Innovations SRK-250BK Quick Release Kit",
-       "url": "https://amzn.to/4bCc8RE",
-       "asin": "B001AM1PHY"
-      },
-      {
-       "name": "NRG Innovations NRG-SRK-100H Hub Adapter (for Subaru)",
-       "url": "https://amzn.to/3PSj5qn",
-       "asin": "B005DHV8Q0"
-      },
-      {
-       "note": "Steering wheel hook",
-       "links": [
-        {
-         "h": "https://www.frogracing.us/store/steering-wheel-hook",
-         "t": ""
-        }
-       ]
-      }
-     ]
-    },
-    {
-     "name": "Onboard video and telemetry",
-     "items": [
-      {
-       "note": "Check our Onboard Videos and Telemetry pages",
-       "links": [
-        {
-         "h": "https://www.frogracing.us/tech/on-board-cameras",
-         "t": "Onboard Videos"
-        },
-        {
-         "h": "https://www.frogracing.us/tech/telemetry",
-         "t": "Telemetry"
-        }
-       ]
-      },
-      {
-       "name": "The current go-to camera for onboard footage is the DJI line-up",
-       "url": "https://amzn.to/4vedM4A",
-       "vendor": "Amazon list",
-       "group": "Camera"
-      },
-      {
-       "name": "DJI Osmo Action 4 Adventure Combo",
-       "url": "https://amzn.to/4vatL3o",
-       "asin": "B009CN8VNY",
-       "group": "Camera"
-      },
-      {
-       "name": "DJI Osmo Action 5 Pro Essential Combo",
-       "url": "https://amzn.to/4uy7gEr",
-       "asin": "B0DS2DF5S5",
-       "group": "Camera"
-      },
-      {
-       "name": "DJI Osmo 360 Camera",
-       "url": "https://amzn.to/4vPEYqi",
-       "asin": "B0DTTZZ6Q3",
-       "group": "Camera"
-      },
-      {
-       "name": "ContourRoam cameras (discontinued but we still use them!)",
-       "url": "https://amzn.to/4vatL3o",
-       "asin": "B009CN8VNY",
-       "group": "Camera"
-      },
-      {
-       "name": "rollcage mount",
-       "group": "RAM mounts to secure tablet to rollcage",
-       "url": "https://amzn.to/4vOj7iK",
-       "asin": "B0030HO6SM"
-      },
-      {
-       "name": "tablet holder",
-       "group": "RAM mounts to secure tablet to rollcage",
-       "url": "https://amzn.to/4a4parg",
-       "asin": "B005MFKV20"
-      },
-      {
-       "name": "ball mount for tablet holder",
-       "group": "RAM mounts to secure tablet to rollcage",
-       "url": "https://amzn.to/4vMBNPX",
-       "asin": "B000WJA5ZY"
-      },
-      {
-       "name": "long arm",
-       "group": "RAM mounts to secure tablet to rollcage",
-       "url": "https://amzn.to/4vMBNPX",
-       "asin": "B000WJA5ZY"
-      },
-      {
-       "name": "Bluetooth OBD2 for telemetry ($5)",
-       "group": "Telemetry",
-       "url": "https://amzn.to/4uAlp3Y",
-       "asin": "B0D5Q5Z4KL"
-      }
-     ]
-    }
-   ]
-  },
-  {
    "name": "Trailer",
    "link": "https://amzn.to/4uvInd9",
    "subsections": [
@@ -2023,630 +2647,6 @@
        "group": "Ramps",
        "url": "https://amzn.to/4vDkMI0",
        "asin": "B086NW4977"
-      }
-     ]
-    }
-   ]
-  },
-  {
-   "name": "Fluids",
-   "subsections": [
-    {
-     "name": "",
-     "items": [
-      {
-       "name": "Amazon list",
-       "url": "https://amzn.to/4tMz5Jp",
-       "vendor": "Amazon list"
-      },
-      {
-       "name": "Brake fluid Motul RBF 600 (MTL100949 8068HL)",
-       "url": "https://amzn.to/4lGL5Jw",
-       "asin": "B07KY29S4L"
-      },
-      {
-       "name": "Brake Bleeder Kit One Person, 4L Brake Pressure Bleeder Hand Pump with 1L Brake Bleeder Bottle for Most European Automotive Master Cylinder Bleeders (also 43.5mm adapter for Jeep, Dodge... ( 49.5mm adapter for GM, Mazda ( 50.7mm adapter for Subaru, Nissan, Ford... (",
-       "url": "https://amzn.to/3NDRQiz",
-       "asin": "B0C2YP1Y5T"
-      },
-      {
-       "name": "Brake Fluid Tester, BELEY F60 Brake Fluid Moisture Tester for DOT3/DOT4/DOT5.1",
-       "url": "https://amzn.to/4tiA2Jf",
-       "asin": "B0DZNJPCVK"
-      },
-      {
-       "note": "Engine oil",
-       "links": []
-      },
-      {
-       "name": "Street use: LIQUI MOLY Leichtlauf High Tech SAE 5W-40 | 20 L | Fully synthetic engine oil | SKU: 20122",
-       "group": "RS4 engine oil",
-       "url": "https://amzn.to/4t1LlW3",
-       "asin": "B082Q587QT"
-      },
-      {
-       "name": "Race use: Liqui Moly Synthoil Race Tech GT1 10W-60 Motor Oil",
-       "group": "RS4 engine oil",
-       "url": "https://amzn.to/4bNS2E0",
-       "asin": "B00G4UI52U"
-      },
-      {
-       "name": "ECOGARD X5843 Premium Cartridge Engine Oil Filter",
-       "group": "RS4 engine oil",
-       "url": "https://amzn.to/4ekTJLZ",
-       "asin": "B00I8IKC5Y"
-      },
-      {
-       "name": "Shell Rotella T6 Full Synthetic 5W-40 Diesel Engine Oil, 1 Gallon",
-       "group": "Subaru engine oil",
-       "url": "https://amzn.to/4cXhKIy",
-       "asin": "B01LG3Q6LQ"
-      },
-      {
-       "name": "K&N HP 1008 oil filter",
-       "group": "Subaru engine oil",
-       "url": "https://amzn.to/41xmwWo",
-       "asin": "B000C4087Y"
-      },
-      {
-       "name": "DURATECH 8-Piece Oil Filter Swivel Wrench Set",
-       "group": "Subaru engine oil",
-       "url": "https://amzn.to/47i38jr",
-       "asin": "B0BNHWGBV9"
-      },
-      {
-       "name": "FOUR UNCLES 1.5L Engine Oil Funnel Kit, Universal No-Spill",
-       "group": "Subaru engine oil",
-       "url": "https://amzn.to/4dIbDbt",
-       "asin": "B0DCB7QQ9X"
-      },
-      {
-       "name": "Subaru transmission oil Motul Gear 300 75W90 100 Percent Synthetic Gear Oil 1 Liter (105777)",
-       "group": "Transmission oil",
-       "url": "https://amzn.to/4d4emvC",
-       "asin": "B07GNT8WCV"
-      },
-      {
-       "name": "04 STi rear differential LSD oil Motul Gear 300 LS 75W90-100% Synthetic Ester",
-       "group": "Transmission oil",
-       "url": "https://amzn.to/4dD8bi9",
-       "asin": "B00N30Q7N8"
-      },
-      {
-       "name": "Transfer case: 2qt of ATF+4 fluid (Castrol Transmax ATF+4",
-       "group": "Transmission oil",
-       "url": "https://amzn.to/4s6Fg9W",
-       "asin": "B008MISB2Q"
-      },
-      {
-       "name": "FOUR UNCLES 200cc Fluid Extractor & Fill Pump for Automotive Use",
-       "group": "Transmission oil",
-       "url": "https://amzn.to/3NRf9FZ",
-       "asin": "B0CRDBQY5T"
-      },
-      {
-       "name": "Racing Shock Oil 75/390, 3wt",
-       "group": "Suspension",
-       "url": "https://amzn.to/3QCMghy",
-       "asin": "B000MYAH20"
-      },
-      {
-       "name": "Red Line 80401 High Performance CV-2 Synthetic Grease for coilovers or bearings",
-       "group": "Suspension",
-       "url": "https://amzn.to/4dMWSUS",
-       "asin": "B000T9Q8K8"
-      },
-      {
-       "name": "Permatex 80078 Anti-Seize Lubricant with Brush Top Bottle",
-       "group": "Lubricants/Glue/Loctite",
-       "url": "https://amzn.to/4sKosWx",
-       "asin": "B000FW7VGE"
-      },
-      {
-       "name": "To remove stickers/vinyl glue... Transtar 9783 Acry Solvent - 14 oz. Aerosol",
-       "group": "Lubricants/Glue/Loctite",
-       "url": "https://amzn.to/4rMCshO",
-       "asin": "B000RI578K"
-      },
-      {
-       "name": "Kroil Aerokroil Penetrant - Rust Penetrating Lubricant",
-       "group": "Lubricants/Glue/Loctite",
-       "url": "https://amzn.to/415IcIV",
-       "asin": "B005XUIX24"
-      },
-      {
-       "name": "Torque paint Vibra-TITE Viz-Torque Tamper Detection Marker",
-       "group": "Lubricants/Glue/Loctite",
-       "url": "https://amzn.to/48GsdoH",
-       "asin": "B07Q84FX6K"
-      },
-      {
-       "name": "Better than red Loctite: Vibra-TITE - 13535 135 Permanent Strength Gel Anaerobic Threadlocker, 35 ml Pump, Red",
-       "group": "Lubricants/Glue/Loctite",
-       "url": "https://amzn.to/42gRqlS",
-       "asin": "B002QMYQRI"
-      },
-      {
-       "name": "Better than blue Loctite: Vibra-TITE - 12535 125 Removable Medium Strength Gel Anaerobic Threadlocker, 35 ml Pump, Blue",
-       "group": "Lubricants/Glue/Loctite",
-       "url": "https://amzn.to/4cgRl7S",
-       "asin": "B004UMONPC"
-      },
-      {
-       "name": "Gorilla 2 Part Clear Epoxy, 0.85 Ounce Syringe - 5 Minute Set",
-       "group": "Lubricants/Glue/Loctite",
-       "url": "https://amzn.to/4zr0FPO",
-       "asin": "B01M7VD07W"
-      },
-      {
-       "name": "J-B Weld SteelStik, 1 Hour Cure, Steel Reinforced Epoxy Putty",
-       "group": "Lubricants/Glue/Loctite",
-       "url": "https://amzn.to/42bFxh4",
-       "asin": "B0B5VJML6M"
-      },
-      {
-       "name": "J-B Weld 2120 Radiator Repair Kit",
-       "group": "Lubricants/Glue/Loctite",
-       "url": "https://amzn.to/4tMWrhR",
-       "asin": "B01IOPE66G"
-      },
-      {
-       "name": "J-B Weld 8276 KwikWeld Quick Setting Steel Reinforced Epoxy",
-       "group": "Lubricants/Glue/Loctite",
-       "url": "https://amzn.to/4mCoVsz",
-       "asin": "B0006O1ICY"
-      },
-      {
-       "name": "Permatex Right Stuff one minute gasket maker (oil resistant)",
-       "group": "Lubricants/Glue/Loctite",
-       "url": "https://amzn.to/4vas1al",
-       "asin": "B000HBM6PE"
-      },
-      {
-       "name": "Tuff Jug | 5 Gallon Multipurpose Container: Green: - Red",
-       "group": "Gas cans",
-       "url": "https://amzn.to/4v7lIEW",
-       "asin": "B0FC3RBX6C"
-      },
-      {
-       "name": "VP Racing Square Motorsports 5 gal Jug (Red)",
-       "group": "Gas cans",
-       "url": "https://amzn.to/41KCJY2",
-       "asin": "B00BSG0DN4"
-      },
-      {
-       "name": "VP Racing Fuels 3044 Deluxe Filler Hose",
-       "group": "Gas cans",
-       "url": "https://amzn.to/41JdKV5",
-       "asin": "B005G5R5LQ"
-      },
-      {
-       "name": "VP Racing Utility Container 5.5 Gallon Jug - 2 Pack With 2 Deluxe Hoses and a Get Bent Hose Bender",
-       "group": "Gas cans",
-       "url": "https://amzn.to/3NZtaBu",
-       "asin": "B0DSWMH8JY"
-      },
-      {
-       "name": "VP Racing Utility Container 5.5 Gallon Jug - 4 Pack With 4 Deluxe Hoses and a Get Bent Hose Bender",
-       "group": "Gas cans",
-       "url": "https://amzn.to/3POFu8f",
-       "asin": "B0DQ27422D"
-      },
-      {
-       "name": "Spill Heavy Duty Absorbent pads",
-       "group": "Gas cans",
-       "url": "https://amzn.to/4orNAkd",
-       "asin": "B07CYCB8JL"
-      },
-      {
-       "name": "Anti Fog & Water Repellent Spray",
-       "group": "Gas cans",
-       "url": "https://amzn.to/4j92lb7",
-       "asin": "B0H3KDJ4MG"
-      }
-     ]
-    }
-   ]
-  },
-  {
-   "name": "Emergency repairs essentials",
-   "link": "https://amzn.to/3SdRgKq",
-   "subsections": [
-    {
-     "name": "",
-     "items": [
-      {
-       "name": "J-B Weld SteelStik, 1 Hour Cure, Steel Reinforced Epoxy Putty",
-       "url": "https://amzn.to/42bFxh4",
-       "asin": "B0B5VJML6M"
-      },
-      {
-       "name": "RadiatorWeld J-B Weld 2120 Radiator Repair Kit",
-       "url": "https://amzn.to/4tMWrhR",
-       "asin": "B01IOPE66G"
-      },
-      {
-       "name": "J-B Weld 8276 KwikWeld Quick Setting Steel Reinforced Epoxy",
-       "url": "https://amzn.to/4mCoVsz",
-       "asin": "B0006O1ICY"
-      },
-      {
-       "name": "Permatex Right Stuff one minute gasket maker (oil resistant)",
-       "url": "https://amzn.to/4vas1al",
-       "asin": "B000HBM6PE"
-      },
-      {
-       "name": "Windshield repair kit",
-       "url": "https://amzn.to/3Q7loXo",
-       "asin": "B0H35PQMD9"
-      },
-      {
-       "name": "Flex seal tape",
-       "url": "https://amzn.to/4vUmEwf",
-       "asin": "B07B6CM4SL"
-      },
-      {
-       "name": "J-B Weld 8277 WaterWeld Epoxy Putty",
-       "url": "https://amzn.to/4vLseRh",
-       "asin": "B000BRQ0TW"
-      },
-      {
-       "name": "J-B Weld 50139 Plastic Bonder Body Panel Adhesive and Gap Filler",
-       "url": "https://amzn.to/4eKewsb",
-       "asin": "B01IBOK7FE"
-      },
-      {
-       "name": "Gorilla 2 Part Clear Epoxy 5 Minute",
-       "url": "https://amzn.to/4uCUoNu",
-       "asin": "B01M7VD07W"
-      },
-      {
-       "name": "Cable Zip Ties Heavy Duty 12 Inch, Ultra Strong Plastic Wire Ties with 120 Pounds Tensile Strength, 100 Pieces",
-       "url": "https://amzn.to/41l8AOR",
-       "asin": "B01N2M308O"
-      },
-      {
-       "name": "Zip tie gun",
-       "url": "https://amzn.to/41lMLyG",
-       "asin": "B0BC184T32"
-      }
-     ]
-    }
-   ]
-  },
-  {
-   "name": "Rollcage mounts",
-   "subsections": [
-    {
-     "name": "",
-     "items": [
-      {
-       "note": "Steering wheel hook with GoPro mount by Frog Racing",
-       "links": [
-        {
-         "h": "https://www.frogracing.us/store/steering-wheel-hook",
-         "t": "Steering wheel hook"
-        }
-       ]
-      },
-      {
-       "note": "Rollcage mounted Sun visor by Frog Racing",
-       "links": [
-        {
-         "h": "https://www.frogracing.us/store/sun-visor",
-         "t": "Sun visor"
-        }
-       ]
-      },
-      {
-       "name": "Phone Holder with tether, 1\" Ball Compatible with RAM mount",
-       "url": "https://amzn.to/4elMPos",
-       "asin": "B0D1XNF4ZY"
-      },
-      {
-       "name": "Phone Mount X Holder Grip Tether (set of 4)",
-       "url": "https://amzn.to/4oqqSJb",
-       "asin": "B01CTZ7VVY"
-      },
-      {
-       "name": "RAM MOUNTS Twist-Lock Suction Cup Base with B Size 1\" Ball,RAP-B-224-1U",
-       "url": "https://amzn.to/4uAAZNk",
-       "asin": "B008JGZMZK"
-      },
-      {
-       "name": "RAM Mounts rollcage mount for 1\"-2.1\" bars RAM-B-108BU",
-       "url": "https://amzn.to/4om4CQJ",
-       "asin": "B0030HO6SM"
-      },
-      {
-       "name": "Hydration backpack (CamelBak) with storage",
-       "url": "https://amzn.to/49YY7xs",
-       "asin": "B0BYCRTF54"
-      },
-      {
-       "name": "Waist bag (attach to rollcage to secure cellphone/wallet/...)",
-       "url": "https://amzn.to/4459Sii",
-       "asin": "B08FT1NQ2T"
-      }
-     ]
-    }
-   ]
-  },
-  {
-   "name": "Brakes",
-   "subsections": [
-    {
-     "name": "Brake pads",
-     "items": [
-      {
-       "name": "Street: HPS 5.0",
-       "group": "Hawk brake pads",
-       "url": "https://www.anrdoezrs.net/click-101708275-10399817",
-       "vendor": "Tire Rack"
-      },
-      {
-       "name": "RallyX / Hillclimb for cold bite: HP+",
-       "group": "Hawk brake pads",
-       "url": "https://www.anrdoezrs.net/click-101708275-10399817",
-       "vendor": "Tire Rack"
-      },
-      {
-       "name": "HPDE / Rally: DTC-60 front / HP+ rear",
-       "group": "Hawk brake pads",
-       "url": "https://www.anrdoezrs.net/click-101708275-10399817",
-       "vendor": "Tire Rack"
-      },
-      {
-       "name": "Track on slicks: DTC-70 front / DTC-60 rear",
-       "group": "Hawk brake pads",
-       "url": "https://www.anrdoezrs.net/click-101708275-10399817",
-       "vendor": "Tire Rack"
-      }
-     ]
-    },
-    {
-     "name": "Subaru brakes",
-     "link": "https://amzn.to/4tAQIfb",
-     "items": [
-      {
-       "name": "Front 4-pot brake calipers (direct fit on 04 STi) (buy left and right separately, they are cheaper than the combo!)",
-       "group": "Calipers",
-       "url": "https://amzn.to/3NlvYbU",
-       "asin": "B082MKSNSY"
-      },
-      {
-       "name": "Rear 2-pot brake calipers (direct fit on 04 STi) (buy left and right separately, they are cheaper than the combo!)",
-       "group": "Calipers",
-       "url": "https://amzn.to/4tl7DSX",
-       "asin": "B083JCZHPT"
-      },
-      {
-       "name": "Rear caliper/brake pad spring 26632FA010",
-       "group": "Calipers",
-       "url": "https://amzn.to/4vSNaH9",
-       "asin": "B00L2ORKS8"
-      },
-      {
-       "name": "Frozen rotors from Rally.Build (for 4/2 pots on 04 STi)",
-       "group": "Rotors",
-       "url": "https://rally.build/collections/frozen-rotors",
-       "vendor": "Rally.Build"
-      },
-      {
-       "name": "Front rotor for HP+ pads only: Centric Premium 120.47018",
-       "group": "Rotors",
-       "url": "https://amzn.to/4vdRKiE",
-       "asin": "B000BZXR6I"
-      },
-      {
-       "name": "KNS 4650 Front rotors (dual drilled 5x100/5x114)",
-       "group": "Rotors",
-       "url": "https://bleedingtarmac.com/products/kns-brakes-front-rotor-02-14-subaru-wrx",
-       "vendor": "Bleeding Tarmac"
-      },
-      {
-       "name": "KNS4656 Rear rotor (dual drilled 5x100/5x114)",
-       "group": "Rotors",
-       "url": "https://bleedingtarmac.com/products/kns-brakes-dual-drilled-2-pot-rear-gravel-rotor-04-07-subaru-wrx-sti",
-       "vendor": "Bleeding Tarmac"
-      },
-      {
-       "name": "Hawk brake pads: HAWK brake pads at Tire Rack",
-       "group": "Brake pads",
-       "url": "https://www.dpbolvw.net/click-101708275-10399817",
-       "vendor": "Tire Rack"
-      },
-      {
-       "name": "4 pot front HP+ HB178N.564",
-       "group": "Brake pads",
-       "url": "https://amzn.to/4sXFSiR",
-       "asin": "B000CO728M"
-      },
-      {
-       "name": "4 pot front DTC60 HB700G.562",
-       "group": "Brake pads",
-       "url": "https://amzn.to/3PSlLnV",
-       "asin": "B006A3WWI4"
-      },
-      {
-       "name": "2 pot rear HP+ HB179N.630",
-       "group": "Brake pads",
-       "url": "https://amzn.to/3NwLrWC",
-       "asin": "B000IES5Q4"
-      },
-      {
-       "name": "Brembo front HP+ HB453N.585",
-       "group": "Brake pads",
-       "url": "https://amzn.to/4t5UUTX",
-       "asin": "B000IET39C"
-      },
-      {
-       "name": "Brembo rear HP+ HB180N.56",
-       "group": "Brake pads",
-       "url": "https://amzn.to/4sXFZLj",
-       "asin": "B0014HP9IQ"
-      },
-      {
-       "name": "Stainless steel braided brake lines Goodridge 24215",
-       "group": "Brake lines",
-       "url": "https://amzn.to/4uLMzWX",
-       "asin": "B00HZGS00O"
-      },
-      {
-       "name": "2004 STi ABS sensor rear passenger",
-       "group": "Sensors",
-       "url": "https://amzn.to/4bmDvAk",
-       "asin": "B0946CHZ14"
-      }
-     ]
-    },
-    {
-     "name": "2007 Audi RS4 brakes",
-     "items": [
-      {
-       "name": "Hawk brake pads: HAWK brake pads at Tire Rack",
-       "url": "https://www.dpbolvw.net/click-101708275-10399817",
-       "vendor": "Tire Rack",
-       "group": "Brake pads"
-      },
-      {
-       "name": "front HP+ HB609N.572",
-       "url": "https://amzn.to/3NTMK1S",
-       "asin": "B002MBF9HY",
-       "group": "Brake pads"
-      },
-      {
-       "name": "front DTC60 HB609G.572",
-       "url": "https://amzn.to/47cFBQP",
-       "asin": "B003I51QRU",
-       "group": "Brake pads"
-      },
-      {
-       "name": "rear HPS5.0 HB553B.652",
-       "url": "https://amzn.to/4dAWmJd",
-       "asin": "B07WH7QTYN",
-       "group": "Brake pads"
-      },
-      {
-       "name": "Stainless steel braided brake lines",
-       "url": "https://jhmotorsports.com/brake-line-kit-stainless-jhm-front-and-rear-lines-for-b7-rs4.html",
-       "vendor": "JHM Motorsports",
-       "group": "Brake lines"
-      }
-     ]
-    }
-   ]
-  },
-  {
-   "name": "Tires / Rims",
-   "subsections": [
-    {
-     "name": "",
-     "items": [
-      {
-       "name": "We are a Tire Rack affiliate and earn a commission when you purchase from the TireRack using the link below (all discounts and coupons apply normally)",
-       "url": "https://www.tkqlhce.com/click-101708275-10377982",
-       "vendor": "Tire Rack"
-      }
-     ]
-    },
-    {
-     "name": "Tarmac 200TW",
-     "items": [
-      {
-       "name": "Bridgestone RE-71RS",
-       "url": "https://www.dpbolvw.net/click-101708275-10399846",
-       "vendor": "Tire Rack"
-      },
-      {
-       "name": "Yokohama A052",
-       "url": "https://www.dpbolvw.net/click-101708275-10399878",
-       "vendor": "Tire Rack"
-      },
-      {
-       "name": "Budget: Falken RT660",
-       "url": "https://www.dpbolvw.net/click-101708275-12976277",
-       "vendor": "Tire Rack"
-      }
-     ]
-    },
-    {
-     "name": "Winter tires",
-     "items": [
-      {
-       "name": "Nokian Hakkapeliitta (studded or unstudded)",
-       "url": "https://www.jdoqocy.com/click-101708275-15867316",
-       "vendor": "Tire Rack"
-      },
-      {
-       "name": "Blizzak WS90",
-       "url": "https://www.dpbolvw.net/click-101708275-10399846",
-       "vendor": "Tire Rack"
-      },
-      {
-       "name": "Michelin X-Ice",
-       "url": "https://www.tkqlhce.com/click-101708275-10399872",
-       "vendor": "Tire Rack"
-      },
-      {
-       "name": "General Arctic 12 (cars) / Grabber Arctic (Truck)",
-       "url": "https://www.jdoqocy.com/click-101708275-14092901",
-       "vendor": "Tire Rack"
-      },
-      {
-       "name": "Budget: Sumitomo Ice Edge",
-       "url": "https://amzn.to/4hNw0nZ",
-       "vendor": "Amazon"
-      }
-     ]
-    },
-    {
-     "name": "All season performance",
-     "items": [
-      {
-       "name": "Continental DWS06+",
-       "url": "https://www.tkqlhce.com/click-101708275-10399847",
-       "vendor": "Tire Rack"
-      }
-     ]
-    },
-    {
-     "name": "Gravel tires",
-     "items": [
-      {
-       "name": "MRF ZDM3 (soft, 175-195 sizes)",
-       "url": "https://tirestreets.com/collections/gravel-rally-tires/products/mrf-zdm",
-       "vendor": "tirestreets.com"
-      },
-      {
-       "name": "MRF ZG3 (205 sizes)",
-       "url": "https://tirestreets.com/collections/gravel-rally-tires/products/mrf-zg3",
-       "vendor": "tirestreets.com"
-      }
-     ]
-    },
-    {
-     "name": "Rims",
-     "items": [
-      {
-       "name": "RallyX / Recce: Sparco Terra",
-       "url": "https://www.kqzyfj.com/click-101708275-15867268",
-       "vendor": "Tire Rack"
-      },
-      {
-       "name": "Stage Rally: Evo Corse",
-       "url": "https://rally.build/collections/evocorse-rally-wheels",
-       "vendor": "Rally.Build"
-      },
-      {
-       "name": "RallyX / Rally: Method MR502",
-       "url": "https://www.kqzyfj.com/click-101708275-12232389",
-       "vendor": "Tire Rack"
-      },
-      {
-       "name": "Lightweight Tarmac: Enkei RPF1",
-       "url": "https://www.dpbolvw.net/click-101708275-10399940",
-       "vendor": "Tire Rack"
       }
      ]
     }
