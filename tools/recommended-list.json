@@ -66,49 +66,49 @@
       },
       {
        "name": "Hawk brake pads: HAWK brake pads at Tire Rack",
-       "group": "Rotors",
+       "group": "Brake pads",
        "url": "https://www.dpbolvw.net/click-101708275-10399817",
        "vendor": "Tire Rack"
       },
       {
        "name": "4 pot front HP+ HB178N.564",
-       "group": "Rotors",
+       "group": "Brake pads",
        "url": "https://amzn.to/4sXFSiR",
        "asin": "B000CO728M"
       },
       {
        "name": "4 pot front DTC60 HB700G.562",
-       "group": "Rotors",
+       "group": "Brake pads",
        "url": "https://amzn.to/3PSlLnV",
        "asin": "B006A3WWI4"
       },
       {
        "name": "2 pot rear HP+ HB179N.630",
-       "group": "Rotors",
+       "group": "Brake pads",
        "url": "https://amzn.to/3NwLrWC",
        "asin": "B000IES5Q4"
       },
       {
        "name": "Brembo front HP+ HB453N.585",
-       "group": "Rotors",
+       "group": "Brake pads",
        "url": "https://amzn.to/4t5UUTX",
        "asin": "B000IET39C"
       },
       {
        "name": "Brembo rear HP+ HB180N.56",
-       "group": "Rotors",
+       "group": "Brake pads",
        "url": "https://amzn.to/4sXFZLj",
        "asin": "B0014HP9IQ"
       },
       {
        "name": "Stainless steel braided brake lines Goodridge 24215",
-       "group": "Rotors",
+       "group": "Brake lines",
        "url": "https://amzn.to/4uLMzWX",
        "asin": "B00HZGS00O"
       },
       {
        "name": "2004 STi ABS sensor rear passenger",
-       "group": "Rotors",
+       "group": "Sensors",
        "url": "https://amzn.to/4bmDvAk",
        "asin": "B0946CHZ14"
       }
@@ -2382,6 +2382,171 @@
        "group": "RAM mounts to secure tablet to rollcage",
        "url": "https://amzn.to/4uAlp3Y",
        "asin": "B0D5Q5Z4KL"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "name": "Brakes",
+   "subsections": [
+    {
+     "name": "Brake pads",
+     "items": [
+      {
+       "name": "Street: HPS 5.0",
+       "group": "Hawk brake pads",
+       "url": "https://www.anrdoezrs.net/click-101708275-10399817",
+       "vendor": "Tire Rack"
+      },
+      {
+       "name": "RallyX / Hillclimb for cold bite: HP+",
+       "group": "Hawk brake pads",
+       "url": "https://www.anrdoezrs.net/click-101708275-10399817",
+       "vendor": "Tire Rack"
+      },
+      {
+       "name": "HPDE / Rally: DTC-60 front / HP+ rear",
+       "group": "Hawk brake pads",
+       "url": "https://www.anrdoezrs.net/click-101708275-10399817",
+       "vendor": "Tire Rack"
+      },
+      {
+       "name": "Track on slicks: DTC-70 front / DTC-60 rear",
+       "group": "Hawk brake pads",
+       "url": "https://www.anrdoezrs.net/click-101708275-10399817",
+       "vendor": "Tire Rack"
+      }
+     ]
+    },
+    {
+     "name": "Subaru brakes",
+     "link": "https://amzn.to/4tAQIfb",
+     "items": [
+      {
+       "name": "Front 4-pot brake calipers (direct fit on 04 STi) (buy left and right separately, they are cheaper than the combo!)",
+       "group": "Calipers",
+       "url": "https://amzn.to/3NlvYbU",
+       "asin": "B082MKSNSY"
+      },
+      {
+       "name": "Rear 2-pot brake calipers (direct fit on 04 STi) (buy left and right separately, they are cheaper than the combo!)",
+       "group": "Calipers",
+       "url": "https://amzn.to/4tl7DSX",
+       "asin": "B083JCZHPT"
+      },
+      {
+       "name": "Rear caliper/brake pad spring 26632FA010",
+       "group": "Calipers",
+       "url": "https://amzn.to/4vSNaH9",
+       "asin": "B00L2ORKS8"
+      },
+      {
+       "name": "Frozen rotors from Rally.Build (for 4/2 pots on 04 STi)",
+       "group": "Rotors",
+       "url": "https://rally.build/collections/frozen-rotors",
+       "vendor": "Rally.Build"
+      },
+      {
+       "name": "Front rotor for HP+ pads only: Centric Premium 120.47018",
+       "group": "Rotors",
+       "url": "https://amzn.to/4vdRKiE",
+       "asin": "B000BZXR6I"
+      },
+      {
+       "name": "KNS 4650 Front rotors (dual drilled 5x100/5x114)",
+       "group": "Rotors",
+       "url": "https://bleedingtarmac.com/products/kns-brakes-front-rotor-02-14-subaru-wrx",
+       "vendor": "Bleeding Tarmac"
+      },
+      {
+       "name": "KNS4656 Rear rotor (dual drilled 5x100/5x114)",
+       "group": "Rotors",
+       "url": "https://bleedingtarmac.com/products/kns-brakes-dual-drilled-2-pot-rear-gravel-rotor-04-07-subaru-wrx-sti",
+       "vendor": "Bleeding Tarmac"
+      },
+      {
+       "name": "Hawk brake pads: HAWK brake pads at Tire Rack",
+       "group": "Brake pads",
+       "url": "https://www.dpbolvw.net/click-101708275-10399817",
+       "vendor": "Tire Rack"
+      },
+      {
+       "name": "4 pot front HP+ HB178N.564",
+       "group": "Brake pads",
+       "url": "https://amzn.to/4sXFSiR",
+       "asin": "B000CO728M"
+      },
+      {
+       "name": "4 pot front DTC60 HB700G.562",
+       "group": "Brake pads",
+       "url": "https://amzn.to/3PSlLnV",
+       "asin": "B006A3WWI4"
+      },
+      {
+       "name": "2 pot rear HP+ HB179N.630",
+       "group": "Brake pads",
+       "url": "https://amzn.to/3NwLrWC",
+       "asin": "B000IES5Q4"
+      },
+      {
+       "name": "Brembo front HP+ HB453N.585",
+       "group": "Brake pads",
+       "url": "https://amzn.to/4t5UUTX",
+       "asin": "B000IET39C"
+      },
+      {
+       "name": "Brembo rear HP+ HB180N.56",
+       "group": "Brake pads",
+       "url": "https://amzn.to/4sXFZLj",
+       "asin": "B0014HP9IQ"
+      },
+      {
+       "name": "Stainless steel braided brake lines Goodridge 24215",
+       "group": "Brake lines",
+       "url": "https://amzn.to/4uLMzWX",
+       "asin": "B00HZGS00O"
+      },
+      {
+       "name": "2004 STi ABS sensor rear passenger",
+       "group": "Sensors",
+       "url": "https://amzn.to/4bmDvAk",
+       "asin": "B0946CHZ14"
+      }
+     ]
+    },
+    {
+     "name": "2007 Audi RS4 brakes",
+     "items": [
+      {
+       "name": "Hawk brake pads: HAWK brake pads at Tire Rack",
+       "url": "https://www.dpbolvw.net/click-101708275-10399817",
+       "vendor": "Tire Rack",
+       "group": "Brake pads"
+      },
+      {
+       "name": "front HP+ HB609N.572",
+       "url": "https://amzn.to/3NTMK1S",
+       "asin": "B002MBF9HY",
+       "group": "Brake pads"
+      },
+      {
+       "name": "front DTC60 HB609G.572",
+       "url": "https://amzn.to/47cFBQP",
+       "asin": "B003I51QRU",
+       "group": "Brake pads"
+      },
+      {
+       "name": "rear HPS5.0 HB553B.652",
+       "url": "https://amzn.to/4dAWmJd",
+       "asin": "B07WH7QTYN",
+       "group": "Brake pads"
+      },
+      {
+       "name": "Stainless steel braided brake lines",
+       "url": "https://jhmotorsports.com/brake-line-kit-stainless-jhm-front-and-rear-lines-for-b7-rs4.html",
+       "vendor": "JHM Motorsports",
+       "group": "Brake lines"
       }
      ]
     }
