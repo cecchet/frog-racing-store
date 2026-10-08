@@ -1,31 +1,29 @@
 #!/usr/bin/env node
-// Rebuilds ../recommended-data.js, the data behind the "Recommended Products"
-// section of the store.
+// Rebuilds ../recommended-data.js, the data behind recommended.html.
 //
-//   1. Fetches the live list from the old Google Sites page and parses it into
-//      categories -> sub-categories -> items.
-//   2. Resolves each amzn.to affiliate short link to its Amazon ASIN.
-//   3. Merges the Amazon price / list price / coupon / thumbnail for each ASIN
-//      from cache/products.json.
+//   1. Reads the list from recommended-list.json (categories -> sub-categories -> items).
+//      That file is the source of truth: it was copied from the old Google Sites page,
+//      which now just points to this store, so add and edit recommendations there.
+//   2. Resolves any new amzn.to affiliate short link to its Amazon ASIN, and labels
+//      other links with their vendor. Resolved values are written back to the list.
+//   3. Merges the Amazon price / list price / coupon / thumbnail for each ASIN from
+//      cache/products.json.
 //
-// Amazon answers scripted requests (node, curl) with a captcha, so step 3's input
-// is collected from a real browser session instead - see amazon-scrape.js for the
-// snippet that produces cache/products.json. Items without an entry there simply
-// show "See price on Amazon".
+// Amazon answers scripted requests (node, curl) with a captcha, so step 3's input is
+// collected from a real browser session instead - see amazon-scrape.js - and the live
+// prices come from google-apps-script-prices.gs. Items without an entry simply show
+// "See price on Amazon".
 //
-// Usage (from this folder, after `npm install`):
+// Usage (from this folder):
 //   node build-recommended.js           rebuild ../recommended-data.js
 //   node build-recommended.js --asins   also print the ASIN list for amazon-scrape.js
 
 const fs = require("fs");
 const path = require("path");
-const cheerio = require("cheerio");
 
-const SITE_ORIGIN = "https://www.frogracing.us";
-const PAGE_URL = SITE_ORIGIN + "/store/recommended-products";
+const LIST_FILE = path.join(__dirname, "recommended-list.json");
 const OUT_FILE = path.join(__dirname, "..", "recommended-data.js");
 const CACHE_DIR = path.join(__dirname, "cache");
-const ASIN_CACHE = path.join(CACHE_DIR, "asin.json");
 const PRODUCT_CACHE = path.join(CACHE_DIR, "products.json");
 
 const UA =
@@ -40,20 +38,6 @@ const readJson = (file, fallback) => {
   }
 };
 
-// ---------------------------------------------------------------- stage 1: parse
-
-const clean = (s) => s.replace(/\s+/g, " ").trim();
-
-// Google Sites wraps outbound links in google.com/url?q=...
-function unwrap(href) {
-  try {
-    const u = new URL(href);
-    if (u.hostname.endsWith("google.com") && u.pathname === "/url") return u.searchParams.get("q") || href;
-  } catch (e) {}
-  return href;
-}
-
-const isFrogSite = (href) => /(^|\.)frogracing\.us/.test(new URL(href, "https://x.invalid").hostname);
 const isAmazon = (href) => /^https:\/\/(amzn\.to\/|www\.amazon\.com\/)/.test(href);
 
 function vendorOf(href) {
@@ -69,125 +53,12 @@ function vendorOf(href) {
   return known[host] || host;
 }
 
-// The page text reads "Some product: https://amzn.to/xyz (comment)"; drop the URL
-// and the punctuation it leaves behind.
-function labelFrom(text) {
-  return clean(text.replace(/https?:\/\/\S+/g, ""))
-    .replace(/:\s+(?=[(\[])/g, " ")
-    .replace(/[\s:\-–.]+$/, "");
-}
-
-// Turn the page's flat run of headings/paragraphs into an ordered entry list.
-function readEntries(html) {
-  const $ = cheerio.load(html);
-  const entries = [];
-  $("h2, h3, p").each((_, el) => {
-    const $el = $(el);
-    if ($el.closest("header, nav, footer").length) return;
-    const text = clean($el.text());
-    if (!text) return;
-    const hrefs = [];
-    const anchors = []; // links to other pages of frogracing.us, with the words they sit on
-    $el.find("a[href]").each((__, a) => {
-      const raw = $(a).attr("href");
-      if (/^(#|mailto:|tel:)/.test(raw)) return; // in-page anchors and mail links
-      // Internal links in the page source are relative (/tech/tools), so resolve them.
-      const h = unwrap(new URL(raw, SITE_ORIGIN + "/").toString());
-      if (!/^https?:/.test(h)) return;
-      if (!hrefs.includes(h)) hrefs.push(h);
-      if (isFrogSite(h) && !anchors.some((x) => x.h === h)) {
-        const words = clean($(a).text());
-        anchors.push({ h, t: /^https?:/.test(words) ? "" : words });
-      }
-    });
-    // A few lines hold a bare amzn.to URL that was never turned into a hyperlink.
-    for (const m of text.matchAll(/https:\/\/amzn\.to\/\w+/g)) if (!hrefs.includes(m[0])) hrefs.push(m[0]);
-    entries.push({ tag: el.tagName.toLowerCase(), label: labelFrom(text), hrefs, anchors });
-  });
-  return entries;
-}
-
-// Group the entries into sections / sub-sections / groups.
-function parseSections(entries) {
-  const sections = [];
-  let sec = null;
-  let sub = null;
-  let grp = null;
-
-  for (let i = 0; i < entries.length; i++) {
-    const e = entries[i];
-    const external = e.hrefs.filter((h) => !isFrogSite(h));
-    const internal = e.hrefs.filter(isFrogSite);
-
-    if (e.tag === "h2") {
-      sec = { name: e.label, link: external.find(isAmazon) || null, subsections: [] };
-      sections.push(sec);
-      sub = null;
-      grp = null;
-      continue;
-    }
-    if (!sec) continue; // intro text before the first category
-    const ensureSub = () => {
-      if (!sub) {
-        sub = { name: "", link: null, items: [] };
-        sec.subsections.push(sub);
-      }
-      return sub;
-    };
-
-    if (e.tag === "h3") {
-      sub = { name: e.label, link: external.find(isAmazon) || null, items: [] };
-      sec.subsections.push(sub);
-      grp = null;
-      continue;
-    }
-
-    if (external.length) {
-      ensureSub().items.push({ name: e.label, group: grp, links: external });
-      continue;
-    }
-
-    // Plain text: either a heading for the items that follow, or a free-standing note.
-    const next = entries[i + 1];
-    const nextIsItem = next && next.tag === "p" && next.hrefs.some((h) => !isFrogSite(h));
-    const looksLikeHeading = nextIsItem && !internal.length && e.label.length <= 60 && !/[.!]$/.test(e.label);
-    if (looksLikeHeading) {
-      grp = e.label;
-    } else {
-      // `links`: the linked words (t) and where they go (h); t is blank when the
-      // page showed the bare URL, in which case the whole note is the link.
-      ensureSub().items.push({ note: e.label, links: e.anchors, group: grp });
-    }
-  }
-
-  // Merge runs of consecutive short notes ("Part numbers:", "Bolt: ...", "Nut: ...") into one.
-  for (const s of sections) {
-    for (const ss of s.subsections) {
-      const merged = [];
-      for (const it of ss.items) {
-        const prev = merged[merged.length - 1];
-        if (it.note && prev && prev.note && !it.links.length && !prev.links.length && it.group === prev.group) {
-          prev.note += (/:$/.test(prev.note) ? " " : " · ") + it.note;
-        } else merged.push(it);
-      }
-      ss.items = merged;
-    }
-    s.subsections = s.subsections.filter((ss) => ss.items.length || ss.link);
-  }
-  return sections.filter((s) => s.subsections.length);
-}
-
-// ------------------------------------------------------- stage 2: short link -> ASIN
-
-async function resolveAsin(link, cache) {
-  if (cache[link]) return cache[link];
+// amzn.to short link -> ASIN (follows the redirect chain by hand; no Amazon page is loaded).
+async function resolveAsin(link) {
   let url = link;
   for (let hop = 0; hop < 4; hop++) {
     const m = url.match(/\/(?:dp|gp\/product)\/([A-Z0-9]{10})/);
-    if (m) {
-      cache[link] = m[1];
-      return m[1];
-    }
+    if (m) return m[1];
     const res = await fetch(url, { redirect: "manual", headers: { "User-Agent": UA } });
     const loc = res.headers.get("location");
     if (!loc) break;
@@ -196,43 +67,37 @@ async function resolveAsin(link, cache) {
   return null;
 }
 
-// ------------------------------------------------------------------------- main
-
 async function main() {
-  console.log("Fetching", PAGE_URL);
-  const html = await (await fetch(PAGE_URL, { headers: { "User-Agent": UA } })).text();
-  const sections = parseSections(readEntries(html));
+  const list = readJson(LIST_FILE, null);
+  // An unreadable or truncated list must never replace the data file.
+  if (!list || !Array.isArray(list.sections) || list.sections.length < 10) {
+    throw new Error(`${path.basename(LIST_FILE)} is missing or has too few categories. Nothing was written.`);
+  }
+  const sections = list.sections;
 
-  const asinCache = readJson(ASIN_CACHE, {});
+  // Fill in what a newly added item needs (asin for Amazon links, vendor for the rest).
   let resolved = 0;
   for (const s of sections) {
     for (const ss of s.subsections) {
       for (const it of ss.items) {
-        if (it.note !== undefined || !it.links) continue; // notes keep their `links`
-        const amazon = it.links.find(isAmazon);
-        if (amazon) {
-          it.url = amazon;
-          const known = !!asinCache[amazon];
-          it.asin = (await resolveAsin(amazon, asinCache)) || undefined;
-          // A storefront / idea-list link rather than a single product.
-          if (!it.asin) it.vendor = "Amazon list";
-          if (!known) {
-            await sleep(150);
-            if (++resolved % 50 === 0) console.log(`  resolved ${resolved} new links`);
-          }
+        if (it.note !== undefined || it.asin || it.vendor) continue;
+        if (!it.url) throw new Error(`Item "${it.name}" in "${s.name}" has no url.`);
+        if (isAmazon(it.url)) {
+          it.asin = (await resolveAsin(it.url)) || undefined;
+          if (!it.asin) it.vendor = "Amazon list"; // a storefront / idea list, not one product
+          resolved++;
+          await sleep(150);
         } else {
-          it.url = it.links[0];
-          it.vendor = vendorOf(it.links[0]);
+          it.vendor = vendorOf(it.url);
         }
-        delete it.links;
       }
     }
   }
-  fs.mkdirSync(CACHE_DIR, { recursive: true });
-  fs.writeFileSync(ASIN_CACHE, JSON.stringify(asinCache));
+  if (resolved) console.log(`Resolved ${resolved} new Amazon link(s).`);
+  fs.writeFileSync(LIST_FILE, JSON.stringify(list, null, 1) + "\n"); // keep resolved asin/vendor
 
   const asins = [...new Set(sections.flatMap((s) => s.subsections.flatMap((ss) => ss.items.map((i) => i.asin).filter(Boolean))))];
-  const total = sections.reduce((a, s) => a + s.subsections.reduce((b, ss) => b + ss.items.filter((i) => !i.note).length, 0), 0);
+  const total = sections.reduce((a, s) => a + s.subsections.reduce((b, ss) => b + ss.items.filter((i) => i.note === undefined).length, 0), 0);
   console.log(`${sections.length} categories, ${total} items, ${asins.length} unique Amazon products`);
   if (process.argv.includes("--asins")) console.log(asins.join(","));
 
@@ -241,37 +106,39 @@ async function main() {
   const products = cache.products || {};
   let priced = 0;
   let missing = 0;
-  for (const s of sections) {
-    for (const ss of s.subsections) {
-      for (const it of ss.items) {
-        if (!it.asin) continue;
-        const p = products[it.asin];
+  const out = sections.map((s) => ({
+    ...s,
+    subsections: s.subsections.map((ss) => ({
+      ...ss,
+      items: ss.items.map((it) => {
+        const item = { ...it };
+        if (!item.asin) return item;
+        const p = products[item.asin];
         if (!p || p.e) {
           missing++;
-          continue;
+          return item;
         }
         if (p.p != null) {
-          it.price = p.p;
+          item.price = p.p;
           priced++;
         }
-        if (p.l) it.was = p.l;
-        if (p.d) it.pct = p.d;
-        if (p.c) it.coupon = p.c;
-        if (p.b) it.deal = p.b;
-        if (p.i) it.img = p.i;
-        if (p.u) it.unavailable = true;
-        if (!it.name && p.t) it.name = p.t;
-      }
-    }
-  }
+        if (p.l) item.was = p.l;
+        if (p.d) item.pct = p.d;
+        if (p.c) item.coupon = p.c;
+        if (p.b) item.deal = p.b;
+        if (p.i) item.img = p.i;
+        if (p.u) item.unavailable = true;
+        return item;
+      }),
+    })),
+  }));
   console.log(`${priced} items priced, ${missing} items with no Amazon data`);
 
-  const body = JSON.stringify(sections, (k, v) => (v === null || v === undefined ? undefined : v));
+  const body = JSON.stringify(out, (k, v) => (v === null || v === undefined ? undefined : v));
   const checked = cache.checkedAt || new Date().toISOString();
   fs.writeFileSync(
     OUT_FILE,
-    "// GENERATED by tools/build-recommended.js - do not edit by hand.\n" +
-      `// Source list: ${PAGE_URL}\n` +
+    "// GENERATED by tools/build-recommended.js from tools/recommended-list.json - do not edit by hand.\n" +
       `const RECOMMENDED_CHECKED = ${JSON.stringify(checked)};\n` +
       `const RECOMMENDED = ${body};\n`
   );
