@@ -237,9 +237,15 @@ function noteFailure_(message) {
   props.setProperty("fail_count", String(count));
   var due = count === ALERT_AFTER_FAILURES || (count > ALERT_AFTER_FAILURES && (count - ALERT_AFTER_FAILURES) % ALERT_REPEAT_EVERY === 0);
   if (!due) return;
-  var hint = /AssociateNotEligible/.test(message)
-    ? "\n\nAmazon says the account is not eligible for the Creators API right now. It requires an approved Associates account with at least 10 qualifying sales in the past 30 days."
-    : "";
+  var hint = "";
+  if (/AssociateNotEligible/.test(message)) {
+    hint = "\n\nAmazon says the account is not eligible for the Creators API right now. It requires an approved Associates account with at least 10 qualifying sales in the past 30 days.";
+  } else if (/ThrottleException|HTTP 429/.test(message)) {
+    hint =
+      "\n\nAmazon is refusing requests as 'rate limit exceeded'. This script makes about 33 requests an hour, well under the " +
+      "1 per second / 8,640 per day that new credentials get, so this usually means Amazon has not (yet) allocated API usage to the " +
+      "account, or access was revoked after 30 days without qualified sales. Check the Creators API page in Associates Central.";
+  }
   sendMail_(
     "Frog Racing store: Amazon price refresh is failing",
     "The hourly Amazon price refresh has failed " + count + " times in a row.\n\n" +
