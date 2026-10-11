@@ -6,7 +6,8 @@
 // Web app URL of google-apps-script-prices.gs (see the setup steps at the top of that
 // file). While this is blank, or if the request fails, the page shows the dated
 // snapshot in recommended-data.js instead.
-const RECOMMENDED_LIVE_URL = "";
+const RECOMMENDED_LIVE_URL =
+  "https://script.google.com/macros/s/AKfycbwYz0x6vSI5pAmtUmC9VhSxiGZxSavFVQfeOD0DF9lIxnWrWDrt8FN5mgUcqS7eFnBY/exec";
 
 // Set once live prices have been applied: the ISO time Amazon was last asked.
 let recLiveAt = null;
@@ -94,7 +95,9 @@ function recApplyLive(data) {
         item.pct = live.d || undefined;
         item.deal = live.b || undefined;
         item.coupon = undefined; // coupons are not part of the API data
-        item.unavailable = live.u ? true : undefined;
+        // "Unavailable" with no image means Amazon left the product out of its answer
+        // altogether: we know nothing, so say so rather than claim it is unavailable.
+        item.unavailable = live.u && live.i ? true : undefined;
         if (live.i) item.img = live.i;
         applied++;
       }

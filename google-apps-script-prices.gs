@@ -310,8 +310,11 @@ function refreshPricesNow_() {
       found[it.asin] = true;
       items[it.asin] = parseItem_(it);
     });
+    // Products Amazon left out of the answer (see the logged errors): we know nothing about
+    // them, which is not the same as "unavailable" - the page shows "See price on Amazon".
+    if (data.errors && data.errors.length) console.log("Amazon reported: " + JSON.stringify(data.errors).slice(0, 600));
     batch.forEach(function (a) {
-      if (!found[a]) items[a] = previous[a] || { p: null, l: null, d: 0, b: "", i: null, u: 1 };
+      if (!found[a]) items[a] = previous[a] || { p: null, l: null, d: 0, b: "", i: null, u: 0 };
     });
     Utilities.sleep(PAUSE_MS);
   }
