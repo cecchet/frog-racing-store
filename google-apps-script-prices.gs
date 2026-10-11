@@ -173,7 +173,12 @@ function parseItem_(item) {
   var deal = listing.dealDetails;
   var badge = deal && (deal.badge || deal.accessType || "");
   if (badge) out.b = /prime big deal/i.test(badge) ? "pbd" : "ltd";
-  if (out.p == null) out.u = 1;
+  if (out.p == null) {
+    // No price: either truly out of stock, or Amazon is hiding it (manufacturer's
+    // minimum-advertised-price rule) - the page says "See price on Amazon" for the latter.
+    var stock = (listing.availability && listing.availability.type) || "";
+    out.u = /OUT_OF_STOCK|UNAVAILABLE/.test(stock) ? 1 : 0;
+  }
   return out;
 }
 
