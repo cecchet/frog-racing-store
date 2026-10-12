@@ -15,8 +15,11 @@
 // "See price on Amazon".
 //
 // Usage (from this folder):
-//   node build-recommended.js           rebuild ../recommended-data.js
-//   node build-recommended.js --asins   also print the ASIN list for amazon-scrape.js
+//   node build-recommended.js              rebuild ../recommended-data.js from the list + cache
+//   node build-recommended.js --from-live  first replace the cache with the live price feed's
+//                                          current data (the fallback the page shows if the feed
+//                                          is unreachable), then rebuild; commit and push after
+//   node build-recommended.js --asins      also print the ASIN list for amazon-scrape.js
 
 const fs = require("fs");
 const path = require("path");
@@ -67,7 +70,33 @@ async function resolveAsin(link) {
   return null;
 }
 
+// Replace cache/products.json with what the live price feed (google-apps-script-prices.gs)
+// is serving right now, so the committed fallback holds recent Creators API data.
+async function refreshCacheFromLive() {
+  const source = fs.readFileSync(path.join(__dirname, "..", "recommended.js"), "utf8");
+  const url = (source.match(/const RECOMMENDED_LIVE_URL =\s*"([^"]+)"/) || [])[1];
+  if (!url) throw new Error("RECOMMENDED_LIVE_URL is not set in recommended.js.");
+  const res = await fetch(url);
+  const text = await res.text();
+  let feed;
+  try {
+    feed = JSON.parse(text);
+  } catch (e) {
+    throw new Error(`The live feed did not return JSON (HTTP ${res.status}); is the Web app open to "Anyone"? Nothing was changed.`);
+  }
+  const count = feed && feed.items ? Object.keys(feed.items).length : 0;
+  const priced = feed && feed.items ? Object.values(feed.items).filter((p) => p.p != null).length : 0;
+  if (!feed.updatedAt || count < 200 || priced < 100) {
+    throw new Error(`The live feed looks incomplete (${count} products, ${priced} priced, updatedAt ${feed.updatedAt}). Nothing was changed.`);
+  }
+  fs.mkdirSync(CACHE_DIR, { recursive: true });
+  if (fs.existsSync(PRODUCT_CACHE)) fs.copyFileSync(PRODUCT_CACHE, PRODUCT_CACHE + ".bak"); // previous data, just in case
+  fs.writeFileSync(PRODUCT_CACHE, JSON.stringify({ checkedAt: feed.updatedAt, products: feed.items }));
+  console.log(`Fallback data taken from the live feed: ${count} products (${priced} priced), as of ${feed.updatedAt}.`);
+}
+
 async function main() {
+  if (process.argv.includes("--from-live")) await refreshCacheFromLive();
   const list = readJson(LIST_FILE, null);
   // An unreadable or truncated list must never replace the data file.
   if (!list || !Array.isArray(list.sections) || list.sections.length < 10) {
@@ -127,7 +156,8 @@ async function main() {
         if (p.c) item.coupon = p.c;
         if (p.b) item.deal = p.b;
         if (p.i) item.img = p.i;
-        if (p.u) item.unavailable = true;
+        // Same rule as the page: "unavailable" with no image means Amazon left the product out.
+        if (p.u && p.i) item.unavailable = true;
         return item;
       }),
     })),
