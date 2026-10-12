@@ -1,0 +1,50 @@
+# Keeps the Recommended page's offline fallback fresh.
+#
+# Every Monday this copies the live price feed (the Apps Script behind
+# RECOMMENDED_LIVE_URL in recommended.js) into recommended-data.js and commits it.
+# The page itself reads the feed live; this file is only what visitors see if the feed
+# can't be reached, and the page hides its prices once it is more than 7 days old.
+#
+# If the feed is unreachable, incomplete or more than 24 hours stale (the Apps Script's
+# hourly refresh is failing), the build refuses to write and this job fails, which GitHub
+# reports by email. Run it by hand from the Actions tab ("Run workflow") at any time.
+
+name: Refresh Recommended fallback data
+
+on:
+  schedule:
+    - cron: "17 9 * * 1" # Mondays, 09:17 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: refresh-recommended-fallback
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Rebuild the fallback from the live price feed
+        working-directory: tools
+        run: node build-recommended.js --from-live
+
+      - name: Commit if the data changed
+        run: |
+          if git diff --quiet -- recommended-data.js; then
+            echo "recommended-data.js is unchanged."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add recommended-data.js
+          git commit -m "Weekly refresh of the Recommended fallback prices"
+          git push

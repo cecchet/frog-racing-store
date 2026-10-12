@@ -18,7 +18,9 @@
 //   node build-recommended.js              rebuild ../recommended-data.js from the list + cache
 //   node build-recommended.js --from-live  first replace the cache with the live price feed's
 //                                          current data (the fallback the page shows if the feed
-//                                          is unreachable), then rebuild; commit and push after
+//                                          is unreachable), then rebuild; refuses a feed that is
+//                                          incomplete or older than 24h (--max-age-hours N to change).
+//                                          A weekly GitHub Action runs this and commits the result.
 //   node build-recommended.js --asins      also print the ASIN list for amazon-scrape.js
 
 const fs = require("fs");
@@ -88,6 +90,16 @@ async function refreshCacheFromLive() {
   const priced = feed && feed.items ? Object.values(feed.items).filter((p) => p.p != null).length : 0;
   if (!feed.updatedAt || count < 200 || priced < 100) {
     throw new Error(`The live feed looks incomplete (${count} products, ${priced} priced, updatedAt ${feed.updatedAt}). Nothing was changed.`);
+  }
+  // If the hourly refresh has been failing, the feed is serving old prices: don't copy those.
+  const argAt = process.argv.indexOf("--max-age-hours");
+  const maxAgeHours = argAt > -1 ? parseFloat(process.argv[argAt + 1]) : 24;
+  const ageHours = (Date.now() - new Date(feed.updatedAt).getTime()) / 3600e3;
+  if (!(ageHours <= maxAgeHours)) {
+    throw new Error(
+      `The live feed's data is ${ageHours.toFixed(1)} hours old (updated ${feed.updatedAt}); the hourly refresh in the ` +
+        `Apps Script is probably failing. Nothing was changed.`
+    );
   }
   fs.mkdirSync(CACHE_DIR, { recursive: true });
   if (fs.existsSync(PRODUCT_CACHE)) fs.copyFileSync(PRODUCT_CACHE, PRODUCT_CACHE + ".bak"); // previous data, just in case
