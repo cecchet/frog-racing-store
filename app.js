@@ -184,6 +184,114 @@ function getImages(item) {
   return item.images && item.images.length > 0 ? item.images : [item.image];
 }
 
+// ---------------------------------------------------------------- photo zoom
+// Clicking a product photo opens it full screen. The viewer steps through the same
+// photos as the card's carousel (arrows, arrow keys, swipe) and on close the card's
+// carousel is left on the photo that was last viewed.
+const lightbox = { el: null, img: null, count: null, images: [], index: 0, alt: "", opener: null, onClose: null };
+
+function buildLightbox() {
+  const el = document.createElement("div");
+  el.className = "lightbox";
+  el.hidden = true;
+  el.setAttribute("role", "dialog");
+  el.setAttribute("aria-modal", "true");
+  el.setAttribute("aria-label", "Photo viewer");
+  el.innerHTML = `
+    <button class="lightbox-close" type="button" aria-label="Close photo viewer">&times;</button>
+    <button class="lightbox-prev" type="button" aria-label="Previous photo">&#10094;</button>
+    <img class="lightbox-img" alt="">
+    <button class="lightbox-next" type="button" aria-label="Next photo">&#10095;</button>
+    <div class="lightbox-count" aria-live="polite"></div>
+  `;
+  document.body.appendChild(el);
+
+  lightbox.el = el;
+  lightbox.img = el.querySelector(".lightbox-img");
+  lightbox.count = el.querySelector(".lightbox-count");
+
+  el.querySelector(".lightbox-close").addEventListener("click", closeLightbox);
+  el.querySelector(".lightbox-prev").addEventListener("click", () => stepLightbox(-1));
+  el.querySelector(".lightbox-next").addEventListener("click", () => stepLightbox(1));
+  // Clicking the photo or the dark area around it closes the viewer.
+  el.addEventListener("click", (e) => {
+    if (e.target === el || e.target === lightbox.img) closeLightbox();
+  });
+
+  let touchStartX = null;
+  el.addEventListener("touchstart", (e) => {
+    touchStartX = e.touches.length === 1 ? e.touches[0].clientX : null;
+  }, { passive: true });
+  el.addEventListener("touchend", (e) => {
+    if (touchStartX === null) return;
+    const dx = e.changedTouches[0].clientX - touchStartX;
+    touchStartX = null;
+    if (Math.abs(dx) > 50) stepLightbox(dx < 0 ? 1 : -1);
+  }, { passive: true });
+}
+
+function showLightboxPhoto(i) {
+  const n = lightbox.images.length;
+  lightbox.index = ((i % n) + n) % n;
+  lightbox.img.src = lightbox.images[lightbox.index];
+  lightbox.img.alt = n > 1 ? `${lightbox.alt} (photo ${lightbox.index + 1} of ${n})` : lightbox.alt;
+  lightbox.count.textContent = n > 1 ? `${lightbox.index + 1} / ${n}` : "";
+  for (const sel of [".lightbox-prev", ".lightbox-next"]) lightbox.el.querySelector(sel).hidden = n < 2;
+  if (n > 1) {
+    // Warm the cache for the photos either side so stepping feels instant.
+    new Image().src = lightbox.images[(lightbox.index + 1) % n];
+    new Image().src = lightbox.images[(lightbox.index - 1 + n) % n];
+  }
+}
+
+function stepLightbox(delta) {
+  if (lightbox.images.length > 1) showLightboxPhoto(lightbox.index + delta);
+}
+
+function lightboxKeydown(e) {
+  if (e.key === "Escape") {
+    closeLightbox();
+  } else if (e.key === "ArrowLeft") {
+    stepLightbox(-1);
+  } else if (e.key === "ArrowRight") {
+    stepLightbox(1);
+  } else if (e.key === "Tab") {
+    // Keep keyboard focus inside the viewer while it is open.
+    const buttons = [...lightbox.el.querySelectorAll("button")].filter((b) => !b.hidden);
+    const first = buttons[0];
+    const last = buttons[buttons.length - 1];
+    if (e.shiftKey && document.activeElement === first) {
+      e.preventDefault();
+      last.focus();
+    } else if (!e.shiftKey && document.activeElement === last) {
+      e.preventDefault();
+      first.focus();
+    }
+  }
+}
+
+function openLightbox({ images, index, alt, opener, onClose }) {
+  if (!lightbox.el) buildLightbox();
+  lightbox.images = images;
+  lightbox.alt = alt;
+  lightbox.opener = opener;
+  lightbox.onClose = onClose;
+  showLightboxPhoto(index);
+  lightbox.el.hidden = false;
+  document.body.style.overflow = "hidden";
+  document.addEventListener("keydown", lightboxKeydown);
+  lightbox.el.querySelector(".lightbox-close").focus();
+}
+
+function closeLightbox() {
+  if (!lightbox.el || lightbox.el.hidden) return;
+  lightbox.el.hidden = true;
+  document.body.style.overflow = "";
+  document.removeEventListener("keydown", lightboxKeydown);
+  if (lightbox.onClose) lightbox.onClose(lightbox.index);
+  if (lightbox.opener) lightbox.opener.focus();
+}
+
 function buildProductCard(product) {
   const card = document.createElement("div");
   card.className = "product-card";
@@ -261,6 +369,29 @@ function buildProductCard(product) {
   });
 
   renderCarousel();
+
+  // Click (or Enter/Space when focused) on the photo to enlarge it.
+  img.tabIndex = 0;
+  img.setAttribute("role", "button");
+  img.setAttribute("aria-label", `Enlarge photo of ${product.name}`);
+  const zoom = () =>
+    openLightbox({
+      images,
+      index,
+      alt: product.name,
+      opener: img,
+      onClose: (i) => {
+        index = i;
+        renderCarousel();
+      },
+    });
+  img.addEventListener("click", zoom);
+  img.addEventListener("keydown", (e) => {
+    if (e.key === "Enter" || e.key === " ") {
+      e.preventDefault();
+      zoom();
+    }
+  });
 
   if (hasVariants) {
     const select = card.querySelector(".variant-select");
