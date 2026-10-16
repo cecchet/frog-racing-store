@@ -170,7 +170,10 @@ function cartShippingTotal() {
   let maxFirstAdditional = 0;
   for (const group of productGroups) {
     sumAdditional += group.sumAdditional;
-    if (group.first > maxFirst) {
+    // Several products can share the same first-item fee (e.g. both hood pin clip versions);
+    // then the one whose units cost more to add takes the first-item slot, so a free
+    // "rides along" variant never absorbs it while something else is in the order.
+    if (group.first > maxFirst || (group.first === maxFirst && group.maxAdditional > maxFirstAdditional)) {
       maxFirst = group.first;
       maxFirstAdditional = group.maxAdditional;
     }
