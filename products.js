@@ -152,7 +152,7 @@ const PRODUCTS = [
       "images/hood-pin-clips/pin-size.jpg",
       "images/hood-pin-clips/ring-size.jpg",
     ],
-    description: "Version 2 of the Frog Racing hood pin clips, with a redesigned clip. They secure your hood pins in place (made for hood pins with 6mm diameter pins and 3mm rings). It is made of ASA filament and 3D printed in house by Frog Racing. Currently only shipping to the USA; contact sales@frogracing.us for international shipping.",
+    description: "Version 2 of the Frog Racing hood pin clips, with a redesigned clip that adds a tab on top for easier handling. They secure your hood pins in place (made for hood pins with 6mm diameter pins and 3mm rings). It is made of ASA filament and 3D printed in house by Frog Racing. Currently only shipping to the USA; contact sales@frogracing.us for international shipping.",
     variants: [
       {
         id: "clips-only",
