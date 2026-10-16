@@ -147,8 +147,8 @@ const PRODUCTS = [
     images: [
       "images/hood-pin-clips-v2/cover.jpg",
       "images/hood-pin-clips-v2/clips.jpg",
+      "images/hood-pin-clips-v2/installed-1.jpg",
       "images/hood-pin-clips-v2/installed-2.jpg",
-      "images/hood-pin-clips-v2/installed-3.jpg",
       "images/hood-pin-clips/pin-size.jpg",
       "images/hood-pin-clips/ring-size.jpg",
     ],
@@ -161,37 +161,37 @@ const PRODUCTS = [
         // Free as an additional item alongside any other hood pin clips option
         // (still pays the normal $5.50 first-item rate if ordered alone).
         shippingAdditional: 0,
-        images: ["images/hood-pin-clips-v2/clips.jpg", "images/hood-pin-clips-v2/cover.jpg", "images/hood-pin-clips-v2/installed-2.jpg", "images/hood-pin-clips-v2/installed-3.jpg", "images/hood-pin-clips/pin-size.jpg", "images/hood-pin-clips/ring-size.jpg"],
+        images: ["images/hood-pin-clips-v2/clips.jpg", "images/hood-pin-clips-v2/cover.jpg", "images/hood-pin-clips-v2/installed-1.jpg", "images/hood-pin-clips-v2/installed-2.jpg", "images/hood-pin-clips/pin-size.jpg", "images/hood-pin-clips/ring-size.jpg"],
       },
       {
         id: "holder-2",
         label: "4 clip + key ring clip holder (holds 2 clips)",
         price: 10.00,
-        images: ["images/hood-pin-clips-v2/holder2.jpg", "images/hood-pin-clips-v2/cover.jpg", "images/hood-pin-clips-v2/installed-2.jpg", "images/hood-pin-clips-v2/installed-3.jpg", "images/hood-pin-clips/pin-size.jpg", "images/hood-pin-clips/ring-size.jpg"],
+        images: ["images/hood-pin-clips-v2/holder2.jpg", "images/hood-pin-clips-v2/cover.jpg", "images/hood-pin-clips-v2/installed-1.jpg", "images/hood-pin-clips-v2/installed-2.jpg", "images/hood-pin-clips/pin-size.jpg", "images/hood-pin-clips/ring-size.jpg"],
       },
       {
         id: "holder-4",
         label: "4 clip + key ring clip holder (holds 4 clips)",
         price: 10.00,
-        images: ["images/hood-pin-clips-v2/holder4.jpg", "images/hood-pin-clips-v2/cover.jpg", "images/hood-pin-clips-v2/installed-2.jpg", "images/hood-pin-clips-v2/installed-3.jpg", "images/hood-pin-clips/pin-size.jpg", "images/hood-pin-clips/ring-size.jpg"],
+        images: ["images/hood-pin-clips-v2/holder4.jpg", "images/hood-pin-clips-v2/cover.jpg", "images/hood-pin-clips-v2/installed-1.jpg", "images/hood-pin-clips-v2/installed-2.jpg", "images/hood-pin-clips/pin-size.jpg", "images/hood-pin-clips/ring-size.jpg"],
       },
       {
         id: "signs",
         label: "4 clips + 2 service in progress clip-on signs",
         price: 10.00,
-        images: ["images/hood-pin-clips-v2/signs.jpg", "images/hood-pin-clips-v2/cover.jpg", "images/hood-pin-clips-v2/installed-2.jpg", "images/hood-pin-clips-v2/installed-3.jpg", "images/hood-pin-clips/pin-size.jpg", "images/hood-pin-clips/ring-size.jpg"],
+        images: ["images/hood-pin-clips-v2/signs.jpg", "images/hood-pin-clips-v2/cover.jpg", "images/hood-pin-clips-v2/installed-1.jpg", "images/hood-pin-clips-v2/installed-2.jpg", "images/hood-pin-clips/pin-size.jpg", "images/hood-pin-clips/ring-size.jpg"],
       },
       {
         id: "combo-2",
         label: "Full combo (2 clips capacity key ring)",
         price: 15.00,
-        images: ["images/hood-pin-clips-v2/combo2.jpg", "images/hood-pin-clips-v2/cover.jpg", "images/hood-pin-clips-v2/installed-2.jpg", "images/hood-pin-clips-v2/installed-3.jpg", "images/hood-pin-clips/pin-size.jpg", "images/hood-pin-clips/ring-size.jpg"],
+        images: ["images/hood-pin-clips-v2/combo2.jpg", "images/hood-pin-clips-v2/cover.jpg", "images/hood-pin-clips-v2/installed-1.jpg", "images/hood-pin-clips-v2/installed-2.jpg", "images/hood-pin-clips/pin-size.jpg", "images/hood-pin-clips/ring-size.jpg"],
       },
       {
         id: "combo-4",
         label: "Full combo (4 clips capacity key ring)",
         price: 15.00,
-        images: ["images/hood-pin-clips-v2/combo4.jpg", "images/hood-pin-clips-v2/cover.jpg", "images/hood-pin-clips-v2/installed-2.jpg", "images/hood-pin-clips-v2/installed-3.jpg", "images/hood-pin-clips/pin-size.jpg", "images/hood-pin-clips/ring-size.jpg"],
+        images: ["images/hood-pin-clips-v2/combo4.jpg", "images/hood-pin-clips-v2/cover.jpg", "images/hood-pin-clips-v2/installed-1.jpg", "images/hood-pin-clips-v2/installed-2.jpg", "images/hood-pin-clips/pin-size.jpg", "images/hood-pin-clips/ring-size.jpg"],
       },
     ],
     shipping: { first: 5.50, additional: 1.00 },
