@@ -1594,6 +1594,21 @@
    ]
   },
   {
+   "name": "Storage",
+   "subsections": [
+    {
+     "name": "",
+     "items": [
+      {
+       "name": "Storage rack",
+       "url": "https://amzn.to/4xIjaPa",
+       "asin": "B0F3X1Y8NR"
+      }
+     ]
+    }
+   ]
+  },
+  {
    "name": "Tires / Rims",
    "subsections": [
     {
@@ -2818,10 +2833,8 @@
        "asin": "B0FVRPD7YP"
       },
       {
-       "name": "Storage rack",
-       "group": "Could not get a decent print with SUNLU Easy PA",
-       "url": "https://amzn.to/4xIjaPa",
-       "asin": "B0F3X1Y8NR"
+       "note": "Could not get a decent print with SUNLU Easy PA",
+       "group": "Nylon"
       }
      ]
     },
