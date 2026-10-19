@@ -50,6 +50,7 @@ function vendorOf(href) {
   if (/tkqlhce|dpbolvw|jdoqocy|anrdoezrs|kqzyfj/.test(host)) return "Tire Rack";
   const known = {
     "rally.build": "Rally.Build",
+    "bimarco.com": "Bimarco",
     "bleedingtarmac.com": "Bleeding Tarmac",
     "get-primitive.com": "Primitive",
     "fercomp.com": "Fercomp",
