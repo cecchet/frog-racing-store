@@ -53,6 +53,7 @@ function vendorOf(href) {
     "bimarco.com": "Bimarco",
     "zoro.com": "Zoro",
     "kaabousa.com": "Kaabo",
+    "hansdevice.com": "HANS",
     "bleedingtarmac.com": "Bleeding Tarmac",
     "get-primitive.com": "Primitive",
     "fercomp.com": "Fercomp",

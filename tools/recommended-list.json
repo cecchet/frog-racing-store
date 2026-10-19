@@ -1368,14 +1368,21 @@
        "asin": "B007VAW1W2"
       },
       {
+       "name": "HANS Device",
+       "group": "Hans Device (Head and Neck Restraint)",
+       "url": "https://www.hansdevice.com/products/hans_devices/",
+       "vendor": "HANS",
+       "thumb": "images/recommended/hansdevice-hans-devices.jpg"
+      },
+      {
        "name": "Classic TK12314",
-       "group": "Hans tethers",
+       "group": "Hans Device (Head and Neck Restraint)",
        "url": "https://amzn.to/3Ovu8FR",
        "asin": "B019XEC6UK"
       },
       {
        "name": "M61 quick release FIA",
-       "group": "Hans tethers",
+       "group": "Hans Device (Head and Neck Restraint)",
        "url": "https://amzn.to/4thcjcz",
        "asin": "B0G7QQSSJ3"
       },
