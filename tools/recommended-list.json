@@ -11,25 +11,33 @@
        "name": "Street: HPS 5.0",
        "group": "Hawk brake pads",
        "url": "https://www.anrdoezrs.net/click-101708275-10399817",
-       "vendor": "Tire Rack"
+       "vendor": "Tire Rack",
+       "thumbPage": "https://www.hawkperformance.com/pads/hb453g-585",
+       "thumb": "images/recommended/hawkperformance-hb453g-585.jpg"
       },
       {
        "name": "RallyX / Hillclimb for cold bite: HP+",
        "group": "Hawk brake pads",
        "url": "https://www.anrdoezrs.net/click-101708275-10399817",
-       "vendor": "Tire Rack"
+       "vendor": "Tire Rack",
+       "thumbPage": "https://www.hawkperformance.com/pads/hb453g-585",
+       "thumb": "images/recommended/hawkperformance-hb453g-585.jpg"
       },
       {
        "name": "HPDE / Rally: DTC-60 front / HP+ rear",
        "group": "Hawk brake pads",
        "url": "https://www.anrdoezrs.net/click-101708275-10399817",
-       "vendor": "Tire Rack"
+       "vendor": "Tire Rack",
+       "thumbPage": "https://www.hawkperformance.com/pads/hb453g-585",
+       "thumb": "images/recommended/hawkperformance-hb453g-585.jpg"
       },
       {
        "name": "Track on slicks: DTC-70 front / DTC-60 rear",
        "group": "Hawk brake pads",
        "url": "https://www.anrdoezrs.net/click-101708275-10399817",
-       "vendor": "Tire Rack"
+       "vendor": "Tire Rack",
+       "thumbPage": "https://www.hawkperformance.com/pads/hb453g-585",
+       "thumb": "images/recommended/hawkperformance-hb453g-585.jpg"
       }
      ]
     },
@@ -59,7 +67,8 @@
        "name": "Frozen rotors from Rally.Build (for 4/2 pots on 04 STi)",
        "group": "Rotors",
        "url": "https://rally.build/collections/frozen-rotors",
-       "vendor": "Rally.Build"
+       "vendor": "Rally.Build",
+       "thumb": "images/recommended/rally-build-frozen-rotors.jpg"
       },
       {
        "name": "Front rotor for HP+ pads only: Centric Premium 120.47018",
@@ -71,19 +80,23 @@
        "name": "KNS 4650 Front rotors (dual drilled 5x100/5x114)",
        "group": "Rotors",
        "url": "https://bleedingtarmac.com/products/kns-brakes-front-rotor-02-14-subaru-wrx",
-       "vendor": "Bleeding Tarmac"
+       "vendor": "Bleeding Tarmac",
+       "thumb": "images/recommended/bleedingtarmac-kns-brakes-front-rotor-02-14-subaru-wrx.jpg"
       },
       {
        "name": "KNS4656 Rear rotor (dual drilled 5x100/5x114)",
        "group": "Rotors",
        "url": "https://bleedingtarmac.com/products/kns-brakes-dual-drilled-2-pot-rear-gravel-rotor-04-07-subaru-wrx-sti",
-       "vendor": "Bleeding Tarmac"
+       "vendor": "Bleeding Tarmac",
+       "thumb": "images/recommended/bleedingtarmac-kns-brakes-dual-drilled-2-pot-rear-gravel-rotor-04-07-subaru-wrx-sti.jpg"
       },
       {
        "name": "Hawk brake pads: HAWK brake pads at Tire Rack",
        "group": "Brake pads",
        "url": "https://www.dpbolvw.net/click-101708275-10399817",
-       "vendor": "Tire Rack"
+       "vendor": "Tire Rack",
+       "thumbPage": "https://www.hawkperformance.com/pads/hb453g-585",
+       "thumb": "images/recommended/hawkperformance-hb453g-585.jpg"
       },
       {
        "name": "4 pot front HP+ HB178N.564",
@@ -136,7 +149,9 @@
        "name": "Hawk brake pads: HAWK brake pads at Tire Rack",
        "url": "https://www.dpbolvw.net/click-101708275-10399817",
        "vendor": "Tire Rack",
-       "group": "Brake pads"
+       "group": "Brake pads",
+       "thumbPage": "https://www.hawkperformance.com/pads/hb453g-585",
+       "thumb": "images/recommended/hawkperformance-hb453g-585.jpg"
       },
       {
        "name": "front HP+ HB609N.572",
@@ -160,7 +175,8 @@
        "name": "Stainless steel braided brake lines",
        "url": "https://jhmotorsports.com/brake-line-kit-stainless-jhm-front-and-rear-lines-for-b7-rs4.html",
        "vendor": "JHM Motorsports",
-       "group": "Brake lines"
+       "group": "Brake lines",
+       "thumb": "images/recommended/jhmotorsports-brake-line-kit-stainless-jhm-front-and-rear-lines-for-b7-rs4-html.jpg"
       }
      ]
     }
@@ -204,7 +220,8 @@
        "name": "Frozen rotors from Rally.Build (for 4/2 pots on 04 STi)",
        "group": "Brakes › Rotors",
        "url": "https://rally.build/collections/frozen-rotors",
-       "vendor": "Rally.Build"
+       "vendor": "Rally.Build",
+       "thumb": "images/recommended/rally-build-frozen-rotors.jpg"
       },
       {
        "name": "Front rotor for HP+ pads only: Centric Premium 120.47018",
@@ -216,19 +233,23 @@
        "name": "KNS 4650 Front rotors (dual drilled 5x100/5x114)",
        "group": "Brakes › Rotors",
        "url": "https://bleedingtarmac.com/products/kns-brakes-front-rotor-02-14-subaru-wrx",
-       "vendor": "Bleeding Tarmac"
+       "vendor": "Bleeding Tarmac",
+       "thumb": "images/recommended/bleedingtarmac-kns-brakes-front-rotor-02-14-subaru-wrx.jpg"
       },
       {
        "name": "KNS4656 Rear rotor (dual drilled 5x100/5x114)",
        "group": "Brakes › Rotors",
        "url": "https://bleedingtarmac.com/products/kns-brakes-dual-drilled-2-pot-rear-gravel-rotor-04-07-subaru-wrx-sti",
-       "vendor": "Bleeding Tarmac"
+       "vendor": "Bleeding Tarmac",
+       "thumb": "images/recommended/bleedingtarmac-kns-brakes-dual-drilled-2-pot-rear-gravel-rotor-04-07-subaru-wrx-sti.jpg"
       },
       {
        "name": "Hawk brake pads: HAWK brake pads at Tire Rack",
        "group": "Brakes › Brake pads",
        "url": "https://www.dpbolvw.net/click-101708275-10399817",
-       "vendor": "Tire Rack"
+       "vendor": "Tire Rack",
+       "thumbPage": "https://www.hawkperformance.com/pads/hb453g-585",
+       "thumb": "images/recommended/hawkperformance-hb453g-585.jpg"
       },
       {
        "name": "4 pot front HP+ HB178N.564",
@@ -306,7 +327,8 @@
        "name": "Budget KYB with King Springs",
        "url": "https://amzn.to/4mNn9EU",
        "vendor": "Amazon list",
-       "group": "Suspension"
+       "group": "Suspension",
+       "img": "31uY5amELxL"
       },
       {
        "name": "KYB 734036",
@@ -348,7 +370,8 @@
        "name": "King Springs",
        "url": "https://get-primitive.com/products/lift-springs-king-springs-2004-2007-impreza",
        "vendor": "Primitive",
-       "group": "Suspension"
+       "group": "Suspension",
+       "thumb": "images/recommended/get-primitive-lift-springs-king-springs-2004-2007-impreza.jpg"
       },
       {
        "name": "Subaru Group N Front & Rear Strut Mounts (Front Strut Mount B0310FE000 X 2 + Rear Strut Mount B0310FE013 X2)",
@@ -360,13 +383,15 @@
        "name": "Intrax Rally suspension at Rally.Build",
        "url": "https://rally.build/collections/intrax-suspension",
        "vendor": "Rally.Build",
-       "group": "Suspension"
+       "group": "Suspension",
+       "thumb": "images/recommended/rally-build-intrax-suspension.jpg"
       },
       {
        "name": "Samsonas at Fercomp",
        "url": "https://fercomp.com/product/samsonas-motorsport-subaru-impreza-sti-n14-suspension/",
        "vendor": "Fercomp",
-       "group": "Suspension"
+       "group": "Suspension",
+       "thumb": "images/recommended/fercomp-samsonas-motorsport-subaru-impreza-sti-n14-suspension.jpg"
       },
       {
        "name": "Sparco Seat Bracket, Competition, Side Mount, FIA Approved",
@@ -757,7 +782,9 @@
        "name": "Hawk brake pads: HAWK brake pads at Tire Rack",
        "url": "https://www.dpbolvw.net/click-101708275-10399817",
        "vendor": "Tire Rack",
-       "group": "Brakes"
+       "group": "Brakes",
+       "thumbPage": "https://www.hawkperformance.com/pads/hb453g-585",
+       "thumb": "images/recommended/hawkperformance-hb453g-585.jpg"
       },
       {
        "name": "front HP+ HB609N.572",
@@ -781,7 +808,8 @@
        "name": "Stainless steel braided brake lines",
        "url": "https://jhmotorsports.com/brake-line-kit-stainless-jhm-front-and-rear-lines-for-b7-rs4.html",
        "vendor": "JHM Motorsports",
-       "group": "Brakes"
+       "group": "Brakes",
+       "thumb": "images/recommended/jhmotorsports-brake-line-kit-stainless-jhm-front-and-rear-lines-for-b7-rs4-html.jpg"
       }
      ]
     },
@@ -1007,7 +1035,8 @@
       {
        "name": "Amazon list",
        "url": "https://amzn.to/4tMz5Jp",
-       "vendor": "Amazon list"
+       "vendor": "Amazon list",
+       "img": "31z6loIHNTL"
       },
       {
        "name": "Brake fluid Motul RBF 600 (MTL100949 8068HL)",
@@ -1252,7 +1281,8 @@
       {
        "name": "Bolt/nuts securing essentials",
        "url": "https://amzn.to/3RGVI4e",
-       "vendor": "Amazon list"
+       "vendor": "Amazon list",
+       "img": "31cqovo8fLL"
       }
      ]
     }
@@ -1287,7 +1317,8 @@
       {
        "name": "First aid kit and spill kit ($100): get it from Rally.Build (",
        "url": "https://rally.build/collections/rally-build-fabricated-rally-parts/products/first-aid-spill-kit-combo",
-       "vendor": "Rally.Build"
+       "vendor": "Rally.Build",
+       "thumb": "images/recommended/rally-build-first-aid-spill-kit-combo.jpg"
       },
       {
        "name": "Air horn for hillclimbs: Shoreline Marine Eco Air Horn",
@@ -1329,7 +1360,8 @@
        "name": "Cartek GT",
        "group": "Kill switch",
        "url": "https://rally.build/products/cartek-x-club-solid-state-battery-isolator-kit",
-       "vendor": "Rally.Build"
+       "vendor": "Rally.Build",
+       "thumb": "images/recommended/rally-build-cartek-x-club-solid-state-battery-isolator-kit.jpg"
       },
       {
        "name": "Fuse tap",
@@ -1457,7 +1489,8 @@
        "name": "The current go-to camera for onboard footage is the DJI line-up",
        "url": "https://amzn.to/4vedM4A",
        "vendor": "Amazon list",
-       "group": "Camera"
+       "group": "Camera",
+       "img": "417VVonRHdL"
       },
       {
        "name": "DJI Osmo Pocket 3 Creator Combo",
@@ -1577,17 +1610,21 @@
       {
        "name": "Bridgestone RE-71RS",
        "url": "https://www.dpbolvw.net/click-101708275-10399846",
-       "vendor": "Tire Rack"
+       "vendor": "Tire Rack",
+       "thumbPage": "https://www.bridgestonetire.com/tire/potenza-re-71rs/"
       },
       {
        "name": "Yokohama A052",
        "url": "https://www.dpbolvw.net/click-101708275-10399878",
-       "vendor": "Tire Rack"
+       "vendor": "Tire Rack",
+       "thumbPage": "https://www.yokohamatire.com/tires/advan-a052"
       },
       {
        "name": "Budget: Falken RT660",
        "url": "https://www.dpbolvw.net/click-101708275-12976277",
-       "vendor": "Tire Rack"
+       "vendor": "Tire Rack",
+       "thumbPage": "https://www.falkentire.com/azenis/rt660",
+       "thumb": "images/recommended/falkentire-rt660.jpg"
       }
      ]
     },
@@ -1597,27 +1634,35 @@
       {
        "name": "Nokian Hakkapeliitta (studded or unstudded)",
        "url": "https://www.jdoqocy.com/click-101708275-15867316",
-       "vendor": "Tire Rack"
+       "vendor": "Tire Rack",
+       "thumbPage": "https://nokiantires.com/snow-winter-tires/nokian-tyres-hakkapeliitta-r5",
+       "thumb": "images/recommended/nokiantires-nokian-tyres-hakkapeliitta-r5.jpg"
       },
       {
        "name": "Blizzak WS90",
        "url": "https://www.dpbolvw.net/click-101708275-10399846",
-       "vendor": "Tire Rack"
+       "vendor": "Tire Rack",
+       "thumbPage": "https://www.bridgestonetire.com/tire/blizzak-ws90/"
       },
       {
        "name": "Michelin X-Ice",
        "url": "https://www.tkqlhce.com/click-101708275-10399872",
-       "vendor": "Tire Rack"
+       "vendor": "Tire Rack",
+       "thumbPage": "https://www.michelinman.com/auto/tires/michelin-x-ice-snow",
+       "thumb": "images/recommended/michelinman-michelin-x-ice-snow.jpg"
       },
       {
        "name": "General Arctic 12 (cars) / Grabber Arctic (Truck)",
        "url": "https://www.jdoqocy.com/click-101708275-14092901",
-       "vendor": "Tire Rack"
+       "vendor": "Tire Rack",
+       "thumbPage": "https://generaltire.com/tires/winter/altimax-arctic-12",
+       "thumb": "images/recommended/generaltire-altimax-arctic-12.jpg"
       },
       {
        "name": "Budget: Sumitomo Ice Edge",
        "url": "https://amzn.to/4hNw0nZ",
-       "vendor": "Amazon"
+       "vendor": "Amazon",
+       "img": "91fV9SCM1NL"
       }
      ]
     },
@@ -1627,7 +1672,9 @@
       {
        "name": "Continental DWS06+",
        "url": "https://www.tkqlhce.com/click-101708275-10399847",
-       "vendor": "Tire Rack"
+       "vendor": "Tire Rack",
+       "thumbPage": "https://continentaltire.com/tires/extremecontact-dws06-plus",
+       "thumb": "images/recommended/continentaltire-extremecontact-dws06-plus.jpg"
       }
      ]
     },
@@ -1637,12 +1684,14 @@
       {
        "name": "MRF ZDM3 (soft, 175-195 sizes)",
        "url": "https://tirestreets.com/collections/gravel-rally-tires/products/mrf-zdm",
-       "vendor": "tirestreets.com"
+       "vendor": "tirestreets.com",
+       "thumb": "images/recommended/tirestreets-mrf-zdm.jpg"
       },
       {
        "name": "MRF ZG3 (205 sizes)",
        "url": "https://tirestreets.com/collections/gravel-rally-tires/products/mrf-zg3",
-       "vendor": "tirestreets.com"
+       "vendor": "tirestreets.com",
+       "thumb": "images/recommended/tirestreets-mrf-zg3.jpg"
       }
      ]
     },
@@ -1652,22 +1701,29 @@
       {
        "name": "RallyX / Recce: Sparco Terra",
        "url": "https://www.kqzyfj.com/click-101708275-15867268",
-       "vendor": "Tire Rack"
+       "vendor": "Tire Rack",
+       "thumbPage": "https://www.discounttire.com/buy-wheels/sparco-terra/p/107533",
+       "thumb": "images/recommended/discounttire-107533.jpg"
       },
       {
        "name": "Stage Rally: Evo Corse",
        "url": "https://rally.build/collections/evocorse-rally-wheels",
-       "vendor": "Rally.Build"
+       "vendor": "Rally.Build",
+       "thumb": "images/recommended/rally-build-evocorse-rally-wheels.jpg"
       },
       {
        "name": "RallyX / Rally: Method MR502",
        "url": "https://www.kqzyfj.com/click-101708275-12232389",
-       "vendor": "Tire Rack"
+       "vendor": "Tire Rack",
+       "thumbPage": "https://www.methodracewheels.com/products/502-rally-method-bronze",
+       "thumb": "images/recommended/methodracewheels-502-rally-method-bronze.jpg"
       },
       {
        "name": "Lightweight Tarmac: Enkei RPF1",
        "url": "https://www.dpbolvw.net/click-101708275-10399940",
-       "vendor": "Tire Rack"
+       "vendor": "Tire Rack",
+       "thumbPage": "https://enkei.com/shop/wheels/racing/rpf1/",
+       "thumb": "images/recommended/enkei-rpf1.jpg"
       }
      ]
     }
@@ -1721,7 +1777,8 @@
        "name": "Bolt/nuts securing essentials",
        "group": "Suspension",
        "url": "https://amzn.to/3RGVI4e",
-       "vendor": "Amazon list"
+       "vendor": "Amazon list",
+       "img": "31cqovo8fLL"
       },
       {
        "name": "Balljoint removal tool",
@@ -1973,7 +2030,8 @@
       {
        "name": "Gas cans: Storefront link",
        "url": "https://amzn.to/4scX1nX",
-       "vendor": "Amazon list"
+       "vendor": "Amazon list",
+       "img": "41YKXSuxIbL"
       },
       {
        "name": "Tuff Jug | 5 Gallon Multipurpose Container: Green: - Red",
@@ -2065,7 +2123,8 @@
        "name": "Torque wrenches",
        "group": "Wrenches",
        "url": "https://amzn.to/4cgijwf",
-       "vendor": "Amazon list"
+       "vendor": "Amazon list",
+       "img": "41g4sL3+qHL"
       },
       {
        "name": "The cheap backup in the car",
@@ -2102,6 +2161,12 @@
        "group": "Sockets and extensions",
        "url": "https://amzn.to/4stFp8o",
        "asin": "B08GC4W4YT"
+      },
+      {
+       "name": "Low profile impact socket set",
+       "group": "Sockets and extensions",
+       "url": "https://www.amazon.com/dp/B0CQJSTL1B?tag=frogracing-20",
+       "asin": "B0CQJSTL1B"
       }
      ]
     },
@@ -2346,7 +2411,8 @@
       {
        "name": "Curated list of tools on our Amazon front store",
        "url": "https://amzn.to/4txmklP",
-       "vendor": "Amazon list"
+       "vendor": "Amazon list",
+       "img": "41CCtT0d3RL"
       },
       {
        "note": "As an Amazon Associate we earn from qualifying purchases made from the links we provide",
@@ -2541,7 +2607,8 @@
        "name": "Pit Products Extension Ramp for Trailer Door - 4\" or 6\" Lift",
        "group": "Ramps",
        "url": "https://pitproducts.com/products/extension-ramp-trailer-door",
-       "vendor": "pitproducts.com"
+       "vendor": "pitproducts.com",
+       "thumb": "images/recommended/pitproducts-extension-ramp-trailer-door.jpg"
       },
       {
        "name": "D Ring Tie Down Anchor",
@@ -2553,7 +2620,8 @@
        "name": "Organization",
        "group": "Ramps",
        "url": "https://amzn.to/4uvvzD7",
-       "vendor": "Amazon list"
+       "vendor": "Amazon list",
+       "img": "51FxBb2bIQL"
       },
       {
        "name": "Rubbermaid FastTrack Rail Hook Kit and Tool Organizer",
@@ -2640,12 +2708,14 @@
       {
        "name": "Bambu Lab H2S for large functional parts in single color",
        "url": "https://us.store.bambulab.com/products/h2s",
-       "vendor": "us.store.bambulab.com"
+       "vendor": "us.store.bambulab.com",
+       "thumb": "images/recommended/bambulab-h2s.jpg"
       },
       {
        "name": "Bambu Lab H2D for multicolor/multi-material prints with AMS Combo",
        "url": "https://us.store.bambulab.com/products/h2d",
-       "vendor": "us.store.bambulab.com"
+       "vendor": "us.store.bambulab.com",
+       "thumb": "images/recommended/bambulab-h2d.jpg"
       },
       {
        "name": "Revopoint MetroX 3D Scanner",
@@ -2764,7 +2834,8 @@
       {
        "name": "Bambu Lab AMS HT for high temp filaments",
        "url": "https://us.store.bambulab.com/products/ams-ht",
-       "vendor": "us.store.bambulab.com"
+       "vendor": "us.store.bambulab.com",
+       "thumb": "images/recommended/bambulab-ams-ht.jpg"
       },
       {
        "name": "Carbon Fiber PEI plate",

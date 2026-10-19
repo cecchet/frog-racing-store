@@ -1,0 +1,17 @@
+{
+  "_comment": "Hand-found thumbnail sources for find-thumbs.js. `pages` maps a page to the product photo found on it by viewing it in a browser, for pages that build their pictures with JavaScript (a plain fetch sees no image). `skip` lists pages not to use: they turn scripted requests away or only offer a brand logo / banner.",
+  "pages": {
+    "https://www.falkentire.com/azenis/rt660": "https://falken-tires-website-storage.s3.amazonaws.com/storage/app/media/Exports/Azenis%20RT660%20Tire%20Product%20Page/Desktop/Description/x1/img-rt660-3qtr-tire-min.png",
+    "https://www.michelinman.com/auto/tires/michelin-x-ice-snow": "https://dxm.contentcenter.michelin.com/api/wedia/dam/transform/b98rpyxf61b4xa6z8bsqetc8ke/4w-463_3528701004396_tire_michelin_x-ice-snow_205-slash-55-r16-94h-xl_a_main_1-30_nopad.webp?t=resize&height=500",
+    "https://enkei.com/shop/wheels/racing/rpf1/": "https://enkei.com/wp-content/uploads/2019/12/ENKEI-RPF1-SP-144-WEB-510x510.jpg",
+    "https://www.hawkperformance.com/pads/hb453g-585": "https://s3.us-east-1.amazonaws.com/hawkperformance.staging.assets/public/uploads/partImages/_productDrawing/Hawk-Performance-DTC-80-brake-pads.jpg",
+    "https://www.discounttire.com/buy-wheels/sparco-terra/p/107533": "https://discounttire.scene7.com/is/image/discounttire/Sparco_wheel_107533_1000_front?$product_large$",
+    "https://generaltire.com/tires/winter/altimax-arctic-12": "https://generaltire.com/sites/default/files/styles/square_medium/public/tires/images/product_images/2018-08/Altimax_Arctic_Lt3Q_1.png?itok=tsc7HV58"
+  },
+  "skip": [
+    "https://www.bridgestonetire.com/tire/potenza-re-71rs/",
+    "https://www.bridgestonetire.com/tire/blizzak-ws90/",
+    "https://www.yokohamatire.com/tires/advan-a052",
+    "https://gpx.studio/app"
+  ]
+}
