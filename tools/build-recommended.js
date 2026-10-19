@@ -52,6 +52,7 @@ function vendorOf(href) {
     "rally.build": "Rally.Build",
     "bimarco.com": "Bimarco",
     "zoro.com": "Zoro",
+    "kaabousa.com": "Kaabo",
     "bleedingtarmac.com": "Bleeding Tarmac",
     "get-primitive.com": "Primitive",
     "fercomp.com": "Fercomp",

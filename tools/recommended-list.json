@@ -1590,6 +1590,17 @@
        "asin": "B08FT1NQ2T"
       }
      ]
+    },
+    {
+     "name": "Scooter",
+     "items": [
+      {
+       "name": "Mantis King GT scooter",
+       "url": "https://www.kaabousa.com/products/mantis-king-gt",
+       "vendor": "Kaabo",
+       "thumb": "images/recommended/kaabousa-mantis-king-gt.jpg"
+      }
+     ]
     }
    ]
   },
