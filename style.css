@@ -531,6 +531,21 @@ main {
   overflow-wrap: anywhere;
 }
 
+.rec-desc {
+  font-size: 0.8rem;
+  line-height: 1.3;
+  color: var(--muted);
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.rec-from {
+  font-size: 0.78rem;
+  color: var(--muted);
+}
+
 .rec-price {
   display: flex;
   flex-wrap: wrap;

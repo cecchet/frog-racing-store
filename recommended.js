@@ -176,7 +176,57 @@ function recNoteHtml(text, links) {
   return html;
 }
 
+// ---- Frog Racing's own products ------------------------------------------------------
+// An item like { store: "sun-visor" } is drawn from the store's product data (products.js),
+// so its photo, wording and price always match the store: the row looks like an Amazon one
+// (thumbnail, description, price) and links to the product's card on the store page.
+
+function recStoreProduct(item) {
+  if (!item.store || typeof PRODUCTS === "undefined") return null;
+  return PRODUCTS.find((p) => p.id === item.store) || null;
+}
+
+// Lowest price you can buy it at (the cheapest option), and whether the options differ.
+function recStorePrice(product) {
+  const prices = product.variants && product.variants.length ? product.variants.map((v) => v.price) : [product.price];
+  const lowest = Math.min(...prices);
+  return { lowest, varies: Math.max(...prices) > lowest };
+}
+
+function recFirstSentence(text) {
+  const m = text.match(/^.*?[.!?](?=\s|$)/);
+  return m ? m[0] : text;
+}
+
+function recBuildStoreItem(product) {
+  const link = document.createElement("a");
+  link.className = "rec-item rec-item-store";
+  link.href = `./#product-${product.id}`;
+
+  const cover = (product.images && product.images[0]) || product.image;
+  const { lowest, varies } = recStorePrice(product);
+  link.innerHTML =
+    `<span class="rec-thumb"><img loading="lazy" alt="" src="${recEsc(cover)}"></span>` +
+    `<span class="rec-info">` +
+    `<span class="rec-name">${recEsc(product.name)}</span>` +
+    `<span class="rec-desc">${recEsc(recFirstSentence(product.description))}</span>` +
+    `<span class="rec-price">${varies ? `<span class="rec-from">From</span> ` : ""}<b class="rec-now">${recMoney(lowest)}</b></span>` +
+    `<span class="rec-tags"><span class="rec-tag">Frog Racing store</span></span>` +
+    `</span>`;
+  return link;
+}
+
+function recSearchText(item) {
+  const product = recStoreProduct(item);
+  if (product) return `${product.name} ${product.description}`.toLowerCase();
+  return (item.name || item.title || item.note || "").toLowerCase();
+}
+
 function recBuildItem(item) {
+  if (item.store) {
+    const product = recStoreProduct(item);
+    return product ? recBuildStoreItem(product) : null; // unknown product id: show nothing
+  }
   if (!recIsProduct(item)) {
     const note = document.createElement("p");
     note.className = "rec-note";
@@ -193,6 +243,8 @@ function recBuildItem(item) {
   const name = item.name || item.title || "Product";
   const thumb = item.img
     ? `<img loading="lazy" alt="" src="${recThumbUrl(item.img, 160)}" srcset="${recThumbUrl(item.img, 320)} 2x">`
+    : item.thumb
+    ? `<img loading="lazy" alt="" src="${recEsc(item.thumb)}">` // a photo saved with the store
     : `<span class="rec-thumb-empty">${recEsc((item.vendor || "Amazon").charAt(0))}</span>`;
 
   link.innerHTML =
@@ -256,7 +308,8 @@ function recBuildCategory(category) {
       }
       lastGroup = item.group || null;
       const node = recBuildItem(item);
-      node.dataset.search = (item.name || item.title || item.note || "").toLowerCase();
+      if (!node) continue;
+      node.dataset.search = recSearchText(item);
       if (recIsProduct(item)) node.dataset.sale = recOnSale(item) ? "1" : "";
       grid.appendChild(node);
     }

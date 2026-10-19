@@ -122,7 +122,7 @@ async function main() {
   for (const s of sections) {
     for (const ss of s.subsections) {
       for (const it of ss.items) {
-        if (it.note !== undefined || it.asin || it.vendor) continue;
+        if (it.note !== undefined || it.store || it.asin || it.vendor) continue; // notes and store rows need nothing resolved
         if (!it.url) throw new Error(`Item "${it.name}" in "${s.name}" has no url.`);
         if (isAmazon(it.url)) {
           it.asin = (await resolveAsin(it.url)) || undefined;

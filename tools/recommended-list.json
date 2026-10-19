@@ -1295,27 +1295,21 @@
        "asin": "B01NCSJGGC"
       },
       {
-       "note": "Racing harness collars",
-       "links": [
-        {
-         "h": "https://www.frogracing.us/store/racing-harness-collars",
-         "t": ""
-        }
-       ]
+       "store": "racing-harness-collar"
       },
       {
-       "note": "Steering wheel hook",
-       "links": [
-        {
-         "h": "https://www.frogracing.us/store/steering-wheel-hook",
-         "t": ""
-        }
-       ]
+       "store": "steering-wheel-hook"
       },
       {
        "name": "Universal hood pins",
        "url": "https://amzn.to/4uLP63r",
        "asin": "B08L8TPFYY"
+      },
+      {
+       "store": "hood-pin-clips-v2"
+      },
+      {
+       "store": "hood-pin-clips"
       },
       {
        "name": "Nord-Lock Wedge Locking Washers",
@@ -1408,7 +1402,8 @@
       {
        "name": "Bimarco Phantom FIA seat with halo",
        "url": "https://bimarco.com/en/fia-seats/185-bimarco-phantom-fia-2026-black.html",
-       "vendor": "Bimarco"
+       "vendor": "Bimarco",
+       "thumb": "images/recommended/bimarco-phantom.jpg"
       }
      ]
     },
@@ -1441,13 +1436,7 @@
        "asin": "B005DHV8Q0"
       },
       {
-       "note": "Steering wheel hook",
-       "links": [
-        {
-         "h": "https://www.frogracing.us/store/steering-wheel-hook",
-         "t": ""
-        }
-       ]
+       "store": "steering-wheel-hook"
       }
      ]
     },
@@ -1474,10 +1463,10 @@
        "group": "Camera"
       },
       {
-       "name": "DJI Osmo Action 4 Adventure Combo",
-       "url": "https://amzn.to/4vatL3o",
-       "asin": "B009CN8VNY",
-       "group": "Camera"
+       "name": "DJI Osmo Pocket 3 Creator Combo",
+       "group": "Camera",
+       "url": "https://amzn.to/4dKGXpb",
+       "asin": "B0CG19FGQ5"
       },
       {
        "name": "DJI Osmo Action 5 Pro Essential Combo",
@@ -1533,22 +1522,10 @@
      "name": "Rollcage mounts",
      "items": [
       {
-       "note": "Steering wheel hook with GoPro mount by Frog Racing",
-       "links": [
-        {
-         "h": "https://www.frogracing.us/store/steering-wheel-hook",
-         "t": "Steering wheel hook"
-        }
-       ]
+       "store": "steering-wheel-hook"
       },
       {
-       "note": "Rollcage mounted Sun visor by Frog Racing",
-       "links": [
-        {
-         "h": "https://www.frogracing.us/store/sun-visor",
-         "t": "Sun visor"
-        }
-       ]
+       "store": "sun-visor"
       },
       {
        "name": "Phone Holder with tether, 1\" Ball Compatible with RAM mount",
