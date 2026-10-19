@@ -51,6 +51,7 @@ function vendorOf(href) {
   const known = {
     "rally.build": "Rally.Build",
     "bimarco.com": "Bimarco",
+    "zoro.com": "Zoro",
     "bleedingtarmac.com": "Bleeding Tarmac",
     "get-primitive.com": "Primitive",
     "fercomp.com": "Fercomp",
