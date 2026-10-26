@@ -1663,21 +1663,6 @@
    ]
   },
   {
-   "name": "Storage",
-   "subsections": [
-    {
-     "name": "",
-     "items": [
-      {
-       "name": "Storage rack",
-       "url": "https://amzn.to/4xIjaPa",
-       "asin": "B0F3X1Y8NR"
-      }
-     ]
-    }
-   ]
-  },
-  {
    "name": "Tires / Rims",
    "subsections": [
     {
@@ -2945,6 +2930,16 @@
        "name": "Brass Threaded Inserts M2 M2.5 M3 M4 M5 M6 for 3D Printing",
        "url": "https://amzn.to/4g7JeMU",
        "asin": "B0FWCHPY4F"
+      }
+     ]
+    },
+    {
+     "name": "Storage",
+     "items": [
+      {
+       "name": "Storage rack",
+       "url": "https://amzn.to/4xIjaPa",
+       "asin": "B0F3X1Y8NR"
       }
      ]
     }
