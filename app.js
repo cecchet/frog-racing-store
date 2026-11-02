@@ -327,6 +327,12 @@ function buildProductCard(product) {
     <button class="add-to-cart" type="button">Add to Cart</button>
   `;
 
+  if (product.videos && product.videos.length) {
+    const priceEl = card.querySelector(".price");
+    priceEl.classList.add("has-video");
+    priceEl.append(...frogVideoControls(product.videos));
+  }
+
   const img = card.querySelector(".image-carousel img");
   const prevBtn = card.querySelector(".carousel-prev");
   const nextBtn = card.querySelector(".carousel-next");

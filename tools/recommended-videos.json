@@ -1,5 +1,5 @@
 {
- "_comment": "Frog Racing YouTube videos shown as a small logo on the recommended-product rows they relate to. Matches are curated by hand (tools/match-videos.js suggests candidates from titles; find-videos.js scans the frogracing.us /tech pages). Each entry: the video id, its title, and the rows it belongs to - an Amazon ASIN, \"store:<product id>\", or \"name:<regex>\" for rows without an ASIN. build-recommended.js warns about any key that matches no row.",
+ "_comment": "Frog Racing YouTube videos shown as a small logo on the recommended-product rows they relate to. Matches are curated by hand (tools/match-videos.js suggests candidates from titles; find-videos.js scans the frogracing.us /tech pages). Each entry: the video id, its title, and the rows it belongs to - an Amazon ASIN or \"name:<regex>\" for rows without an ASIN. build-recommended.js warns about any key that matches no row. Store products carry their own videos in products.js.",
  "videos": [
   {
    "id": "k5pCDlP8bNU",
@@ -249,13 +249,6 @@
    ]
   },
   {
-   "id": "YUXAlhTuNKQ",
-   "title": "Frog Racing Hood pin clips",
-   "rows": [
-    "store:hood-pin-clips-v2"
-   ]
-  },
-  {
    "id": "CteQuVL86Ws",
    "title": "Hemi v8 5.7l spark plug replacement - 2014 Jeep Grand Cherokee Summit",
    "rows": [
@@ -337,20 +330,6 @@
     "name:^Amerex 817S",
     "name:^Element E50",
     "name:^Bracket for the Element"
-   ]
-  },
-  {
-   "id": "Kq47aszCYwA",
-   "title": "Frog Racing harness collars Carbon Fiber Polyamide",
-   "rows": [
-    "store:racing-harness-collar"
-   ]
-  },
-  {
-   "id": "Q20wtNtVSO8",
-   "title": "2026 Frog Racing harness collars Carbon Fiber Polyamide installation instructions",
-   "rows": [
-    "store:racing-harness-collar"
    ]
   },
   {

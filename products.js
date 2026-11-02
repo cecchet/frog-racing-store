@@ -144,6 +144,10 @@ const PRODUCTS = [
     id: "hood-pin-clips-v2",
     category: "race-car-parts",
     name: "Frog Racing Hood Pin Clips V2",
+    // Frog Racing YouTube videos about this product: shown as the YouTube logo on its card.
+    videos: [
+      { id: "YUXAlhTuNKQ", title: "Frog Racing Hood pin clips" },
+    ],
     images: [
       "images/hood-pin-clips-v2/cover.jpg",
       "images/hood-pin-clips-v2/clips.jpg",
@@ -200,6 +204,11 @@ const PRODUCTS = [
     id: "racing-harness-collar",
     category: "race-car-parts",
     name: "Racing Harness Collar",
+    // Frog Racing YouTube videos about this product: shown as the YouTube logo on its card.
+    videos: [
+      { id: "Kq47aszCYwA", title: "Frog Racing harness collars Carbon Fiber Polyamide" },
+      { id: "Q20wtNtVSO8", title: "2026 Frog Racing harness collars Carbon Fiber Polyamide installation instructions" },
+    ],
     pageUrl: "https://www.frogracing.us/store/racing-harness-collars",
     images: ["images/racing-harness-collar/cover.jpg"],
     description: "Carbon Fiber reinforced polyamide (PA6-CF) racing harness collar with carbon steel hardware, designed and produced in-house at Frog Racing.",

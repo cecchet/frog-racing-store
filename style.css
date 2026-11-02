@@ -667,6 +667,28 @@ main {
   color: var(--green-dark);
 }
 
+/* On a store card the logo sits at the right end of the price line. */
+.product-card .price.has-video { position: relative; }
+
+.product-card .price .rec-video {
+  right: 0;
+  bottom: auto;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.product-card .price .rec-video img {
+  aspect-ratio: auto;
+  background: none;
+  border-radius: 0;
+}
+
+.product-card .price .rec-video-menu {
+  right: 0;
+  bottom: calc(100% + 6px);
+  font-weight: 400;
+}
+
 .rec-fineprint {
   color: var(--muted);
   font-size: 0.78rem;
