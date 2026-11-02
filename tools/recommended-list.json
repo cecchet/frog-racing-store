@@ -542,6 +542,23 @@
        "group": "Gaskets"
       },
       {
+       "name": "Denso 234-9120 primary O2 sensor (air/fuel ratio) - the correct part",
+       "group": "Primary O2 sensor",
+       "url": "https://www.amazon.com/dp/B001F799X6?tag=frogracing-20",
+       "asin": "B001F799X6"
+      },
+      {
+       "note": "There are cheap clones of the 234-9120, like the one below, but we are not sure how reliable they are",
+       "group": "Primary O2 sensor",
+       "links": []
+      },
+      {
+       "name": "WEIDA 234-9120 clone (cheap alternative, reliability unknown)",
+       "group": "Primary O2 sensor",
+       "url": "https://www.amazon.com/dp/B07VWWNK7B?tag=frogracing-20",
+       "asin": "B07VWWNK7B"
+      },
+      {
        "name": "2004 STi STi Cabin Air Filter with Activated Carbon",
        "url": "https://amzn.to/41lUc94",
        "asin": "B0BRSCH9P4",
