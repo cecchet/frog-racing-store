@@ -597,6 +597,76 @@ main {
   color: #b8321f;
 }
 
+/* Frog Racing YouTube logo in a row's bottom-right corner (rows with a related video) */
+
+.rec-item-wrap {
+  position: relative;
+  display: flex;
+  min-width: 0;
+}
+
+.rec-item-wrap > .rec-item { flex: 1; }
+
+.rec-video {
+  position: absolute;
+  right: 8px;
+  bottom: 7px;
+  width: 34px;
+  height: 27px;
+  padding: 0;
+  border: 0;
+  border-radius: 4px;
+  background: #fff;
+  cursor: pointer;
+  display: block;
+  line-height: 0;
+}
+
+.rec-video img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 0;
+  background: none;
+  display: block;
+}
+
+.rec-video:hover,
+.rec-video:focus-visible {
+  box-shadow: 0 0 0 2px var(--green);
+}
+
+.rec-video-menu {
+  position: absolute;
+  right: 6px;
+  bottom: 40px;
+  z-index: 30;
+  width: min(330px, 80vw);
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+  padding: 0.3rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.rec-video-menu a {
+  display: block;
+  padding: 0.45rem 0.55rem;
+  border-radius: 5px;
+  color: var(--text);
+  font-size: 0.82rem;
+  line-height: 1.3;
+  text-decoration: none;
+}
+
+.rec-video-menu a:hover,
+.rec-video-menu a:focus-visible {
+  background: #e7ece6;
+  color: var(--green-dark);
+}
+
 .rec-fineprint {
   color: var(--muted);
   font-size: 0.78rem;

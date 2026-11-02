@@ -222,6 +222,76 @@ function recSearchText(item) {
   return (item.name || item.title || item.note || "").toLowerCase();
 }
 
+// ---- Related Frog Racing videos ---------------------------------------------------------
+// A row with `videos` gets the Frog Racing YouTube logo in its bottom-right corner: one video
+// opens straight away, several open a short list. The logo can't live inside the row's own link
+// (links can't nest), so the row and the logo share a wrapper.
+
+const FROG_YOUTUBE_ICON = "images/frog-youtube.jpg";
+
+function recCloseVideoMenus(except) {
+  for (const menu of document.querySelectorAll(".rec-video-menu")) {
+    if (menu === except) continue;
+    menu.hidden = true;
+    const button = menu.previousElementSibling;
+    if (button) button.setAttribute("aria-expanded", "false");
+  }
+}
+
+document.addEventListener("click", () => recCloseVideoMenus());
+document.addEventListener("keydown", (e) => {
+  if (e.key === "Escape") recCloseVideoMenus();
+});
+
+function recWithVideos(row, videos) {
+  const wrap = document.createElement("div");
+  wrap.className = "rec-item-wrap";
+  wrap.appendChild(row);
+
+  const icon = `<img src="${FROG_YOUTUBE_ICON}" alt="" width="32" height="25" loading="lazy">`;
+  if (videos.length === 1) {
+    const label = `Watch on the Frog Racing YouTube channel: ${videos[0].title}`;
+    const link = document.createElement("a");
+    link.className = "rec-video";
+    link.href = `https://www.youtube.com/watch?v=${videos[0].id}`;
+    link.target = "_blank";
+    link.rel = "noopener";
+    link.title = label;
+    link.setAttribute("aria-label", label);
+    link.innerHTML = icon;
+    wrap.appendChild(link);
+    return wrap;
+  }
+
+  const label = `${videos.length} related videos on the Frog Racing YouTube channel`;
+  const button = document.createElement("button");
+  button.type = "button";
+  button.className = "rec-video";
+  button.title = label;
+  button.setAttribute("aria-label", label);
+  button.setAttribute("aria-haspopup", "true");
+  button.setAttribute("aria-expanded", "false");
+  button.innerHTML = icon;
+
+  const menu = document.createElement("div");
+  menu.className = "rec-video-menu";
+  menu.hidden = true;
+  menu.innerHTML = videos
+    .map((v) => `<a href="https://www.youtube.com/watch?v=${recEsc(v.id)}" target="_blank" rel="noopener">${recEsc(v.title)}</a>`)
+    .join("");
+  menu.addEventListener("click", (e) => e.stopPropagation());
+
+  button.addEventListener("click", (e) => {
+    e.stopPropagation();
+    const opening = menu.hidden;
+    recCloseVideoMenus(menu);
+    menu.hidden = !opening;
+    button.setAttribute("aria-expanded", String(opening));
+  });
+  wrap.append(button, menu);
+  return wrap;
+}
+
 function recBuildItem(item) {
   if (item.store) {
     const product = recStoreProduct(item);
@@ -307,8 +377,9 @@ function recBuildCategory(category) {
         grid.appendChild(groupHeading);
       }
       lastGroup = item.group || null;
-      const node = recBuildItem(item);
+      let node = recBuildItem(item);
       if (!node) continue;
+      if (item.videos && item.videos.length && recIsProduct(item)) node = recWithVideos(node, item.videos);
       node.dataset.search = recSearchText(item);
       if (recIsProduct(item)) node.dataset.sale = recOnSale(item) ? "1" : "";
       grid.appendChild(node);
@@ -345,7 +416,7 @@ function recApplyFilter(root) {
           groupShown = 0;
           continue;
         }
-        const isProduct = node.classList.contains("rec-item");
+        const isProduct = node.classList.contains("rec-item") || node.classList.contains("rec-item-wrap");
         const matches =
           (!query || node.dataset.search.includes(query)) && (!saleOnly || (isProduct && node.dataset.sale === "1"));
         node.hidden = filtering && !matches;

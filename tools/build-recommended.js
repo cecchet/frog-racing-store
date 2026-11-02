@@ -30,6 +30,7 @@ const LIST_FILE = path.join(__dirname, "recommended-list.json");
 const OUT_FILE = path.join(__dirname, "..", "recommended-data.js");
 const CACHE_DIR = path.join(__dirname, "cache");
 const PRODUCT_CACHE = path.join(CACHE_DIR, "products.json");
+const VIDEOS_FILE = path.join(__dirname, "recommended-videos.json");
 
 const UA =
   "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0 Safari/537.36";
@@ -151,12 +152,39 @@ async function main() {
   const products = cache.products || {};
   let priced = 0;
   let missing = 0;
+
+  // Frog Racing videos for the rows they relate to (recommended-videos.json, curated by hand).
+  // A row key is an ASIN, "store:<product id>", or "name:<regex>".
+  const videoFile = readJson(VIDEOS_FILE, { videos: [] });
+  const usedKeys = new Set();
+  let videoRows = 0;
+  const videosFor = (item) => {
+    const keys = [item.asin, item.url, item.store ? "store:" + item.store : null].filter(Boolean);
+    const found = [];
+    for (const v of videoFile.videos) {
+      const hit = v.rows.find((r) => {
+        const ok = r.startsWith("name:") ? new RegExp(r.slice(5)).test(item.name || "") : keys.includes(r);
+        if (ok) usedKeys.add(`${v.id}|${r}`);
+        return ok;
+      });
+      if (hit) found.push({ id: v.id, title: v.title });
+    }
+    return found;
+  };
+
   const out = sections.map((s) => ({
     ...s,
     subsections: s.subsections.map((ss) => ({
       ...ss,
       items: ss.items.map((it) => {
         const item = { ...it };
+        if (item.note === undefined) {
+          const videos = videosFor(item);
+          if (videos.length) {
+            item.videos = videos;
+            videoRows++;
+          }
+        }
         if (!item.asin) return item;
         const p = products[item.asin];
         if (!p || p.e) {
@@ -179,6 +207,8 @@ async function main() {
     })),
   }));
   console.log(`${priced} items priced, ${missing} items with no Amazon data`);
+  const unmatched = videoFile.videos.flatMap((v) => v.rows.filter((r) => !usedKeys.has(`${v.id}|${r}`)).map((r) => `${v.id} -> ${r}`));
+  console.log(`${videoRows} rows have related videos` + (unmatched.length ? `; NO ROW for: ${unmatched.join(", ")}` : ""));
 
   const body = JSON.stringify(out, (k, v) => (v === null || v === undefined ? undefined : v));
   const checked = cache.checkedAt || new Date().toISOString();

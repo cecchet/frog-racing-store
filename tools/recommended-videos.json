@@ -1,0 +1,460 @@
+{
+ "_comment": "Frog Racing YouTube videos shown as a small logo on the recommended-product rows they relate to. Matches are curated by hand (tools/match-videos.js suggests candidates from titles; find-videos.js scans the frogracing.us /tech pages). Each entry: the video id, its title, and the rows it belongs to - an Amazon ASIN, \"store:<product id>\", or \"name:<regex>\" for rows without an ASIN. build-recommended.js warns about any key that matches no row.",
+ "videos": [
+  {
+   "id": "k5pCDlP8bNU",
+   "title": "Ryobi to Milwaukee battery adapter",
+   "rows": [
+    "B0DDT5CFM1"
+   ]
+  },
+  {
+   "id": "fq9C5yWgwrA",
+   "title": "VP Racing vs Tuff Jug - Which one is the fastest?",
+   "rows": [
+    "B0FC3RBX6C",
+    "name:^VP Racing"
+   ]
+  },
+  {
+   "id": "yBb2bjZgIfg",
+   "title": "Tire changer base for tire machine",
+   "rows": [
+    "B0GKGT3H98"
+   ]
+  },
+  {
+   "id": "7ZOaidWV70Y",
+   "title": "QuickTrick QuickString 5th gen VS professional 4 wheel alignment machine",
+   "rows": [
+    "B0BYPGPJR7"
+   ]
+  },
+  {
+   "id": "B3Unb5FGYA0",
+   "title": "BeadBuster and Bead Sealer - Rallycross tire tips",
+   "rows": [
+    "B009XJARD4",
+    "B000GKD722"
+   ]
+  },
+  {
+   "id": "uTpnDZQNDE4",
+   "title": "One Person Manual Brake Fluid Bleeder",
+   "rows": [
+    "B0C2YP1Y5T"
+   ]
+  },
+  {
+   "id": "tJMpsVAz-nY",
+   "title": "Subaru Balljoint removal tool by Company23 review",
+   "rows": [
+    "B0D7N22WSY"
+   ]
+  },
+  {
+   "id": "2SSmhG6Omjc",
+   "title": "Exhaust hanger pliers",
+   "rows": [
+    "B08V1JR5V9"
+   ]
+  },
+  {
+   "id": "weVrx8k9gmE",
+   "title": "Zip tie gun - Tools I should have bought 10 years ago",
+   "rows": [
+    "B0BC184T32"
+   ]
+  },
+  {
+   "id": "FdMp8IK2gEM",
+   "title": "Subaru seized rear lateral link bolt replacement",
+   "rows": [
+    "B07KFZ29D1"
+   ]
+  },
+  {
+   "id": "WNmO-9TSHuM",
+   "title": "Improving a HF toolcart with Wall Control holders for power tools and cans",
+   "rows": [
+    "B086NW4977",
+    "B00AZL25D4"
+   ]
+  },
+  {
+   "id": "lHXHRKnacXk",
+   "title": "Which jack to use? Comparing scissor, floor and air jacks!",
+   "rows": [
+    "B07CZGTXYH",
+    "B0DLKRRCMQ",
+    "B0GTQ4BCSJ"
+   ]
+  },
+  {
+   "id": "YmcY3_6dEvc",
+   "title": "LandWorks Electric Utility Cart",
+   "rows": [
+    "B07KX7W5Q5"
+   ]
+  },
+  {
+   "id": "D3EgkN7x1Ls",
+   "title": "Subaru timing cover repair with threaded heat inserts (heatserts)",
+   "rows": [
+    "B0FWCHPY4F"
+   ]
+  },
+  {
+   "id": "I82J0M1hKN4",
+   "title": "Front wheel bearing replacement on a 2004 Subaru STi",
+   "rows": [
+    "B01GID0FQQ"
+   ]
+  },
+  {
+   "id": "XgCT45F8Q-Q",
+   "title": "Rear wheel bearing replacement on 2004 Subaru STi",
+   "rows": [
+    "B06XT8K8GZ"
+   ]
+  },
+  {
+   "id": "Yf9sUnHao7M",
+   "title": "ARP long studs install on a 2004 Subaru STi",
+   "rows": [
+    "B001O065FY"
+   ]
+  },
+  {
+   "id": "qFinO4ATos4",
+   "title": "ARP long stud installation on Subaru STi (2015-2021 VA) / Wheel bearing removal",
+   "rows": [
+    "B001O065FY"
+   ]
+  },
+  {
+   "id": "gtfJWBaAzqY",
+   "title": "Raised King Springs installation on a 2020 Subaru STi",
+   "rows": [
+    "name:^King Springs$"
+   ]
+  },
+  {
+   "id": "Qv72U0H7jnI",
+   "title": "Fender liner and wiring harness protection for rally - 04 Subaru STi",
+   "rows": [
+    "B081J741J8"
+   ]
+  },
+  {
+   "id": "ZEvd8Ee_qoI",
+   "title": "Rally Armor mud flap install on a 2020 Subaru STi",
+   "rows": [
+    "B004PBCCFQ"
+   ]
+  },
+  {
+   "id": "e6GC0L1uaNg",
+   "title": "Mud flap installation on Froooog - Audi RS4",
+   "rows": [
+    "B004PBCCFQ"
+   ]
+  },
+  {
+   "id": "KAn64QctSaA",
+   "title": "Froooog Audi RS4 mud flaps update",
+   "rows": [
+    "B004PBCCFQ"
+   ]
+  },
+  {
+   "id": "k5r7DgoCJcU",
+   "title": "Subaru STi Group N motor mount installation",
+   "rows": [
+    "B00ANOV24G",
+    "B06ZZ69Z9N"
+   ]
+  },
+  {
+   "id": "Sqko72609zc",
+   "title": "Using an STi intercooler sprayer for an external oil cooler on an Audi RS4",
+   "rows": [
+    "B01N00G2A9"
+   ]
+  },
+  {
+   "id": "xYnORuwapsA",
+   "title": "Froooog - Audi RS4 JHM Stage 3 R clutch and Sachs slave install",
+   "rows": [
+    "name:^Stage 3R clutch$"
+   ]
+  },
+  {
+   "id": "aoC139o3SC8",
+   "title": "2007 Audi RS4 upper coolant hose connecting pipe replacement",
+   "rows": [
+    "B00BQS7KIU"
+   ]
+  },
+  {
+   "id": "DV9CTYL6vQ4",
+   "title": "Audi B7 RS4 rear differential JHM LSD upgrade",
+   "rows": [
+    "name:^Helical LSD$"
+   ]
+  },
+  {
+   "id": "-ozuwhX4-Yc",
+   "title": "2007 Audi RS4 B7 windshield washer pump replacement",
+   "rows": [
+    "B01AOC6J1W"
+   ]
+  },
+  {
+   "id": "mpSW-15KH2Y",
+   "title": "B7 RS4 JHM braided stainless steel brake lines installation and brake bleeding",
+   "rows": [
+    "name:^Stainless steel braided brake lines$"
+   ]
+  },
+  {
+   "id": "BheQIPtTzCc",
+   "title": "Audi RS4 Cartek GT kill switch installation",
+   "rows": [
+    "name:^Cartek GT$",
+    "B012UW1GAI"
+   ]
+  },
+  {
+   "id": "ByflZEtWLA0",
+   "title": "Kill switch install - 4 poles vs Cartek GT",
+   "rows": [
+    "name:^Cartek GT$",
+    "B012UW1GAI"
+   ]
+  },
+  {
+   "id": "Lsw_PY08i1I",
+   "title": "Froooog - NRG SRK-180H hub and 2.5 quick release with Sparco racing wheel on an Audi B7 RS4",
+   "rows": [
+    "B001CK18H6",
+    "B001AM1PHY"
+   ]
+  },
+  {
+   "id": "bJldPEcT9-A",
+   "title": "Hood pins installation on an Audi RS4 rally car",
+   "rows": [
+    "B08L8TPFYY"
+   ]
+  },
+  {
+   "id": "YUXAlhTuNKQ",
+   "title": "Frog Racing Hood pin clips",
+   "rows": [
+    "store:hood-pin-clips-v2"
+   ]
+  },
+  {
+   "id": "CteQuVL86Ws",
+   "title": "Hemi v8 5.7l spark plug replacement - 2014 Jeep Grand Cherokee Summit",
+   "rows": [
+    "B09MKDPXFM"
+   ]
+  },
+  {
+   "id": "X05JnjLa2Hg",
+   "title": "2014 Jeep Grand Cherokee Transfer Case Control Module diagnosis and replacement - Code U010200",
+   "rows": [
+    "B0DFLY2TKZ"
+   ]
+  },
+  {
+   "id": "nkxV4ubQIsc",
+   "title": "2014 Jeep Grand Cherokee Summit drivetrain oil change (diffs + transfer case)",
+   "rows": [
+    "B008MISB2Q"
+   ]
+  },
+  {
+   "id": "5ocoO-LTj38",
+   "title": "Starter diagnosis and replacement on Hemi 5.7 v8 Jeep Grand Cherokee",
+   "rows": [
+    "B0B1V74RK8"
+   ]
+  },
+  {
+   "id": "N61BrQjEmgs",
+   "title": "Jeep Grand Cherokee HEMI v8 water pump / belt / tensioner replacement",
+   "rows": [
+    "B08YRMLQJR",
+    "B08LQ17X2J",
+    "B0D8T4D5DD"
+   ]
+  },
+  {
+   "id": "bXJxfKCCfx0",
+   "title": "Jeep Grand Cherokee license plate lights broken connector replacement",
+   "rows": [
+    "B0BLSJNJCN",
+    "B0CDVT55GG"
+   ]
+  },
+  {
+   "id": "ST89UtzTpeQ",
+   "title": "How to measure rollcage tubing thickness?",
+   "rows": [
+    "B094QDDCK8"
+   ]
+  },
+  {
+   "id": "SOMf03LizOA",
+   "title": "Hans device - FIA Safety week on Frontal Head Restraints",
+   "rows": [
+    "name:^HANS Device$"
+   ]
+  },
+  {
+   "id": "4r-t5PMrlJc",
+   "title": "Hans device padding",
+   "rows": [
+    "name:^HANS Device$"
+   ]
+  },
+  {
+   "id": "80mRdYmKGr4",
+   "title": "Hans device tethers",
+   "rows": [
+    "name:^Classic TK12314$",
+    "name:^M61 quick release FIA$"
+   ]
+  },
+  {
+   "id": "QMHmXz211uI",
+   "title": "Fire extinguisher mounting and anti-torpedo tabs in race cars",
+   "rows": [
+    "name:^Amerex B417",
+    "name:^Amerex 817S",
+    "name:^Element E50",
+    "name:^Bracket for the Element"
+   ]
+  },
+  {
+   "id": "Kq47aszCYwA",
+   "title": "Frog Racing harness collars Carbon Fiber Polyamide",
+   "rows": [
+    "store:racing-harness-collar"
+   ]
+  },
+  {
+   "id": "Q20wtNtVSO8",
+   "title": "2026 Frog Racing harness collars Carbon Fiber Polyamide installation instructions",
+   "rows": [
+    "store:racing-harness-collar"
+   ]
+  },
+  {
+   "id": "Se3w7Pb6oNU",
+   "title": "Loose nuts and bolts on race cars - The torque paint and wedge lock washer solution",
+   "rows": [
+    "B07Q84FX6K",
+    "B007VAW1W2"
+   ]
+  },
+  {
+   "id": "yTxHPr9Pm2Q",
+   "title": "Trailer car tie down straps - Loop style vs axle straps",
+   "rows": [
+    "B0CQL222JV",
+    "B0BTFR87B6"
+   ]
+  },
+  {
+   "id": "R3R1QGDOV2s",
+   "title": "Trailer tire pressure and temperature monitoring system",
+   "rows": [
+    "B07S7CP3PB"
+   ]
+  },
+  {
+   "id": "0qLGAuyuAfs",
+   "title": "Trailer electric tongue jacks - Husky HB4500 vs Quick Products JQ-3500SMB",
+   "rows": [
+    "B004OK77L2",
+    "B0B72524BT"
+   ]
+  },
+  {
+   "id": "RArw4oWmgVM",
+   "title": "Trailer ramp and gap filler - The solution for one set of tools in the shop and the trailer",
+   "rows": [
+    "name:^Pit Products Extension Ramp"
+   ]
+  },
+  {
+   "id": "8sSX1zJ6Xmo",
+   "title": "Understanding trailer tire ratings",
+   "rows": [
+    "B0G5H3PRBT"
+   ]
+  },
+  {
+   "id": "nL4P0_pbUXc",
+   "title": "RS4 engine tray mounting upgrade with U-nuts",
+   "rows": [
+    "B0BWM49ZPL"
+   ]
+  },
+  {
+   "id": "meG7s5FJCV0",
+   "title": "Audi RS4 carbon fiber hood strut",
+   "rows": [
+    "B015F6F2HO"
+   ]
+  },
+  {
+   "id": "hOY7vWS1NfI",
+   "title": "Rally computer HOWTO with an Android tablet and a Bluetooth GPS",
+   "rows": [
+    "B005MFKV20",
+    "B000WJA5ZY",
+    "B0030HO6SM"
+   ]
+  },
+  {
+   "id": "GGOgbQqMa4s",
+   "title": "Rallycross run analysis with telemetry using RaceChrono",
+   "rows": [
+    "B0D5Q5Z4KL"
+   ]
+  },
+  {
+   "id": "lrd_SRcRGXc",
+   "title": "Samsonas full spec gravel rally coilover suspension installation on a 2004 Subaru STi",
+   "rows": [
+    "name:^Samsonas at Fercomp"
+   ]
+  },
+  {
+   "id": "65Jpfj8sAdM",
+   "title": "Samsonas full gravel spec with hydro bump stop rally coilover suspension - Internals overview",
+   "rows": [
+    "name:^Samsonas at Fercomp"
+   ]
+  },
+  {
+   "id": "_6F3YooigS8",
+   "title": "Samsonas full spec gravel rally suspension basic service and regrease",
+   "rows": [
+    "name:^Samsonas at Fercomp"
+   ]
+  },
+  {
+   "id": "5rUrcVSbOGc",
+   "title": "Servicing a Samsonas full gravel spec rally coilover with remote reservoir and hydro bump stop",
+   "rows": [
+    "name:^Samsonas at Fercomp"
+   ]
+  }
+ ]
+}
