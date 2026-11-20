@@ -268,6 +268,10 @@ const PRODUCTS = [
     id: "button-cover-fire-suppression",
     category: "race-car-parts",
     name: "Button Cover for Lifeline Fire Suppression Systems",
+    // Frog Racing YouTube videos about this product: shown as the YouTube logo on its card.
+    videos: [
+      { id: "ndZNMZ2HGFU", title: "Button covers for Lifeline fire suppression systems" },
+    ],
     pageUrl: "https://www.frogracing.us/store/button-cover-for-lifeline-fire-suppression-systems",
     image: "images/button-cover-fire-suppression/red-bg-white-e.jpg",
     description: "Fits Lifeline Zero 360 FIA 3.0kg FK 5-1-12 Stored Pressure Electric System buttons.",
