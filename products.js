@@ -289,6 +289,10 @@ const PRODUCTS = [
     id: "steering-wheel-plug",
     category: "race-car-parts",
     name: "Steering Wheel Horn Plug",
+    // Frog Racing YouTube videos about this product: shown as the YouTube logo on its card.
+    videos: [
+      { id: "ViLA5K2IB6s", title: "Racing steering wheel custom horn plug" },
+    ],
     pageUrl: "https://www.frogracing.us/store/steering-wheel-plug",
     image: "images/steering-wheel-plug/sti.jpg",
     description: "Fits the standard Sparco steering wheel horn button hole.",
