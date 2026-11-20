@@ -651,6 +651,8 @@ main {
   flex-direction: column;
 }
 
+.rec-video-menu[hidden] { display: none; }
+
 .rec-video-menu a {
   display: block;
   padding: 0.45rem 0.55rem;
@@ -667,8 +669,10 @@ main {
   color: var(--green-dark);
 }
 
-/* On a store card the logo sits at the right end of the price line. */
-.product-card .price.has-video { position: relative; }
+/* On a store card the logos sit at the right end of the price line (the web logo left of the video one). */
+.product-card .price.has-logos { position: relative; }
+
+.product-card .price.has-video .rec-web { right: 40px; }
 
 .product-card .price .rec-video {
   right: 0;

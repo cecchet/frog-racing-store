@@ -327,10 +327,16 @@ function buildProductCard(product) {
     <button class="add-to-cart" type="button">Add to Cart</button>
   `;
 
-  if (product.videos && product.videos.length) {
+  // Logos at the right end of the price line: the product's page on the website, then its videos.
+  const hasVideos = product.videos && product.videos.length > 0;
+  if (product.pageUrl || hasVideos) {
     const priceEl = card.querySelector(".price");
-    priceEl.classList.add("has-video");
-    priceEl.append(...frogVideoControls(product.videos));
+    priceEl.classList.add("has-logos");
+    if (product.pageUrl) priceEl.append(frogWebLink(product.pageUrl));
+    if (hasVideos) {
+      priceEl.classList.add("has-video");
+      priceEl.append(...frogVideoControls(product.videos));
+    }
   }
 
   const img = card.querySelector(".image-carousel img");

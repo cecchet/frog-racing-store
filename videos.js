@@ -4,6 +4,21 @@
 
 const FROG_YOUTUBE_ICON = "images/frog-youtube.jpg";
 
+// The Frog Racing "world wide web" logo linking to a product's own page on frogracing.us.
+// Shares the logo-button styling of the video logo (.rec-video).
+function frogWebLink(url) {
+  const label = "Product page on frogracing.us";
+  const link = document.createElement("a");
+  link.className = "rec-video rec-web";
+  link.href = url;
+  link.target = "_blank";
+  link.rel = "noopener";
+  link.title = label;
+  link.setAttribute("aria-label", label);
+  link.innerHTML = `<img src="images/frog-web.jpg" alt="" width="32" height="25" loading="lazy">`;
+  return link;
+}
+
 function frogVideoEsc(text) {
   return String(text).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
 }
