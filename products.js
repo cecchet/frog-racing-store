@@ -301,7 +301,7 @@ const PRODUCTS = [
       "images/rollcage-gauge-tool/hillclimb.png",
       "images/rollcage-gauge-tool/nasa.png",
     ],
-    description: "Designed for both scrutineers and fabricators, the Frog Racing Rollcage tube diameter gauge tool is a set of tools to quickly confirm the size of tubing on rollcages. These tools do not replace the use of a caliper for an accurate measurement of a tubing size but they allow a quick identification of rollcage tubing. Made of ABS plastic, the toolkit is available in 4 versions: Rally (ARA/NRS/CARS/FIA): 1.5\", 40 mm, 1.6\", 1.75\", 45 mm, 50 mm, 2\". Drag/NHRA, Hillclimb, SCCA RR/TA: 1.25\", 1.375\", 1.5\", 1.625\", 1.75\", 2\". NASA RR and Drift: 1.375\", 1.5\", 1.75\", 2\". All rollcages: 1.25\", 1.375\", 1.5\", 40 mm, 1.6\", 1.625\", 1.75\", 45 mm, 50 mm, 2\". Each kit comes with a cable tie to hold all your gauges together. Currently only shipping to the USA; contact sales@frogracing.us for international shipping.",
+    description: "Designed for both scrutineers and fabricators, the Frog Racing Rollcage tube diameter gauge tool is a set of tools to quickly confirm the size of tubing on rollcages.",
     variants: [
       {
         id: "all",
