@@ -247,6 +247,10 @@ const PRODUCTS = [
     id: "sun-visor",
     category: "race-car-parts",
     name: "Sun Visor GoPro Mount",
+    // Frog Racing YouTube videos about this product: shown as the YouTube logo on its card.
+    videos: [
+      { id: "0t5COdg-AKk", title: "Frog Racing Sun Visor GoPro Mount" },
+    ],
     pageUrl: "https://www.frogracing.us/store/sun-visor",
     images: ["images/sun-visor/cover.jpg"],
     description: "Black ABS plastic sun visor with a versatile GoPro mount.",
