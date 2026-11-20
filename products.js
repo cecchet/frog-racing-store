@@ -290,6 +290,47 @@ const PRODUCTS = [
     shipping: { first: 5.00, additional: 1.00 },
   },
   {
+    // PayPal listing: https://www.paypal.com/ncp/payment/DTQGEY7WN6UE6
+    id: "rollcage-gauge-tool",
+    category: "race-car-parts",
+    name: "Scrutineer Rollcage Gauge Tool",
+    images: [
+      "images/rollcage-gauge-tool/cover.jpg",
+      "images/rollcage-gauge-tool/all.png",
+      "images/rollcage-gauge-tool/rally.png",
+      "images/rollcage-gauge-tool/hillclimb.png",
+      "images/rollcage-gauge-tool/nasa.png",
+    ],
+    description: "Designed for both scrutineers and fabricators, the Frog Racing Rollcage tube diameter gauge tool is a set of tools to quickly confirm the size of tubing on rollcages. These tools do not replace the use of a caliper for an accurate measurement of a tubing size but they allow a quick identification of rollcage tubing. Made of ABS plastic, the toolkit is available in 4 versions: Rally (ARA/NRS/CARS/FIA): 1.5\", 40 mm, 1.6\", 1.75\", 45 mm, 50 mm, 2\". Drag/NHRA, Hillclimb, SCCA RR/TA: 1.25\", 1.375\", 1.5\", 1.625\", 1.75\", 2\". NASA RR and Drift: 1.375\", 1.5\", 1.75\", 2\". All rollcages: 1.25\", 1.375\", 1.5\", 40 mm, 1.6\", 1.625\", 1.75\", 45 mm, 50 mm, 2\". Each kit comes with a cable tie to hold all your gauges together. Currently only shipping to the USA; contact sales@frogracing.us for international shipping.",
+    variants: [
+      {
+        id: "all",
+        label: "All rollcages - all 10 sizes",
+        price: 25.00,
+        images: ["images/rollcage-gauge-tool/all.png", "images/rollcage-gauge-tool/cover.jpg"],
+      },
+      {
+        id: "rally",
+        label: "Rally (FIA, ARA/NRS/CARS)",
+        price: 20.00,
+        images: ["images/rollcage-gauge-tool/rally.png", "images/rollcage-gauge-tool/cover.jpg"],
+      },
+      {
+        id: "hillclimb",
+        label: "Drag racing / Hillclimb / SCCA road racing/time attack",
+        price: 20.00,
+        images: ["images/rollcage-gauge-tool/hillclimb.png", "images/rollcage-gauge-tool/cover.jpg"],
+      },
+      {
+        id: "nasa",
+        label: "Drift / NASA road racing",
+        price: 20.00,
+        images: ["images/rollcage-gauge-tool/nasa.png", "images/rollcage-gauge-tool/cover.jpg"],
+      },
+    ],
+    shipping: { first: 7.00, additional: 2.00 },
+  },
+  {
     id: "cttc-road-cutout",
     category: "3d-art",
     name: "Climb to the Clouds Glow in the Dark",
