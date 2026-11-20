@@ -310,6 +310,7 @@ const PRODUCTS = [
     id: "rollcage-gauge-tool",
     category: "race-car-parts",
     name: "Scrutineer Rollcage Gauge Tool",
+    pageUrl: "https://www.frogracing.us/store/rollcage-tube-gauge-toolkit",
     images: [
       "images/rollcage-gauge-tool/cover.jpg",
       "images/rollcage-gauge-tool/all.png",
