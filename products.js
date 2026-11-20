@@ -227,6 +227,10 @@ const PRODUCTS = [
     id: "steering-wheel-hook",
     category: "race-car-parts",
     name: "Steering Wheel Hook with GoPro Mount",
+    // Frog Racing YouTube videos about this product: shown as the YouTube logo on its card.
+    videos: [
+      { id: "zncfFp6vUoU", title: "Rollcage steering wheel hook with GoPro mount" },
+    ],
     pageUrl: "https://www.frogracing.us/store/steering-wheel-hook",
     images: ["images/steering-wheel-hook/cover.jpg"],
     description: "Lightweight 2-in-1 solution to hook a steering wheel to a rollcage bar, plus a standard GoPro mount.",
