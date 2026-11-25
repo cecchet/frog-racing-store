@@ -292,13 +292,23 @@ function recBuildCategory(category) {
   const body = document.createElement("div");
   body.className = "rec-cat-body";
   for (const sub of category.subsections) {
-    const block = document.createElement("div");
-    block.className = "rec-sub-block";
+    // In a "foldable" category (car specific parts) each named sub-category folds, closed to start.
+    const folds = !!(category.foldable && sub.name);
+    const block = document.createElement(folds ? "details" : "div");
+    block.className = folds ? "rec-sub-block rec-fold" : "rec-sub-block";
 
     if (sub.name || sub.link) {
-      const heading = document.createElement("h4");
+      const heading = document.createElement(folds ? "summary" : "h4");
       heading.className = "rec-sub";
       heading.textContent = sub.name || "More";
+      if (folds) {
+        const count = sub.items.filter(recIsProduct).length;
+        const sale = sub.items.filter(recIsProduct).filter(recOnSale).length;
+        heading.innerHTML =
+          `<span class="rec-fold-name">${recEsc(sub.name)}</span>` +
+          `<span class="rec-cat-count">${count} item${count === 1 ? "" : "s"}</span>` +
+          (sale ? `<span class="rec-cat-sale">${sale} on sale</span>` : "");
+      }
       if (sub.link) {
         heading.insertAdjacentHTML(
           "beforeend",
@@ -376,6 +386,7 @@ function recApplyFilter(root) {
       }
       closeGroup();
       block.hidden = filtering && blockShown === 0;
+      if (filtering && blockShown > 0 && block.classList.contains("rec-fold")) block.open = true;
       shown += blockShown;
     }
     cat.hidden = filtering && shown === 0;
@@ -393,6 +404,7 @@ function renderRecommended() {
   const previous = root.querySelector(".rec-list")
     ? {
         open: [...root.querySelectorAll(".rec-cat[open] .rec-cat-name")].map((el) => el.textContent),
+        folds: [...root.querySelectorAll(".rec-fold[open] .rec-fold-name")].map((el) => el.textContent),
         query: root.querySelector(".rec-search").value,
         saleOnly: root.querySelector(".rec-sale-only").checked,
       }
@@ -428,6 +440,9 @@ function renderRecommended() {
   if (previous) {
     for (const cat of root.querySelectorAll(".rec-cat")) {
       cat.open = previous.open.includes(cat.querySelector(".rec-cat-name").textContent);
+    }
+    for (const fold of root.querySelectorAll(".rec-fold")) {
+      fold.open = previous.folds.includes(fold.querySelector(".rec-fold-name").textContent);
     }
     root.querySelector(".rec-search").value = previous.query;
     root.querySelector(".rec-sale-only").checked = previous.saleOnly;

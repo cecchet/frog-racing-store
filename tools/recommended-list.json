@@ -184,6 +184,7 @@
   },
   {
    "name": "Car specific parts",
+   "foldable": true,
    "subsections": [
     {
      "name": "Subaru",

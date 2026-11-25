@@ -375,7 +375,8 @@ main {
   margin-bottom: 0.6rem;
 }
 
-.rec-cat summary {
+.rec-cat > summary,
+.rec-fold > summary {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
@@ -386,17 +387,21 @@ main {
   list-style: none;
 }
 
-.rec-cat summary::-webkit-details-marker { display: none; }
+.rec-cat > summary::-webkit-details-marker,
+.rec-fold > summary::-webkit-details-marker { display: none; }
 
-.rec-cat summary::before {
+.rec-cat > summary::before,
+.rec-fold > summary::before {
   content: "\25B8";
   color: var(--green-dark);
   transition: transform 0.15s;
 }
 
-.rec-cat[open] summary::before { transform: rotate(90deg); }
+.rec-cat[open] > summary::before,
+.rec-fold[open] > summary::before { transform: rotate(90deg); }
 
-.rec-cat-name {
+.rec-cat-name,
+.rec-fold-name {
   flex: 1 1 0;
   min-width: 8rem;
 }
@@ -425,6 +430,17 @@ main {
   border-bottom: 1px solid var(--border);
   padding-bottom: 0.25rem;
 }
+
+/* A foldable sub-category: its heading is a bar to tap. */
+.rec-fold > summary.rec-sub {
+  margin: 0.6rem 0 0;
+  padding: 0.65rem 0.8rem;
+  background: #e7ece6;
+  border: 0;
+  border-radius: 8px;
+}
+
+.rec-fold[open] > summary.rec-sub { margin-bottom: 0.6rem; }
 
 .rec-see-all {
   font-size: 0.8rem;
