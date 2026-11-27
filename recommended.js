@@ -361,6 +361,43 @@ function recBuildCategory(category) {
   return details;
 }
 
+// ---- Seasonal Amazon deals section ---------------------------------------------------------
+// While an event runs, the Amazon products that currently carry a deal badge are also gathered in
+// one section at the top of the page. It is built from the live data only, so it follows Amazon
+// hour by hour and is left out when that data is missing or stale. It switches off at `ends`
+// (end of Cyber Monday, Pacific time), after which a deal is no longer a Black Friday one.
+const REC_DEALS_EVENT = { name: "Black Friday Deals on Amazon", ends: "2026-12-01T00:00:00-08:00" };
+
+// A category made of the deal rows (each product once, under the category it is listed in),
+// or null when there is nothing to show.
+function recDealsCategory() {
+  if (Date.now() >= Date.parse(REC_DEALS_EVENT.ends)) return null;
+  if (!recLiveAt || recDataAgeMs() > REC_STALE_AFTER_MS) return null;
+  const seen = new Set();
+  const subsections = [];
+  for (const category of RECOMMENDED) {
+    for (const sub of category.subsections) {
+      const items = sub.items.filter((item) => {
+        if (!item.asin || !item.deal || item.price == null || item.unavailable || seen.has(item.asin)) return false;
+        seen.add(item.asin);
+        return true;
+      });
+      const name = sub.name ? `${category.name} › ${sub.name}` : category.name;
+      // Group headings stay (they explain short product names); their "full list" links don't.
+      if (items.length) subsections.push({ name, items: items.map((item) => ({ ...item, groupLink: undefined })) });
+    }
+  }
+  return seen.size ? { name: REC_DEALS_EVENT.name, subsections } : null;
+}
+
+function recBuildDeals(category) {
+  const node = recBuildCategory(category);
+  node.classList.add("rec-deals");
+  const count = category.subsections.reduce((n, s) => n + s.items.length, 0);
+  node.querySelector(".rec-cat-count").textContent = `${count} deal${count === 1 ? "" : "s"}`;
+  return node;
+}
+
 // Search / "on sale only" filter. Opens the categories that have matches and
 // hides everything else.
 function recApplyFilter(root) {
@@ -370,6 +407,10 @@ function recApplyFilter(root) {
   let totalShown = 0;
 
   for (const cat of root.querySelectorAll(".rec-cat")) {
+    if (cat.classList.contains("rec-deals")) {
+      cat.hidden = filtering; // its rows are repeats: results come from their own categories
+      continue;
+    }
     let shown = 0;
     for (const block of cat.querySelectorAll(".rec-sub-block")) {
       let blockShown = 0;
@@ -442,6 +483,8 @@ function renderRecommended() {
     `<p class="rec-fineprint">${recFinePrint()}</p>`;
 
   const list = root.querySelector(".rec-list");
+  const deals = recDealsCategory();
+  if (deals) list.appendChild(recBuildDeals(deals));
   for (const category of RECOMMENDED) list.appendChild(recBuildCategory(category));
 
   const apply = () => recApplyFilter(root);

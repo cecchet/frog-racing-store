@@ -423,6 +423,14 @@ main {
 
 .rec-cat-body { padding: 0 1rem 1rem; }
 
+/* Seasonal Amazon deals: the bar at the top stands out from the categories. */
+.rec-deals { border: 2px solid #b8321f; }
+.rec-deals > summary { background: #b8321f; color: #fff; border-radius: 8px; }
+.rec-deals[open] > summary { border-radius: 8px 8px 0 0; }
+.rec-deals > summary::before { color: #fff; }
+.rec-deals > summary .rec-cat-count { color: #fff; font-weight: 700; }
+.rec-deals > summary .rec-cat-sale { display: none; }
+
 .rec-sub {
   margin: 1.1rem 0 0.5rem;
   font-size: 1rem;
