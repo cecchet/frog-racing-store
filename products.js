@@ -144,6 +144,7 @@ const PRODUCTS = [
     id: "hood-pin-clips-v2",
     category: "race-car-parts",
     name: "Frog Racing Hood Pin Clips V2",
+    pageUrl: "https://www.frogracing.us/store/hood-pin-clips",
     // Frog Racing YouTube videos about this product: shown as the YouTube logo on its card.
     videos: [
       { id: "YUXAlhTuNKQ", title: "Frog Racing Hood pin clips" },
