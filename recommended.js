@@ -44,6 +44,12 @@ function recPricesExpired() {
 }
 
 function recOnSale(item) {
+  if (item.store) {
+    const product = recStoreProduct(item); // our own sale (products.js), not an Amazon price
+    if (!product) return false;
+    const { lowest, regular } = recStorePrice(product);
+    return lowest < regular;
+  }
   if (recPricesExpired()) return false;
   return !!(item.pct || item.coupon || item.deal);
 }
@@ -186,11 +192,13 @@ function recStoreProduct(item) {
   return PRODUCTS.find((p) => p.id === item.store) || null;
 }
 
-// Lowest price you can buy it at (the cheapest option), and whether the options differ.
+// Lowest price you can buy it at (the cheapest option) now and without a store sale, and whether
+// the options differ.
 function recStorePrice(product) {
-  const prices = product.variants && product.variants.length ? product.variants.map((v) => v.price) : [product.price];
+  const regular = product.variants && product.variants.length ? product.variants.map((v) => v.price) : [product.price];
+  const prices = regular.map((price) => currentPrice(product, price));
   const lowest = Math.min(...prices);
-  return { lowest, varies: Math.max(...prices) > lowest };
+  return { lowest, regular: Math.min(...regular), varies: Math.max(...prices) > lowest };
 }
 
 function recFirstSentence(text) {
@@ -204,14 +212,17 @@ function recBuildStoreItem(product) {
   link.href = `./#product-${product.id}`;
 
   const cover = (product.images && product.images[0]) || product.image;
-  const { lowest, varies } = recStorePrice(product);
+  const { lowest, regular, varies } = recStorePrice(product);
+  const onSale = lowest < regular;
   link.innerHTML =
     `<span class="rec-thumb"><img loading="lazy" alt="" src="${recEsc(cover)}"></span>` +
     `<span class="rec-info">` +
     `<span class="rec-name">${recEsc(product.name)}</span>` +
     `<span class="rec-desc">${recEsc(recFirstSentence(product.description))}</span>` +
-    `<span class="rec-price">${varies ? `<span class="rec-from">From</span> ` : ""}<b class="rec-now">${recMoney(lowest)}</b></span>` +
-    `<span class="rec-tags"><span class="rec-tag">Frog Racing store</span></span>` +
+    `<span class="rec-price">${varies ? `<span class="rec-from">From</span> ` : ""}<b class="rec-now">${recMoney(lowest)}</b>` +
+    `${onSale ? ` <s class="rec-was">${recMoney(regular)}</s>` : ""}</span>` +
+    `<span class="rec-tags"><span class="rec-tag">Frog Racing store</span>` +
+    `${onSale ? `<span class="rec-tag rec-tag-deal">${SALE.name}</span>` : ""}</span>` +
     `</span>`;
   return link;
 }

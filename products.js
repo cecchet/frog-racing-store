@@ -412,3 +412,38 @@ const PRODUCTS = [
 // Fallback graduated shipping for products that don't yet have a real rate
 // (flat per unit until the user gives us actual numbers).
 const DEFAULT_SHIPPING = { first: 6.00, additional: 6.00 };
+
+// ---- Sale -----------------------------------------------------------------------------------
+// The prices above are the regular ones. While the sale runs, the store (and the store rows on
+// the Recommended page) apply it on top; it switches itself off at `ends`.
+const SALE = {
+  name: "Green Friday",
+  // End of Tuesday, December 1, 2026, US Eastern time.
+  ends: "2026-12-02T00:00:00-05:00",
+  endsLabel: "Tuesday, December 1",
+  summary: "10% off all race car parts and 3D art, and the Climb to the Clouds Limited Edition for $20. Shipping is not discounted.",
+  percentOff: { "race-car-parts": 10, "3d-art": 10 }, // by category
+  products: {
+    // A product listed here gets these values instead of its category's percentage.
+    "cttc-limited-edition": { price: 20.00, shipping: { first: 15.00 } },
+  },
+};
+
+function saleActive() {
+  return Date.now() < Date.parse(SALE.ends);
+}
+
+// What an option of this product costs now, given its regular price.
+function currentPrice(product, regular) {
+  if (!saleActive()) return regular;
+  const own = SALE.products[product.id];
+  if (own && own.price !== undefined) return own.price;
+  const off = SALE.percentOff[product.category] || 0;
+  return Math.round(regular * (100 - off)) / 100;
+}
+
+function currentShipping(product) {
+  const regular = product.shipping || DEFAULT_SHIPPING;
+  const own = saleActive() && SALE.products[product.id];
+  return own && own.shipping ? { ...regular, ...own.shipping } : regular;
+}

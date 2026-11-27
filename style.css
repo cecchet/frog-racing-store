@@ -623,6 +623,9 @@ main {
 
 .rec-item-wrap > .rec-item { flex: 1; }
 
+/* Tags wrap before reaching the logo. */
+.rec-item-wrap .rec-tags { padding-right: 38px; }
+
 .rec-video {
   position: absolute;
   right: 8px;
@@ -706,6 +709,44 @@ main {
 .product-card .price .rec-video-menu {
   right: 0;
   bottom: calc(100% + 6px);
+  font-weight: 400;
+}
+
+/* Store sale (SALE in products.js) */
+
+.sale-banner {
+  background: var(--green-dark);
+  color: #fff;
+  border-radius: 10px;
+  padding: 0.85rem 1rem;
+  margin-bottom: 1.25rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.25rem 0.75rem;
+}
+
+.sale-banner strong { font-size: 1.15rem; }
+
+.deal-badge {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  z-index: 1;
+  background: #b8321f;
+  color: #fff;
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 0.15rem 0.5rem;
+  border-radius: 999px;
+  pointer-events: none;
+}
+
+/* On its own line, so narrow cards keep room for the logos beside the price. */
+.product-card .price .was-price {
+  display: block;
+  color: var(--muted);
+  font-size: 0.8rem;
   font-weight: 400;
 }
 

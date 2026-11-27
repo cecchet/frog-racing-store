@@ -84,7 +84,7 @@ function lineInfo(key) {
   if (!product) return null;
   const variant = variantId ? product.variants.find((v) => v.id === variantId) : null;
   if (variantId && !variant) return null;
-  const price = variant ? variant.price : product.price;
+  const price = currentPrice(product, variant ? variant.price : product.price);
   const label = variant ? `${product.name} — ${variant.label}` : product.name;
   return { product, variant, price, label };
 }
@@ -136,7 +136,7 @@ function lineAdditionalRate(line) {
   if (line.variant && line.variant.shippingAdditional !== undefined) {
     return line.variant.shippingAdditional;
   }
-  return (line.product.shipping || DEFAULT_SHIPPING).additional;
+  return currentShipping(line.product).additional;
 }
 
 function cartShippingTotal() {
@@ -155,7 +155,7 @@ function cartShippingTotal() {
       groups[productId] = {
         sumAdditional: 0,
         maxAdditional: -Infinity,
-        first: (line.product.shipping || DEFAULT_SHIPPING).first,
+        first: currentShipping(line.product).first,
       };
     }
     groups[productId].sumAdditional += line.qty * rate;
@@ -301,9 +301,18 @@ function buildProductCard(product) {
   card.id = `product-${product.id}`; // lets other pages link straight to this card
 
   const hasVariants = Array.isArray(product.variants) && product.variants.length > 0;
-  const priceDisplay = hasVariants
-    ? `$${Math.min(...product.variants.map((v) => v.price)).toFixed(2)}+`
-    : `$${product.price.toFixed(2)}`;
+  const regular = hasVariants ? Math.min(...product.variants.map((v) => v.price)) : product.price;
+  const now = hasVariants
+    ? Math.min(...product.variants.map((v) => currentPrice(product, v.price)))
+    : currentPrice(product, product.price);
+  const plus = hasVariants ? "+" : "";
+  const onSale = now < regular;
+  const priceDisplay = onSale
+    ? `<s class="was-price">$${regular.toFixed(2)}${plus}</s> $${now.toFixed(2)}${plus}`
+    : `$${now.toFixed(2)}${plus}`;
+  const badgeHtml = onSale
+    ? `<span class="deal-badge">${SALE.name} &minus;${Math.round((1 - now / regular) * 100)}%</span>`
+    : "";
   // Always start on the product's own cover photo(s), not a specific
   // variant's - once the shopper picks a variant, the select's "change"
   // handler below takes over and shows that variant's own photo(s).
@@ -319,6 +328,7 @@ function buildProductCard(product) {
       <button class="carousel-prev" type="button" aria-label="Previous photo">&#10094;</button>
       <button class="carousel-next" type="button" aria-label="Next photo">&#10095;</button>
       <div class="carousel-dots"></div>
+      ${badgeHtml}
     </div>
     <h3>${nameHtml}</h3>
     <p>${product.description}</p>
@@ -413,7 +423,7 @@ function buildProductCard(product) {
     for (const variant of product.variants) {
       const opt = document.createElement("option");
       opt.value = variant.id;
-      opt.textContent = `${variant.label} — $${variant.price.toFixed(2)}`;
+      opt.textContent = `${variant.label} — $${currentPrice(product, variant.price).toFixed(2)}`;
       select.appendChild(opt);
     }
     select.addEventListener("change", () => {
@@ -451,6 +461,13 @@ function renderNav() {
 function renderProducts() {
   const catalog = document.getElementById("catalog");
   catalog.innerHTML = "";
+
+  if (saleActive()) {
+    const banner = document.createElement("div");
+    banner.className = "sale-banner";
+    banner.innerHTML = `<strong>${SALE.name} deals</strong> <span>${SALE.summary} Ends ${SALE.endsLabel}.</span>`;
+    catalog.appendChild(banner);
+  }
 
   for (const category of CATEGORIES) {
     const productsInCategory = PRODUCTS.filter((p) => p.category === category.id);
@@ -610,6 +627,14 @@ document.getElementById("cart-overlay").addEventListener("click", closeCart);
 renderNav();
 renderProducts();
 renderCart();
+
+// A page left open past the end of the sale goes back to regular prices, matching what checkout charges.
+if (saleActive()) {
+  setTimeout(() => {
+    renderProducts();
+    renderCart();
+  }, Date.parse(SALE.ends) - Date.now() + 1000);
+}
 
 // The Recommended page's Cart button links here.
 if (new URLSearchParams(location.search).get("cart") === "open") openCart();
