@@ -322,16 +322,16 @@ const PRODUCTS = [
     description: "Designed for both scrutineers and fabricators, the Frog Racing Rollcage tube diameter gauge tool is a set of tools to quickly confirm the size of tubing on rollcages.",
     variants: [
       {
-        id: "all",
-        label: "All rollcages - all 10 sizes",
-        price: 25.00,
-        images: ["images/rollcage-gauge-tool/all.png", "images/rollcage-gauge-tool/cover.jpg"],
-      },
-      {
         id: "rally",
         label: "Rally (FIA, ARA/NRS/CARS)",
         price: 20.00,
         images: ["images/rollcage-gauge-tool/rally.png", "images/rollcage-gauge-tool/cover.jpg"],
+      },
+      {
+        id: "all",
+        label: "All rollcages - all 10 sizes",
+        price: 25.00,
+        images: ["images/rollcage-gauge-tool/all.png", "images/rollcage-gauge-tool/cover.jpg"],
       },
       {
         id: "hillclimb",
